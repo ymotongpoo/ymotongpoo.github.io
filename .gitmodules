@@ -1,0 +1,3 @@
+[submodule "themes/tropic"]
+	path = themes/tropic
+	url = https://github.com/dim0627/hugo_theme_tropic.git
