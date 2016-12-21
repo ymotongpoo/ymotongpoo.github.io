@@ -19,6 +19,7 @@ function _deploy() {
   # git add, commit and push to master
   mkdir -p $tmp
   cp -r public/. $tmp
+  rm -rf public
   git checkout master
   cp -rf $tmp/. .
   git add --all
