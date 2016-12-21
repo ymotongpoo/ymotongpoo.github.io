@@ -1,7 +1,8 @@
 #!/bin/bash
 
 theme=tropic
-tmp="/tmp/`date`"
+date=`date +"%Y%m%d%H%M%S"`
+tmp="/tmp/$date"
 
 function _deploy() {
   echo -e "Build and deploy to GitHub"
@@ -12,7 +13,7 @@ function _deploy() {
 
   # git add, commit and push to source
   git add --all
-  git commit -m "[source] `date` : $1"
+  git commit -m "[source] $date : $1"
   git push origin source:source
 
   # git add, commit and push to master
@@ -21,7 +22,7 @@ function _deploy() {
   git checkout master
   cp -r $tmp/public/* .
   git add --all
-  git commit -m "[site] `date` : $1"
+  git commit -m "[site] $date : $1"
   git push origin master:master
   git checkout source
 
