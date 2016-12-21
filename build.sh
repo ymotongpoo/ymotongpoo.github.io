@@ -13,16 +13,16 @@ function _deploy() {
 
   # git add, commit and push to source
   git add --all
-  git commit -m "[source] $date : $1"
+  git commit -m "[source] $date : $*"
   git push origin source:source
 
   # git add, commit and push to master
   mkdir -p $tmp
-  cp -r public $tmp
+  cp -r public/. $tmp
   git checkout master
-  cp -rf $tmp/public/* .
+  cp -rf $tmp/. .
   git add --all
-  git commit -m "[site] $date : $1"
+  git commit -m "[site] $date : $*"
   git push origin master:master
   git checkout source
 
