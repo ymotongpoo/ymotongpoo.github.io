@@ -20,7 +20,7 @@ function _deploy() {
   mkdir -p $tmp
   cp -r public $tmp
   git checkout master
-  cp -r $tmp/public/* .
+  cp -rf $tmp/public/* .
   git add --all
   git commit -m "[site] $date : $1"
   git push origin master:master
