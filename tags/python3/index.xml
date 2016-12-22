@@ -24,9 +24,32 @@
 &lt;li&gt;&lt;a href=&#34;http://scikit-learn.org/stable/&#34;&gt;scikit-learn&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h2 id=&#34;python-3のセットアップ&#34;&gt;Python 3のセットアップ&lt;/h2&gt;
+&lt;h2 id=&#34;python-3-5環境のセットアップ&#34;&gt;Python 3.5環境のセットアップ&lt;/h2&gt;
 
-&lt;p&gt;ほげほげほげぽよぽよ&lt;/p&gt;
+&lt;p&gt;現在時点での最新版をインストールする。MacPortsを利用しているので次の通り。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;% sudo port install python35
+% sudo port install py35-virtualenv py35-virtualenvwrapper
+% sudo port select --set virtualenv virtualenv35
+% mkvirtualenv sklearn
+(sklearn) %
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;scikit-learnのインストールと確認&#34;&gt;scikit-learnのインストールと確認&lt;/h2&gt;
+
+&lt;p&gt;依存関係があるものを先にインストールしてからインストール。　&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;% pip install numpy scipy
+% pip install sklearn
+% python
+Python 3.5.2 (default, Dec 17 2016, 06:22:44)
+[GCC 4.2.1 Compatible Apple LLVM 7.0.2 (clang-700.1.81)] on darwin
+Type &amp;quot;help&amp;quot;, &amp;quot;copyright&amp;quot;, &amp;quot;credits&amp;quot; or &amp;quot;license&amp;quot; for more information.
+&amp;gt;&amp;gt;&amp;gt; from sklearn import svm
+&amp;gt;&amp;gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;無事インストール出来ました。&lt;/p&gt;
 </description>
     </item>
     
