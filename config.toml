@@ -10,9 +10,9 @@ hasCJKLanguage = true
   dateformat = "Jan 2, 2006"
   themecolor = "#ffbd43"
   # Fonts settings.
-  googlefonts = "https://fonts.googleapis.com/css?family=Lobster|Lato:400,700" # Optional, Include google fonts.
+  googlefonts = "https://fonts.googleapis.com/css?family=Cuprum:400,700" # Optional, Include google fonts.
   fontfamily = "Lato,YuGothic,'Hiragino Kaku Gothic Pro',Meiryo,sans-serif" # Optional, Override body font family.
-  logofontfamily = "Lobster, cursive" # Optional, Override logo font.
+  logofontfamily = "'Cuprum', sans-serif;" # Optional, Override logo font.
   ampscripts = """
 <script async custom-element="amp-twitter" src="https://cdn.ampproject.org/v0/amp-twitter-0.1.js"></script>
 <script async custom-element="amp-iframe" src="https://cdn.ampproject.org/v0/amp-iframe-0.1.js"></script>
@@ -23,4 +23,5 @@ hasCJKLanguage = true
   tag = "tags"
 
 [permalinks]
-  tech = "/blog/:year/:month/:day/:slug/"
+  tech = "/tech/:year/:month/:day/:slug/"
+  blog = "/blog/:year/:month/:day/:slug/"
