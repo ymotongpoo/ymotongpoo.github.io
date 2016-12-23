@@ -6,8 +6,30 @@
     <description>Recent content on depository</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Thu, 22 Dec 2016 22:19:04 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 23 Dec 2016 08:42:44 +0900</lastBuildDate>
     <atom:link href="https://ymotongpoo.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>低温調理の会とか</title>
+      <link>https://ymotongpoo.github.io/diary/anova-party/</link>
+      <pubDate>Fri, 23 Dec 2016 08:42:44 +0900</pubDate>
+      
+      <guid>https://ymotongpoo.github.io/diary/anova-party/</guid>
+      <description>
+
+&lt;h2 id=&#34;低温調理の会&#34;&gt;低温調理の会&lt;/h2&gt;
+
+&lt;p&gt;@adamrocker と @atusi とAnovaを使って低温調理の会をした。大量の肉をAnovaでやっていくのはとても良い。自宅でもたまには塊肉を複数浮かべた絵を見たい。グラスフェッドの肉は50℃で長くやっていくと仕上げたときにふわふわの&lt;/p&gt;
+
+&lt;h2 id=&#34;vsc-licenserの更新&#34;&gt;vsc-licenserの更新&lt;/h2&gt;
+
+&lt;p&gt;Visual Studio Code Advent Calendar 2016に&lt;a href=&#34;http://ymotongpoo.hatenablog.com/entry/2016/12/21/164554&#34;&gt;投稿した&lt;/a&gt;ので、久々に &lt;a href=&#34;https://github.com/ymotongpoo/vsc-licenser&#34;&gt;vsc-licenser&lt;/a&gt;を更新しようかなと思い始めた。手始めに、コメントを1行コメントと複数行コメントの両方でできるようにしようと思う。&lt;/p&gt;
+
+&lt;p&gt;まずはバージョン0.3.0として、これまでマップで対応していたコメント記法の情報を専用クラスを作って1行コメントと複数行コメントの両方を保持できるようにしたので、今後設定で好みのスタイルで出来るようになっている。&lt;/p&gt;
+
+&lt;p&gt;そのついでで、対応言語の数を増やしたので、次は対応ライセンスの数を増やしたい。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>トレーニングの科学的根拠とか</title>
