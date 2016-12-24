@@ -1,5 +1,5 @@
 +++
-draft = true
+draft = false
 title = "クリスマスイブとか"
 date = "2016-12-24T11:07:17+09:00"
 slug = "christmas-eve"
