@@ -6,8 +6,32 @@
     <description>Recent content on depository</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Fri, 23 Dec 2016 08:42:44 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 24 Dec 2016 11:07:17 +0900</lastBuildDate>
     <atom:link href="https://ymotongpoo.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>クリスマスイブとか</title>
+      <link>https://ymotongpoo.github.io/diary/christmas-eve/</link>
+      <pubDate>Sat, 24 Dec 2016 11:07:17 +0900</pubDate>
+      
+      <guid>https://ymotongpoo.github.io/diary/christmas-eve/</guid>
+      <description>
+
+&lt;h2 id=&#34;クリスマスイブの予定&#34;&gt;クリスマスイブの予定&lt;/h2&gt;
+
+&lt;p&gt;特に特別なことはなくて、今日は大掃除でもできればいいなという感じ。家がだいぶ散らかってきたので今やっとかないと来年とかひどいことになりそう。&lt;/p&gt;
+
+&lt;p&gt;とりあえず風呂掃除用のブラシが折れたので新しく買って、あとは風呂場のカビ退治用のスプレーを購入。1時間半ほど格闘して風呂場、洗面台、コンロまわりなどの汚れを一掃した。やはり掃除はきれいになったあとを見ると楽しい。&lt;/p&gt;
+
+&lt;p&gt;一通り重労働な場所は終わったので、書類ケースに入っていたいらない書類などを整理して捨てた。&lt;/p&gt;
+
+&lt;h2 id=&#34;vsc-licenserの更新&#34;&gt;vsc-licenserの更新&lt;/h2&gt;
+
+&lt;p&gt;昨日は対応言語を増やしたので、今日は対応ライセンスを増やした。BSDの3条項ライセンスと2条項ライセンスの新旧の認識が間違ってたので、&lt;code&gt;BSD&lt;/code&gt;という設定はやめて、&lt;code&gt;BSD2&lt;/code&gt;と&lt;code&gt;BSD3&lt;/code&gt;にした。この対応で破壊的変更が入った。あとはCCの追加かなあ。&lt;/p&gt;
+
+&lt;p&gt;また1行コメントと複数行コメントのどちらを優先して使用するかのオプションも追加した。これでとりあえずの変更はおしまい。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>低温調理の会とか</title>
