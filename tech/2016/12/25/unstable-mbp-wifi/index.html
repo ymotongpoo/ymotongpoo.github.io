@@ -13,14 +13,14 @@
 <link rel="apple-touch-icon" href="https://ymotongpoo.github.io/images/logo.png">
 
 
-<link rel="canonical" href="https://ymotongpoo.github.io/tech/2016/12/21/setting-up-sklearn/">
+<link rel="canonical" href="https://ymotongpoo.github.io/tech/2016/12/25/unstable-mbp-wifi/">
 
 
     
     <link href="https://fonts.googleapis.com/css?family=Cuprum:400,700" rel="stylesheet">
     
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet">
-    <title>scikit-learnを使える環境を整える - depository</title>
+    <title>MacBook ProのWifiが頻繁に切れるようになったので対応した - depository</title>
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
@@ -29,21 +29,21 @@
 <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
 
     
-<meta name="description" content="scikit-learnとは 機械学習をPythonで簡単に扱うためのライブラリ。 scikit-learn Python 3.5環境のセットアップ 現在時点での最新版をインストール">
+<meta name="description" content="MacBook ProのWifiが頻繁に切断されるようになった MacBook Pro側の対応 このへん を見つつ対応した。根本的な原因がわからないのが気持ち悪いけど、対処療">
 
-<meta property="og:title" content="scikit-learnを使える環境を整える - depository">
+<meta property="og:title" content="MacBook ProのWifiが頻繁に切れるようになったので対応した - depository">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://ymotongpoo.github.io/tech/2016/12/21/setting-up-sklearn/">
+<meta property="og:url" content="https://ymotongpoo.github.io/tech/2016/12/25/unstable-mbp-wifi/">
 <meta property="og:image" content="https://ymotongpoo.github.io/images/default.png">
 <meta property="og:site_name" content="depository">
-<meta property="og:description" content="scikit-learnとは 機械学習をPythonで簡単に扱うためのライブラリ。 scikit-learn Python 3.5環境のセットアップ 現在時点での最新版をインストール">
+<meta property="og:description" content="MacBook ProのWifiが頻繁に切断されるようになった MacBook Pro側の対応 このへん を見つつ対応した。根本的な原因がわからないのが気持ち悪いけど、対処療">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="depository">
-<meta name="twitter:url" content="https://ymotongpoo.github.io/tech/2016/12/21/setting-up-sklearn/">
-<meta name="twitter:title" content="scikit-learnを使える環境を整える - depository">
-<meta name="twitter:description" content="scikit-learnとは 機械学習をPythonで簡単に扱うためのライブラリ。 scikit-learn Python 3.5環境のセットアップ 現在時点での最新版をインストール">
+<meta name="twitter:url" content="https://ymotongpoo.github.io/tech/2016/12/25/unstable-mbp-wifi/">
+<meta name="twitter:title" content="MacBook ProのWifiが頻繁に切れるようになったので対応した - depository">
+<meta name="twitter:description" content="MacBook ProのWifiが頻繁に切断されるようになった MacBook Pro側の対応 このへん を見つつ対応した。根本的な原因がわからないのが気持ち悪いけど、対処療">
 <meta name="twitter:image" content="https://ymotongpoo.github.io/images/default.png">
 
 
@@ -55,15 +55,15 @@
       "@type": "WebPage",
       "@id":"https:\/\/ymotongpoo.github.io\/"
     },
-    "headline": "scikit-learnを使える環境を整える - depository",
+    "headline": "MacBook ProのWifiが頻繁に切れるようになったので対応した - depository",
     "image": {
       "@type": "ImageObject",
       "url": "https:\/\/ymotongpoo.github.io\/images\/default.png",
       "height": 800,
       "width": 800
     },
-    "datePublished": "2016-12-21T23:35:31JST",
-    "dateModified": "2016-12-21T23:35:31JST",
+    "datePublished": "2016-12-25T11:48:49JST",
+    "dateModified": "2016-12-25T11:48:49JST",
     "author": {
       "@type": "Person",
       "name": "depository"
@@ -78,7 +78,7 @@
         "height": 60
       }
     },
-    "description": "scikit-learnとは 機械学習をPythonで簡単に扱うためのライブラリ。 scikit-learn Python 3.5環境のセットアップ 現在時点での最新版をインストール"
+    "description": "MacBook ProのWifiが頻繁に切断されるようになった MacBook Pro側の対応 このへん を見つつ対応した。根本的な原因がわからないのが気持ち悪いけど、対処療"
   }
 </script>
 
@@ -138,24 +138,24 @@
     
     <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://ymotongpoo.github.io/tech/" itemprop="url"><span itemprop="title">tech</span></a></li>
     
-    <li><span>scikit-learnを使える環境を整える</span></li>
+    <li><span>MacBook ProのWifiが頻繁に切れるようになったので対応した</span></li>
   </ol>
 </nav>
 
 <article class="single">
 
   <header>
-    <h1 class="title">scikit-learnを使える環境を整える</h1>
+    <h1 class="title">MacBook ProのWifiが頻繁に切れるようになったので対応した</h1>
     <ul class="p-facts">
-      <li><time datetime="2016-12-21T23:35:31JST">Dec 21, 2016</time></li>
+      <li><time datetime="2016-12-25T11:48:49JST">Dec 25, 2016</time></li>
       <li><a href="https://ymotongpoo.github.io/tech/">tech</a></li>
       
     </ul>
     <aside class="p-share">
-  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fymotongpoo.github.io%2ftech%2f2016%2f12%2f21%2fsetting-up-sklearn%2f&t=scikit-learn%e3%82%92%e4%bd%bf%e3%81%88%e3%82%8b%e7%92%b0%e5%a2%83%e3%82%92%e6%95%b4%e3%81%88%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fymotongpoo.github.io%2ftech%2f2016%2f12%2f21%2fsetting-up-sklearn%2f&text=scikit-learn%e3%82%92%e4%bd%bf%e3%81%88%e3%82%8b%e7%92%b0%e5%a2%83%e3%82%92%e6%95%b4%e3%81%88%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="https://plus.google.com/share?url=https%3a%2f%2fymotongpoo.github.io%2ftech%2f2016%2f12%2f21%2fsetting-up-sklearn%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-  <a href="http://getpocket.com/edit?url=https%3a%2f%2fymotongpoo.github.io%2ftech%2f2016%2f12%2f21%2fsetting-up-sklearn%2f&title=scikit-learn%e3%82%92%e4%bd%bf%e3%81%88%e3%82%8b%e7%92%b0%e5%a2%83%e3%82%92%e6%95%b4%e3%81%88%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fymotongpoo.github.io%2ftech%2f2016%2f12%2f25%2funstable-mbp-wifi%2f&t=MacBook%20Pro%e3%81%aeWifi%e3%81%8c%e9%a0%bb%e7%b9%81%e3%81%ab%e5%88%87%e3%82%8c%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab%e3%81%aa%e3%81%a3%e3%81%9f%e3%81%ae%e3%81%a7%e5%af%be%e5%bf%9c%e3%81%97%e3%81%9f" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fymotongpoo.github.io%2ftech%2f2016%2f12%2f25%2funstable-mbp-wifi%2f&text=MacBook%20Pro%e3%81%aeWifi%e3%81%8c%e9%a0%bb%e7%b9%81%e3%81%ab%e5%88%87%e3%82%8c%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab%e3%81%aa%e3%81%a3%e3%81%9f%e3%81%ae%e3%81%a7%e5%af%be%e5%bf%9c%e3%81%97%e3%81%9f&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=https%3a%2f%2fymotongpoo.github.io%2ftech%2f2016%2f12%2f25%2funstable-mbp-wifi%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fymotongpoo.github.io%2ftech%2f2016%2f12%2f25%2funstable-mbp-wifi%2f&title=MacBook%20Pro%e3%81%aeWifi%e3%81%8c%e9%a0%bb%e7%b9%81%e3%81%ab%e5%88%87%e3%82%8c%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab%e3%81%aa%e3%81%a3%e3%81%9f%e3%81%ae%e3%81%a7%e5%af%be%e5%bf%9c%e3%81%97%e3%81%9f" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
 </aside>
 
     <amp-ad type="adsense" data-ad-client="ca-pub-7999197875905972" data-ad-slot="8125118534" width="300" height="250"></amp-ad>
@@ -163,47 +163,64 @@
 
   <div class="article-body">
 
-<h2 id="scikit-learnとは">scikit-learnとは</h2>
+<h1 id="macbook-proのwifiが頻繁に切断されるようになった">MacBook ProのWifiが頻繁に切断されるようになった</h1>
 
-<p>機械学習をPythonで簡単に扱うためのライブラリ。</p>
+<h2 id="macbook-pro側の対応">MacBook Pro側の対応</h2>
+
+<p><a href="http://ottan.xyz/mac-wi-fi-1143/">このへん</a> を見つつ対応した。根本的な原因がわからないのが気持ち悪いけど、対処療法でとりあえず実施。実際に行ったのは次の作業。</p>
+
+<h3 id="library-preferences-systemconfiguraiton-以下のシステムファイルを削除"><code>/Library/Preferences/SystemConfiguraiton</code> 以下のシステムファイルを削除</h3>
+
+<p>これらのファイルを削除。</p>
 
 <ul>
-<li><a href="http://scikit-learn.org/stable/">scikit-learn</a></li>
+<li>com.apple.airport.preferences.plist</li>
+<li>com.apple.captive.probe.plist</li>
+<li>com.apple.network.eapolclient.configuration.plist</li>
+<li>com.apple.wifi.message-tracer.plist</li>
+<li>NetworkInterfaces.plist</li>
+<li>preferences.plist</li>
 </ul>
 
-<h2 id="python-3-5環境のセットアップ">Python 3.5環境のセットアップ</h2>
+<h3 id="mtuの確認">MTUの確認</h3>
 
-<p>現在時点での最新版をインストールする。MacPortsを利用しているので次の通り。</p>
+<p><code>MTUの設定値 - 28</code> でパケットサイズ作って送ってみたら安定してたのでデフォルトの1500から特に変更しない。</p>
 
-<pre><code class="language-bash">% sudo port install python35
-% sudo port install py35-virtualenv py35-virtualenvwrapper
-% sudo port select --set virtualenv virtualenv35
-% mkvirtualenv sklearn
-(sklearn) %
+<pre><code class="language-bash">% ping -D -s 1472 192.168.1.1
+PING 192.168.1.1 (192.168.1.1): 1472 data bytes
+1480 bytes from 192.168.1.1: icmp_seq=0 ttl=64 time=1.366 ms
+1480 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=1.060 ms
 </code></pre>
 
-<h2 id="scikit-learnのインストールと確認">scikit-learnのインストールと確認</h2>
+<h3 id="dns-ホスト名-ipv6の設定">DNS、ホスト名、IPv6の設定</h3>
 
-<p>依存関係があるものを先にインストールしてからインストール。　</p>
+<p>ネットワーク設定を全部消したので再設定。以前の通り、DNSはGoogle Public DNSを参照するように設定。</p>
 
-<pre><code class="language-bash">% pip install numpy scipy
-% pip install sklearn
-% python
-Python 3.5.2 (default, Dec 17 2016, 06:22:44)
-[GCC 4.2.1 Compatible Apple LLVM 7.0.2 (clang-700.1.81)] on darwin
-Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
-&gt;&gt;&gt; from sklearn import svm
-&gt;&gt;&gt;
-</code></pre>
+<p>IPv6はリンクローカルのみで使用するように設定。</p>
 
-<p>無事インストール出来ました。</p>
+<p>またホスト名の設定が消えているので、 [システム環境設定] &gt; [共有] から設定し直し。</p>
+
+<h2 id="ルータ側の設定">ルータ側の設定</h2>
+
+<h3 id="チャンネルの変更">チャンネルの変更</h3>
+
+<figure>
+  <amp-img src="https://ymotongpoo.github.io/img/2016-12-25-001.png" alt="MacBook ProのWifiが頻繁に切れるようになったので対応した img/2016-12-25-001.png" width=230px height=310px layout=></amp-img>
+  
+</figure>
+
+
+<p>「ワイヤレス診断」で最適なチャンネルが提案される（[ウィンドウ] &gt; [スキャン]）ので、そのチャンネルを設定するように変更。ただ、まわりの家から飛んでるWifiが鑑賞しまくっててあまり影響はないかもしれないけど、それでも何度かスキャンを実行して、一番推奨チャンネルとして表示される回数が多かったものに変更。</p>
+
+<div class="clearfix"></div>
+
 </div>
 
   <aside class="p-share">
-  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fymotongpoo.github.io%2ftech%2f2016%2f12%2f21%2fsetting-up-sklearn%2f&t=scikit-learn%e3%82%92%e4%bd%bf%e3%81%88%e3%82%8b%e7%92%b0%e5%a2%83%e3%82%92%e6%95%b4%e3%81%88%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fymotongpoo.github.io%2ftech%2f2016%2f12%2f21%2fsetting-up-sklearn%2f&text=scikit-learn%e3%82%92%e4%bd%bf%e3%81%88%e3%82%8b%e7%92%b0%e5%a2%83%e3%82%92%e6%95%b4%e3%81%88%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="https://plus.google.com/share?url=https%3a%2f%2fymotongpoo.github.io%2ftech%2f2016%2f12%2f21%2fsetting-up-sklearn%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-  <a href="http://getpocket.com/edit?url=https%3a%2f%2fymotongpoo.github.io%2ftech%2f2016%2f12%2f21%2fsetting-up-sklearn%2f&title=scikit-learn%e3%82%92%e4%bd%bf%e3%81%88%e3%82%8b%e7%92%b0%e5%a2%83%e3%82%92%e6%95%b4%e3%81%88%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fymotongpoo.github.io%2ftech%2f2016%2f12%2f25%2funstable-mbp-wifi%2f&t=MacBook%20Pro%e3%81%aeWifi%e3%81%8c%e9%a0%bb%e7%b9%81%e3%81%ab%e5%88%87%e3%82%8c%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab%e3%81%aa%e3%81%a3%e3%81%9f%e3%81%ae%e3%81%a7%e5%af%be%e5%bf%9c%e3%81%97%e3%81%9f" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fymotongpoo.github.io%2ftech%2f2016%2f12%2f25%2funstable-mbp-wifi%2f&text=MacBook%20Pro%e3%81%aeWifi%e3%81%8c%e9%a0%bb%e7%b9%81%e3%81%ab%e5%88%87%e3%82%8c%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab%e3%81%aa%e3%81%a3%e3%81%9f%e3%81%ae%e3%81%a7%e5%af%be%e5%bf%9c%e3%81%97%e3%81%9f&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=https%3a%2f%2fymotongpoo.github.io%2ftech%2f2016%2f12%2f25%2funstable-mbp-wifi%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fymotongpoo.github.io%2ftech%2f2016%2f12%2f25%2funstable-mbp-wifi%2f&title=MacBook%20Pro%e3%81%aeWifi%e3%81%8c%e9%a0%bb%e7%b9%81%e3%81%ab%e5%88%87%e3%82%8c%e3%82%8b%e3%82%88%e3%81%86%e3%81%ab%e3%81%aa%e3%81%a3%e3%81%9f%e3%81%ae%e3%81%a7%e5%af%be%e5%bf%9c%e3%81%97%e3%81%9f" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
 </aside>
 
 
@@ -215,9 +232,7 @@ Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;licen
       <header><i class="inline clip"></i><a href="https://ymotongpoo.github.io/tags/">tags</a></header>
       <ul>
         
-        <li><a href="https://ymotongpoo.github.io/tags/sklearn/">sklearn</a></li>
-        
-        <li><a href="https://ymotongpoo.github.io/tags/python3/">python3</a></li>
+        <li><a href="https://ymotongpoo.github.io/tags/network/">network</a></li>
         
       </ul>
     </li>

@@ -6,8 +6,70 @@
     <description>Recent content on depository</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sat, 24 Dec 2016 11:07:17 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 25 Dec 2016 11:48:49 +0900</lastBuildDate>
     <atom:link href="https://ymotongpoo.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>MacBook ProのWifiが頻繁に切れるようになったので対応した</title>
+      <link>https://ymotongpoo.github.io/tech/2016/12/25/unstable-mbp-wifi/</link>
+      <pubDate>Sun, 25 Dec 2016 11:48:49 +0900</pubDate>
+      
+      <guid>https://ymotongpoo.github.io/tech/2016/12/25/unstable-mbp-wifi/</guid>
+      <description>
+
+&lt;h1 id=&#34;macbook-proのwifiが頻繁に切断されるようになった&#34;&gt;MacBook ProのWifiが頻繁に切断されるようになった&lt;/h1&gt;
+
+&lt;h2 id=&#34;macbook-pro側の対応&#34;&gt;MacBook Pro側の対応&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://ottan.xyz/mac-wi-fi-1143/&#34;&gt;このへん&lt;/a&gt; を見つつ対応した。根本的な原因がわからないのが気持ち悪いけど、対処療法でとりあえず実施。実際に行ったのは次の作業。&lt;/p&gt;
+
+&lt;h3 id=&#34;library-preferences-systemconfiguraiton-以下のシステムファイルを削除&#34;&gt;&lt;code&gt;/Library/Preferences/SystemConfiguraiton&lt;/code&gt; 以下のシステムファイルを削除&lt;/h3&gt;
+
+&lt;p&gt;これらのファイルを削除。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;com.apple.airport.preferences.plist&lt;/li&gt;
+&lt;li&gt;com.apple.captive.probe.plist&lt;/li&gt;
+&lt;li&gt;com.apple.network.eapolclient.configuration.plist&lt;/li&gt;
+&lt;li&gt;com.apple.wifi.message-tracer.plist&lt;/li&gt;
+&lt;li&gt;NetworkInterfaces.plist&lt;/li&gt;
+&lt;li&gt;preferences.plist&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;mtuの確認&#34;&gt;MTUの確認&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;MTUの設定値 - 28&lt;/code&gt; でパケットサイズ作って送ってみたら安定してたのでデフォルトの1500から特に変更しない。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;% ping -D -s 1472 192.168.1.1
+PING 192.168.1.1 (192.168.1.1): 1472 data bytes
+1480 bytes from 192.168.1.1: icmp_seq=0 ttl=64 time=1.366 ms
+1480 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=1.060 ms
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;dns-ホスト名-ipv6の設定&#34;&gt;DNS、ホスト名、IPv6の設定&lt;/h3&gt;
+
+&lt;p&gt;ネットワーク設定を全部消したので再設定。以前の通り、DNSはGoogle Public DNSを参照するように設定。&lt;/p&gt;
+
+&lt;p&gt;IPv6はリンクローカルのみで使用するように設定。&lt;/p&gt;
+
+&lt;p&gt;またホスト名の設定が消えているので、 [システム環境設定] &amp;gt; [共有] から設定し直し。&lt;/p&gt;
+
+&lt;h2 id=&#34;ルータ側の設定&#34;&gt;ルータ側の設定&lt;/h2&gt;
+
+&lt;h3 id=&#34;チャンネルの変更&#34;&gt;チャンネルの変更&lt;/h3&gt;
+
+&lt;figure&gt;
+  &lt;amp-img src=&#34;https://ymotongpoo.github.io/img/2016-12-25-001.png&#34; alt=&#34;MacBook ProのWifiが頻繁に切れるようになったので対応した img/2016-12-25-001.png&#34; width=230px height=310px layout=&gt;&lt;/amp-img&gt;
+  
+&lt;/figure&gt;
+
+
+&lt;p&gt;「ワイヤレス診断」で最適なチャンネルが提案される（[ウィンドウ] &amp;gt; [スキャン]）ので、そのチャンネルを設定するように変更。ただ、まわりの家から飛んでるWifiが鑑賞しまくっててあまり影響はないかもしれないけど、それでも何度かスキャンを実行して、一番推奨チャンネルとして表示される回数が多かったものに変更。&lt;/p&gt;
+
+&lt;div class=&#34;clearfix&#34;&gt;&lt;/div&gt;
+
+</description>
+    </item>
     
     <item>
       <title>クリスマスイブとか</title>
