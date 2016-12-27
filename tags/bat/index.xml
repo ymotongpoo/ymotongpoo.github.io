@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>depository</title>
+    <link>https://ymotongpoo.github.io/tags/bat/index.xml</link>
+    <description>Recent content on depository</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <atom:link href="https://ymotongpoo.github.io/tags/bat/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>バッチファイルではまった</title>
+      <link>https://ymotongpoo.github.io/tech/2016/12/27/batch-script/</link>
+      <pubDate>Tue, 27 Dec 2016 02:10:20 +0900</pubDate>
+      
+      <guid>https://ymotongpoo.github.io/tech/2016/12/27/batch-script/</guid>
+      <description>
+
+&lt;h1 id=&#34;バッチファイルではまった&#34;&gt;バッチファイルではまった&lt;/h1&gt;
+
+&lt;h2 id=&#34;shellscriptからbatch-scriptに移植していた&#34;&gt;shellscriptからbatch scriptに移植していた&lt;/h2&gt;
+
+&lt;p&gt;ffmpegでバッチ処理をするスクリプトをWindows用に移植するためにbatch scriptにしていたときにいくつかはまったのでメモしておく。&lt;/p&gt;
+
+&lt;h3 id=&#34;for文&#34;&gt;for文&lt;/h3&gt;
+
+&lt;p&gt;変数は &lt;code&gt;%%[アルファベット1文字]&lt;/code&gt; でないといけない。希望の動作を調べた結果次のようになった。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bat&#34;&gt;for /f &amp;quot;usebackq&amp;quot; %%f in (`dir /b /s *.ts`) do (
+    echo %%f
+)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;/f &amp;quot;usebackq&amp;quot;&lt;/code&gt; は空白を含むファイル名を扱うときに必要&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dir&lt;/code&gt; コマンドのあとのオプションはそれぞれ
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;/b&lt;/code&gt; : ファイル名だけ表示&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/s&lt;/code&gt; : サブツリーも検索&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;改行&#34;&gt;改行&lt;/h3&gt;
+
+&lt;p&gt;shellscriptではバックスラッシュ &lt;code&gt;\&lt;/code&gt; で改行するけど、batch scriptではハット &lt;code&gt;^&lt;/code&gt; でやる。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
