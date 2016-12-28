@@ -44,7 +44,7 @@ function _new() {
   for w in $*; do
     slug=${slug}"-"${w}
   done
-  hugo new "${category}/${prefix}${slug}"
+  hugo new "${category}/${prefix}${slug}.md"
 
   return 0
 }
@@ -62,7 +62,7 @@ case "$1" in
     ;;
   "diary")
     shift
-    _new "dairy" $*
+    _new "diary" $*
     ;;
   "tech")
     shift
