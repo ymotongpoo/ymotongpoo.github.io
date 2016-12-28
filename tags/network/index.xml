@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>depository</title>
+    <title>Network on depository</title>
     <link>https://ymotongpoo.github.io/tags/network/index.xml</link>
-    <description>Recent content on depository</description>
+    <description>Recent content in Network on depository</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <atom:link href="https://ymotongpoo.github.io/tags/network/index.xml" rel="self" type="application/rss+xml" />
@@ -56,17 +56,6 @@ PING 192.168.1.1 (192.168.1.1): 1472 data bytes
 &lt;h2 id=&#34;ルータ側の設定&#34;&gt;ルータ側の設定&lt;/h2&gt;
 
 &lt;h3 id=&#34;チャンネルの変更&#34;&gt;チャンネルの変更&lt;/h3&gt;
-
-&lt;figure&gt;
-  &lt;amp-img src=&#34;https://ymotongpoo.github.io/img/2016-12-25-001.png&#34; alt=&#34;MacBook ProのWifiが頻繁に切れるようになったので対応した img/2016-12-25-001.png&#34; width=230px height=310px layout=&gt;&lt;/amp-img&gt;
-  
-&lt;/figure&gt;
-
-
-&lt;p&gt;「ワイヤレス診断」で最適なチャンネルが提案される（[ウィンドウ] &amp;gt; [スキャン]）ので、そのチャンネルを設定するように変更。ただ、まわりの家から飛んでるWifiが鑑賞しまくっててあまり影響はないかもしれないけど、それでも何度かスキャンを実行して、一番推奨チャンネルとして表示される回数が多かったものに変更。&lt;/p&gt;
-
-&lt;div class=&#34;clearfix&#34;&gt;&lt;/div&gt;
-
 </description>
     </item>
     
