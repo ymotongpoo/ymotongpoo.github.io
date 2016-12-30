@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://ymotongpoo.github.io/</loc>
+    <lastmod>2016-12-30T15:49:41+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://ymotongpoo.github.io/tech/2016/12/30/path-on-zsh-of-msys2/</loc>
+    <lastmod>2016-12-30T15:49:41+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ymotongpoo.github.io/diary/returning%20to%20home%20plade/</loc>
     <lastmod>2016-12-28T16:55:41+09:00</lastmod>
   </url>
