@@ -2,7 +2,7 @@
 date = "2016-12-28T16:55:41+09:00"
 title = "帰省"
 draft = false
-slug = "returning to home plade"
+slug = "returning-to-home-place"
 tags = ["life"]
 +++
 
