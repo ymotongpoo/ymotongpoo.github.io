@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>depository</title>
+    <link>https://ymotongpoo.github.io/tags/msys2/index.xml</link>
+    <description>Recent content on depository</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <atom:link href="https://ymotongpoo.github.io/tags/msys2/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>MSYS2のzshでのPATHについて</title>
+      <link>https://ymotongpoo.github.io/tech/2016/12/30/path-on-zsh-of-msys2/</link>
+      <pubDate>Fri, 30 Dec 2016 15:49:41 +0900</pubDate>
+      
+      <guid>https://ymotongpoo.github.io/tech/2016/12/30/path-on-zsh-of-msys2/</guid>
+      <description>
+
+&lt;h1 id=&#34;msys2のzshでpathがうまく反映されなかった&#34;&gt;MSYS2のzshでPATHがうまく反映されなかった&lt;/h1&gt;
+
+&lt;h2 id=&#34;きっかけ&#34;&gt;きっかけ&lt;/h2&gt;
+
+&lt;p&gt;MSYS2の開発環境もいい感じになってきたので、そろそろ .zshenv なんかも設定するかと思っていじってたら、なぜか &lt;code&gt;.zshenv&lt;/code&gt; で設定したPATHが &lt;code&gt;.zshrc&lt;/code&gt; では吹っ飛んでるという事象に遭遇したので調べた。&lt;/p&gt;
+
+&lt;h2 id=&#34;zshでの設定ファイルの読み込み順&#34;&gt;zshでの設定ファイルの読み込み順&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://zsh.sourceforge.net/Intro/intro_3.html&#34;&gt;zshell - startup files&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+&lt;li&gt;.zshenv&lt;/li&gt;
+&lt;li&gt;.zprofile&lt;/li&gt;
+&lt;li&gt;.zshrc&lt;/li&gt;
+&lt;li&gt;.zlogin&lt;/li&gt;
+&lt;li&gt;.zlogout&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;code&gt;.zshenv&lt;/code&gt; でちゃんと値が取れてて、 &lt;code&gt;.zshrc&lt;/code&gt; で値が取れてないということは、この順番でいくと &lt;code&gt;.zprofile&lt;/code&gt; がなんかやってるはず。でも、 &lt;code&gt;.zprofile&lt;/code&gt; は作ってないので、となるとデフォルトの &lt;code&gt;zprofile&lt;/code&gt; があってそちらでなんかやってるはず。&lt;/p&gt;
+
+&lt;h2 id=&#34;etc-zsh-zprofile&#34;&gt;&lt;code&gt;/etc/zsh/zprofile&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;中身をみたらこれだけしか書いてなかった。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;% cat /etc/zsh/zprofile
+emulate sh -c &#39;source /etc/profile&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;etc-profile&#34;&gt;&lt;code&gt;/etc/profile&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;ここで &lt;code&gt;$PATH&lt;/code&gt; を設定しているところを見てみるとこんな行があった。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;case &amp;quot;${MSYSTEM}&amp;quot; in                                                                       
+MINGW32)                                                                                   
+  MINGW_MOUNT_POINT=&amp;quot;${MINGW_PREFIX}&amp;quot;                                                      
+  PATH=&amp;quot;${MINGW_MOUNT_POINT}/bin:${MSYS2_PATH}${ORIGINAL_PATH:+:${ORIGINAL_PATH}}&amp;quot;         
+  PKG_CONFIG_PATH=&amp;quot;${MINGW_MOUNT_POINT}/lib/pkgconfig:${MINGW_MOUNT_POINT}/share/pkgconfig&amp;quot;
+  ACLOCAL_PATH=&amp;quot;${MINGW_MOUNT_POINT}/share/aclocal:/usr/share/aclocal&amp;quot;                     
+  MANPATH=&amp;quot;${MINGW_MOUNT_POINT}/share/man:${MANPATH}&amp;quot;                                      
+  ;;                                                                                       
+MINGW64)                                                                                   
+  MINGW_MOUNT_POINT=&amp;quot;${MINGW_PREFIX}&amp;quot;                                                      
+  PATH=&amp;quot;${MINGW_MOUNT_POINT}/bin:${MSYS2_PATH}${ORIGINAL_PATH:+:${ORIGINAL_PATH}}&amp;quot;         
+  PKG_CONFIG_PATH=&amp;quot;${MINGW_MOUNT_POINT}/lib/pkgconfig:${MINGW_MOUNT_POINT}/share/pkgconfig&amp;quot;
+  ACLOCAL_PATH=&amp;quot;${MINGW_MOUNT_POINT}/share/aclocal:/usr/share/aclocal&amp;quot;                     
+  MANPATH=&amp;quot;${MINGW_MOUNT_POINT}/share/man:${MANPATH}&amp;quot;                                      
+  ;;                                                                                       
+*)                                                                                         
+  PATH=&amp;quot;${MSYS2_PATH}:/opt/bin${ORIGINAL_PATH:+:${ORIGINAL_PATH}}&amp;quot;                         
+  PKG_CONFIG_PATH=&amp;quot;/usr/lib/pkgconfig:/usr/share/pkgconfig:/lib/pkgconfig&amp;quot;                 
+esac
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;どうやら &lt;code&gt;$ORIGINAL_PATH&lt;/code&gt; というのが怪しいので、それを探してみるとあった。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;case &amp;quot;${MSYS2_PATH_TYPE:-minimal}&amp;quot; in                                                                                      
+  strict)                                                                                                                  
+    # Do not inherit any path configuration, and allow for full customization                                              
+    # of external path. This is supposed to be used in special cases such as                                               
+    # debugging without need to change this file, but not daily usage.                                                     
+    unset ORIGINAL_PATH                                                                                                    
+    ;;                                                                                                                     
+  inherit)                                                                                                                 
+    # Inherit previous path. Note that this will make all of the Windows path                                              
+    # available in current shell, with possible interference in project builds.                                            
+    ORIGINAL_PATH=&amp;quot;${ORIGINAL_PATH:-${PATH}}&amp;quot;                                                                              
+    ;;                                                                                                                     
+  *)                                                                                                                       
+    # Do not inherit any path configuration but configure a default Windows path                                           
+    # suitable for normal usage with minimal external interference.                                                        
+    WIN_ROOT=&amp;quot;$(PATH=${MSYS2_PATH} cygpath -Wu)&amp;quot;                                                                           
+    ORIGINAL_PATH=&amp;quot;${WIN_ROOT}/System32:${WIN_ROOT}:${WIN_ROOT}/System32/Wbem:${WIN_ROOT}/System32/WindowsPowerShell/v1.0/&amp;quot;
+esac
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;もろに &lt;code&gt;ORIGINAL_PATH&lt;/code&gt; の設定が、 &lt;code&gt;$MSYS2_PATH_TYPE&lt;/code&gt; の値で変わるっぽく、これを見る限り、 &lt;code&gt;inherit&lt;/code&gt; に設定しておけばよいっぽい。&lt;/p&gt;
+
+&lt;h2 id=&#34;zshenv-に追記&#34;&gt;&lt;code&gt;.zshenv&lt;/code&gt; に追記&lt;/h2&gt;
+
+&lt;p&gt;次の1文を書いたら期待通りに設定された。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;export MSYS2_PATH_TYPE=&amp;quot;inherit&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
