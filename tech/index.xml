@@ -46,7 +46,7 @@
 &lt;p&gt;これで通常通り &lt;code&gt;git push&lt;/code&gt; などを行うとこういうポップアップが出るようになって2要素認証でログインできた。&lt;/p&gt;
 
 &lt;figure&gt;
-  &lt;amp-img src=&#34;https://ymotongpoo.github.io/img/2016-12-31-001.png&#34; alt=&#34;Git Credential Manger for WinをMSYS2のgitで使う img/2016-12-31-001.png&#34; width=338px height=409px layout=&gt;&lt;/amp-img&gt;
+  &lt;amp-img src=&#34;https://ymotongpoo.github.io/img/2016-12-31-001.png&#34; alt=&#34;Git Credential Manger for WinをMSYS2のgitで使う img/2016-12-31-001.png&#34; width=409px height=338px layout=&gt;&lt;/amp-img&gt;
   
 &lt;/figure&gt;
 
