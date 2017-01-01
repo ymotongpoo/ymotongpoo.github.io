@@ -6,8 +6,28 @@
     <description>Recent content in Diary-rsses on depository</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sat, 31 Dec 2016 12:16:08 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 01 Jan 2017 16:34:08 +0900</lastBuildDate>
     <atom:link href="https://ymotongpoo.github.io/diary/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>元日</title>
+      <link>https://ymotongpoo.github.io/diary/new-year-day/</link>
+      <pubDate>Sun, 01 Jan 2017 16:34:08 +0900</pubDate>
+      
+      <guid>https://ymotongpoo.github.io/diary/new-year-day/</guid>
+      <description>
+
+&lt;h1 id=&#34;2017年元日&#34;&gt;2017年元日&lt;/h1&gt;
+
+&lt;h2 id=&#34;お年玉をもらった&#34;&gt;お年玉をもらった&lt;/h2&gt;
+
+&lt;p&gt;「誕生日プレゼント」と言いつつお年玉をもらった。やっぱり自活していても親子の関係は変わらないものだ。&lt;/p&gt;
+
+&lt;h2 id=&#34;msys2とchocolateyで作ったnode-js環境がぶっこわれた&#34;&gt;MSYS2とchocolateyで作ったnode.js環境がぶっこわれた&lt;/h2&gt;
+
+&lt;p&gt;npmで &lt;code&gt;vscode&lt;/code&gt; パッケージをアップデートしたらぶっ壊れた。具体的にはVisual Studio Codeが &lt;code&gt;vscode&lt;/code&gt; パッケージを参照できなくなった。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>誕生日</title>
