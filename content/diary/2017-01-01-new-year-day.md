@@ -12,3 +12,23 @@ tags = ["life"]
 
 ## MSYS2とchocolateyで作ったnode.js環境がぶっこわれた
 npmで `vscode` パッケージをアップデートしたらぶっ壊れた。具体的にはVisual Studio Codeが `vscode` パッケージを参照できなくなった。
+
+## むかついたのでMSYS2環境つぶした
+結局 MSYS2 の環境と Windows ネイティブの環境を同居させようという精神良くないっていう話で、MSYS2環境をぶっ潰して、PowerShell（+Cmder）の環境でどんどん行くことして、Windowsネイティブだけでやっていくことにした。具体的に入れた環境は次の通り。
+
+* [spf13/hugo](https://github.com/spf13/hugo/)
+* [coreybutler/nvm-windows](https://github.com/coreybutler/nvm-windows/)
+* [dahlbyk/posh-git](https://github.com/dahlbyk/posh-git)
+* [flofreud/posh-gvm](https://github.com/flofreud/posh-gvm)
+
+なんかPowerShellは `Install-Module` っていうコマンドがあって、PowerShellのコマンドライン上でインストール出来てすごくいい。
+
+```powershell
+> Install-Module posh-git -Scope CurrentUser
+```
+
+chocolateyをインストールしてるのでこれでもインストールできるけど。
+
+```powershell
+> choco install poshgit
+```
