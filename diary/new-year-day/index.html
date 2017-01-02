@@ -172,6 +172,27 @@
 <h2 id="msys2とchocolateyで作ったnode-js環境がぶっこわれた">MSYS2とchocolateyで作ったnode.js環境がぶっこわれた</h2>
 
 <p>npmで <code>vscode</code> パッケージをアップデートしたらぶっ壊れた。具体的にはVisual Studio Codeが <code>vscode</code> パッケージを参照できなくなった。</p>
+
+<h2 id="むかついたのでmsys2環境つぶした">むかついたのでMSYS2環境つぶした</h2>
+
+<p>結局 MSYS2 の環境と Windows ネイティブの環境を同居させようという精神良くないっていう話で、MSYS2環境をぶっ潰して、PowerShell（+Cmder）の環境でどんどん行くことして、Windowsネイティブだけでやっていくことにした。具体的に入れた環境は次の通り。</p>
+
+<ul>
+<li><a href="https://github.com/spf13/hugo/">spf13/hugo</a></li>
+<li><a href="https://github.com/coreybutler/nvm-windows/">coreybutler/nvm-windows</a></li>
+<li><a href="https://github.com/dahlbyk/posh-git">dahlbyk/posh-git</a></li>
+<li><a href="https://github.com/flofreud/posh-gvm">flofreud/posh-gvm</a></li>
+</ul>
+
+<p>なんかPowerShellは <code>Install-Module</code> っていうコマンドがあって、PowerShellのコマンドライン上でインストール出来てすごくいい。</p>
+
+<pre><code class="language-powershell">&gt; Install-Module posh-git -Scope CurrentUser
+</code></pre>
+
+<p>chocolateyをインストールしてるのでこれでもインストールできるけど。</p>
+
+<pre><code class="language-powershell">&gt; choco install poshgit
+</code></pre>
 </div>
 
   <aside class="p-share">
