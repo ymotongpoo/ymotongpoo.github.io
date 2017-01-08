@@ -17,10 +17,12 @@ build:
         code: |
           cp -r public/. $WERCKER_OUTPUT_DIR
     - script:
-        name: copy all content to master branch.
+        name: copy all content to master branch and deploy.
         cwd: $WERCKER_SOURCE_DIR
         code: |
           git checkout master
+          git config --global user.email "ymotongpoo@gmail.com"
+          git config --global user.name "Yoshi Yamaguchi"
           cp -rf $WERCKER_OUTPUT_DIR/. . 
           git add --all
           git commit -m '[wercker] `date +"%Y%m%d%H%M%S"`'
