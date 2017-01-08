@@ -4,11 +4,9 @@ box:
 build:
   steps:
     - script:
-        name: set netrc
+        name: set ssh
         code: |
-          echo machine github.com > ~/.netrc
-          echo login ymotongpoo >> ~/.netrc
-          echo password ${GITHUB_TOKEN} >> ~/.netrc
+          echo ${wercker_PRIVATE} > ~/.ssh/id_rsa
     - script:
         name: checkout source branch and build site with hugo.
         cwd: $WERCKER_SOURCE_DIR
