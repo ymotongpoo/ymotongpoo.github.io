@@ -10,6 +10,47 @@
     <atom:link href="https://ymotongpoo.github.io/diary/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>元日</title>
+      <link>https://ymotongpoo.github.io/diary/new-year-day/</link>
+      <pubDate>Sun, 01 Jan 2017 16:34:08 +0900</pubDate>
+      
+      <guid>https://ymotongpoo.github.io/diary/new-year-day/</guid>
+      <description>
+
+&lt;h1 id=&#34;2017年元日&#34;&gt;2017年元日&lt;/h1&gt;
+
+&lt;h2 id=&#34;お年玉をもらった&#34;&gt;お年玉をもらった&lt;/h2&gt;
+
+&lt;p&gt;「誕生日プレゼント」と言いつつお年玉をもらった。やっぱり自活していても親子の関係は変わらないものだ。&lt;/p&gt;
+
+&lt;h2 id=&#34;msys2とchocolateyで作ったnode-js環境がぶっこわれた&#34;&gt;MSYS2とchocolateyで作ったnode.js環境がぶっこわれた&lt;/h2&gt;
+
+&lt;p&gt;npmで &lt;code&gt;vscode&lt;/code&gt; パッケージをアップデートしたらぶっ壊れた。具体的にはVisual Studio Codeが &lt;code&gt;vscode&lt;/code&gt; パッケージを参照できなくなった。&lt;/p&gt;
+
+&lt;h2 id=&#34;むかついたのでmsys2環境つぶした&#34;&gt;むかついたのでMSYS2環境つぶした&lt;/h2&gt;
+
+&lt;p&gt;結局 MSYS2 の環境と Windows ネイティブの環境を同居させようという精神良くないっていう話で、MSYS2環境をぶっ潰して、PowerShell（+Cmder）の環境でどんどん行くことして、Windowsネイティブだけでやっていくことにした。具体的に入れた環境は次の通り。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/spf13/hugo/&#34;&gt;spf13/hugo&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/coreybutler/nvm-windows/&#34;&gt;coreybutler/nvm-windows&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/dahlbyk/posh-git&#34;&gt;dahlbyk/posh-git&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/flofreud/posh-gvm&#34;&gt;flofreud/posh-gvm&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;なんかPowerShellは &lt;code&gt;Install-Module&lt;/code&gt; っていうコマンドがあって、PowerShellのコマンドライン上でインストール出来てすごくいい。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-powershell&#34;&gt;&amp;gt; Install-Module posh-git -Scope CurrentUser
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;chocolateyをインストールしてるのでこれでもインストールできるけど。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-powershell&#34;&gt;&amp;gt; choco install poshgit
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
       <title>誕生日</title>
       <link>https://ymotongpoo.github.io/diary/birthday/</link>
       <pubDate>Sat, 31 Dec 2016 12:16:08 +0900</pubDate>
