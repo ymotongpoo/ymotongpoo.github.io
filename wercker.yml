@@ -16,9 +16,6 @@ build:
         cwd: $WERCKER_SOURCE_DIR
         code: |
           cp -r public/. $WERCKER_OUTPUT_DIR
-
-deploy:
-  steps:
     - script:
         name: copy all content to master branch.
         cwd: $WERCKER_SOURCE_DIR
