@@ -23,7 +23,7 @@ build:
           git checkout master
           git config --global user.email "ymotongpoo@gmail.com"
           git config --global user.name "Yoshi Yamaguchi"
-          cp -rf $WERCKER_OUTPUT_DIR/. . 
+          cp -rf $WERCKER_OUTPUT_DIR/public/. . 
           git add --all
           git commit -m '[wercker] `date +"%Y%m%d%H%M%S"`'
           git push origin master
