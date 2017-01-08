@@ -23,5 +23,5 @@ build:
           git checkout master
           cp -rf $WERCKER_OUTPUT_DIR/. . 
           git add --all
-          git commmit -m '[wercker] `date +"%Y%m%d%H%M%S"`'
+          git commit -m '[wercker] `date +"%Y%m%d%H%M%S"`'
           git push origin master
