@@ -1,0 +1,32 @@
+box:
+  id: ymotongpoo/hugo
+
+build:
+  steps:
+    - add-ssh-key:
+        keyname: MYPACKAGE_KEY
+    - script:
+        name: checkout source branch and build site with hugo.
+        cwd: $WERCKER_SOURCE_DIR
+        code: |
+          git checkout source
+          git submodule init
+          git submodule update
+          /home/hugo/hugo --theme=tropic
+    - script:
+        name: copy all content to output directory.
+        cwd: $WERCKER_SOURCE_DIR
+        code: |
+          cp -r public/. $WERCKER_OUTPUT_DIR
+          rm -rf public
+    - script:
+        name: copy all content to master branch and deploy.
+        cwd: $WERCKER_SOURCE_DIR
+        code: |
+          git checkout master
+          git config --global user.email "ymotongpoo@gmail.com"
+          git config --global user.name "Yoshi Yamaguchi"
+          cp -rf $WERCKER_OUTPUT_DIR/. . 
+          git add --all
+          git commit -m '[wercker]'
+          git push origin master
