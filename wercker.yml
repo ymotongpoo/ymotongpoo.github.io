@@ -3,12 +3,8 @@ box:
 
 build:
   steps:
-    - script:
-        name: set ssh
-        code: |
-          mkdir -p ~/.ssh
-          touch ~/.ssh/id_rsa
-          echo ${wercker_PRIVATE} > ~/.ssh/id_rsa
+    - add-ssh-key:
+        keyname: MYPACKAGE_KEY
     - script:
         name: checkout source branch and build site with hugo.
         cwd: $WERCKER_SOURCE_DIR
