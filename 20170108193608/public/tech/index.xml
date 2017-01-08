@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Teches on depository</title>
+    <link>https://ymotongpoo.github.io/tech/index.xml</link>
+    <description>Recent content in Teches on depository</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <lastBuildDate>Sat, 31 Dec 2016 12:41:35 +0900</lastBuildDate>
+    <atom:link href="https://ymotongpoo.github.io/tech/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Git Credential Manger for WinをMSYS2のgitで使う</title>
+      <link>https://ymotongpoo.github.io/tech/2016/12/31/use-git-credential-manager-for-win-with-msys2/</link>
+      <pubDate>Sat, 31 Dec 2016 12:41:35 +0900</pubDate>
+      
+      <guid>https://ymotongpoo.github.io/tech/2016/12/31/use-git-credential-manager-for-win-with-msys2/</guid>
+      <description>
+
+&lt;h1 id=&#34;なぜgcm-for-winが必要か&#34;&gt;なぜGCM for Winが必要か&lt;/h1&gt;
+
+&lt;h2 id=&#34;githubで2要素認証をしている&#34;&gt;GitHubで2要素認証をしている&lt;/h2&gt;
+
+&lt;p&gt;2要素認証にすると、アクセストークンを発行しないと普通にHTTPSでpushができない。しかし、アクセストークンを発行しても、それを記憶していないといけない。そこでMacやLinuxのときと同様に、Git Credential Managerを利用しようと思った次第。&lt;/p&gt;
+
+&lt;h2 id=&#34;gitはmsys2で入れていた&#34;&gt;Gitはmsys2で入れていた&lt;/h2&gt;
+
+&lt;p&gt;いくつかの選択肢があるけれど、自分はすでにMSYS2でGitをインストールしてしまっていたので、Git Credential Managerのためだけに、再度Gitをインストーラーで入れるのは嫌だった。もしそれが問題ないなら、バイナリインストーラーを使うのが良い。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/Microsoft/Git-Credential-Manager-for-Windows/releases/latest&#34;&gt;Git Credential Manager for Windows latest build&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;そこで、上記のリンクにあったzipのものをダウンロードし、GCMだけを単体でインストールした。中に同梱されている &lt;code&gt;install.cmd&lt;/code&gt; を実行しておしまい。すると &lt;code&gt;git-credential-manager.exe&lt;/code&gt; 等々が &lt;code&gt;%USERPROFILE%\bin&lt;/code&gt; にインストールされる。これにPATHが通るようにMSYS2の &lt;code&gt;.zshenv&lt;/code&gt; に次のように追加しておいた。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-shellscript&#34;&gt;PATH=$PATH:/c/Users/&amp;lt;username&amp;gt;/bin
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;git-configで利用する旨を設定する&#34;&gt;git configで利用する旨を設定する&lt;/h2&gt;
+
+&lt;p&gt;MacやLinuxの場合と同様に &lt;code&gt;git config&lt;/code&gt; で設定しておく。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ git config --global credential.helper manager
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これで通常通り &lt;code&gt;git push&lt;/code&gt; などを行うとこういうポップアップが出るようになって2要素認証でログインできた。&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;amp-img src=&#34;https://ymotongpoo.github.io/img/2016-12-31-001.png&#34; alt=&#34;Git Credential Manger for WinをMSYS2のgitで使う img/2016-12-31-001.png&#34; width=409px height=338px layout=&gt;&lt;/amp-img&gt;
+  
+&lt;/figure&gt;
+
+
+&lt;p&gt;一度ログインしてしまえば2回目以降は自動で認証されるのでなにも入力しなくてよい。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>MSYS2のzshでのPATHについて</title>
+      <link>https://ymotongpoo.github.io/tech/2016/12/30/path-on-zsh-of-msys2/</link>
+      <pubDate>Fri, 30 Dec 2016 15:49:41 +0900</pubDate>
+      
+      <guid>https://ymotongpoo.github.io/tech/2016/12/30/path-on-zsh-of-msys2/</guid>
+      <description>
+
+&lt;h1 id=&#34;msys2のzshでpathがうまく反映されなかった&#34;&gt;MSYS2のzshでPATHがうまく反映されなかった&lt;/h1&gt;
+
+&lt;h2 id=&#34;きっかけ&#34;&gt;きっかけ&lt;/h2&gt;
+
+&lt;p&gt;MSYS2の開発環境もいい感じになってきたので、そろそろ .zshenv なんかも設定するかと思っていじってたら、なぜか &lt;code&gt;.zshenv&lt;/code&gt; で設定したPATHが &lt;code&gt;.zshrc&lt;/code&gt; では吹っ飛んでるという事象に遭遇したので調べた。&lt;/p&gt;
+
+&lt;h2 id=&#34;zshでの設定ファイルの読み込み順&#34;&gt;zshでの設定ファイルの読み込み順&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://zsh.sourceforge.net/Intro/intro_3.html&#34;&gt;zshell - startup files&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+&lt;li&gt;.zshenv&lt;/li&gt;
+&lt;li&gt;.zprofile&lt;/li&gt;
+&lt;li&gt;.zshrc&lt;/li&gt;
+&lt;li&gt;.zlogin&lt;/li&gt;
+&lt;li&gt;.zlogout&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;code&gt;.zshenv&lt;/code&gt; でちゃんと値が取れてて、 &lt;code&gt;.zshrc&lt;/code&gt; で値が取れてないということは、この順番でいくと &lt;code&gt;.zprofile&lt;/code&gt; がなんかやってるはず。でも、 &lt;code&gt;.zprofile&lt;/code&gt; は作ってないので、となるとデフォルトの &lt;code&gt;zprofile&lt;/code&gt; があってそちらでなんかやってるはず。&lt;/p&gt;
+
+&lt;h2 id=&#34;etc-zsh-zprofile&#34;&gt;&lt;code&gt;/etc/zsh/zprofile&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;中身をみたらこれだけしか書いてなかった。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;% cat /etc/zsh/zprofile
+emulate sh -c &#39;source /etc/profile&#39;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;etc-profile&#34;&gt;&lt;code&gt;/etc/profile&lt;/code&gt;&lt;/h2&gt;
+
+&lt;p&gt;ここで &lt;code&gt;$PATH&lt;/code&gt; を設定しているところを見てみるとこんな行があった。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;case &amp;quot;${MSYSTEM}&amp;quot; in                                                                       
+MINGW32)                                                                                   
+  MINGW_MOUNT_POINT=&amp;quot;${MINGW_PREFIX}&amp;quot;                                                      
+  PATH=&amp;quot;${MINGW_MOUNT_POINT}/bin:${MSYS2_PATH}${ORIGINAL_PATH:+:${ORIGINAL_PATH}}&amp;quot;         
+  PKG_CONFIG_PATH=&amp;quot;${MINGW_MOUNT_POINT}/lib/pkgconfig:${MINGW_MOUNT_POINT}/share/pkgconfig&amp;quot;
+  ACLOCAL_PATH=&amp;quot;${MINGW_MOUNT_POINT}/share/aclocal:/usr/share/aclocal&amp;quot;                     
+  MANPATH=&amp;quot;${MINGW_MOUNT_POINT}/share/man:${MANPATH}&amp;quot;                                      
+  ;;                                                                                       
+MINGW64)                                                                                   
+  MINGW_MOUNT_POINT=&amp;quot;${MINGW_PREFIX}&amp;quot;                                                      
+  PATH=&amp;quot;${MINGW_MOUNT_POINT}/bin:${MSYS2_PATH}${ORIGINAL_PATH:+:${ORIGINAL_PATH}}&amp;quot;         
+  PKG_CONFIG_PATH=&amp;quot;${MINGW_MOUNT_POINT}/lib/pkgconfig:${MINGW_MOUNT_POINT}/share/pkgconfig&amp;quot;
+  ACLOCAL_PATH=&amp;quot;${MINGW_MOUNT_POINT}/share/aclocal:/usr/share/aclocal&amp;quot;                     
+  MANPATH=&amp;quot;${MINGW_MOUNT_POINT}/share/man:${MANPATH}&amp;quot;                                      
+  ;;                                                                                       
+*)                                                                                         
+  PATH=&amp;quot;${MSYS2_PATH}:/opt/bin${ORIGINAL_PATH:+:${ORIGINAL_PATH}}&amp;quot;                         
+  PKG_CONFIG_PATH=&amp;quot;/usr/lib/pkgconfig:/usr/share/pkgconfig:/lib/pkgconfig&amp;quot;                 
+esac
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;どうやら &lt;code&gt;$ORIGINAL_PATH&lt;/code&gt; というのが怪しいので、それを探してみるとあった。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;case &amp;quot;${MSYS2_PATH_TYPE:-minimal}&amp;quot; in                                                                                      
+  strict)                                                                                                                  
+    # Do not inherit any path configuration, and allow for full customization                                              
+    # of external path. This is supposed to be used in special cases such as                                               
+    # debugging without need to change this file, but not daily usage.                                                     
+    unset ORIGINAL_PATH                                                                                                    
+    ;;                                                                                                                     
+  inherit)                                                                                                                 
+    # Inherit previous path. Note that this will make all of the Windows path                                              
+    # available in current shell, with possible interference in project builds.                                            
+    ORIGINAL_PATH=&amp;quot;${ORIGINAL_PATH:-${PATH}}&amp;quot;                                                                              
+    ;;                                                                                                                     
+  *)                                                                                                                       
+    # Do not inherit any path configuration but configure a default Windows path                                           
+    # suitable for normal usage with minimal external interference.                                                        
+    WIN_ROOT=&amp;quot;$(PATH=${MSYS2_PATH} cygpath -Wu)&amp;quot;                                                                           
+    ORIGINAL_PATH=&amp;quot;${WIN_ROOT}/System32:${WIN_ROOT}:${WIN_ROOT}/System32/Wbem:${WIN_ROOT}/System32/WindowsPowerShell/v1.0/&amp;quot;
+esac
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;もろに &lt;code&gt;ORIGINAL_PATH&lt;/code&gt; の設定が、 &lt;code&gt;$MSYS2_PATH_TYPE&lt;/code&gt; の値で変わるっぽく、これを見る限り、 &lt;code&gt;inherit&lt;/code&gt; に設定しておけばよいっぽい。&lt;/p&gt;
+
+&lt;h2 id=&#34;zshenv-に追記&#34;&gt;&lt;code&gt;.zshenv&lt;/code&gt; に追記&lt;/h2&gt;
+
+&lt;p&gt;次の1文を書いたら期待通りに設定された。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;export MSYS2_PATH_TYPE=&amp;quot;inherit&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>バッチファイルではまった</title>
+      <link>https://ymotongpoo.github.io/tech/2016/12/27/batch-script/</link>
+      <pubDate>Tue, 27 Dec 2016 02:10:20 +0900</pubDate>
+      
+      <guid>https://ymotongpoo.github.io/tech/2016/12/27/batch-script/</guid>
+      <description>
+
+&lt;h1 id=&#34;バッチファイルではまった&#34;&gt;バッチファイルではまった&lt;/h1&gt;
+
+&lt;h2 id=&#34;shellscriptからbatch-scriptに移植していた&#34;&gt;shellscriptからbatch scriptに移植していた&lt;/h2&gt;
+
+&lt;p&gt;ffmpegでバッチ処理をするスクリプトをWindows用に移植するためにbatch scriptにしていたときにいくつかはまったのでメモしておく。&lt;/p&gt;
+
+&lt;h3 id=&#34;for文&#34;&gt;for文&lt;/h3&gt;
+
+&lt;p&gt;変数は &lt;code&gt;%%[アルファベット1文字]&lt;/code&gt; でないといけない。希望の動作を調べた結果次のようになった。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bat&#34;&gt;for /f &amp;quot;usebackq&amp;quot; %%f in (`dir /b /s *.ts`) do (
+    echo %%f
+)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;/f &amp;quot;usebackq&amp;quot;&lt;/code&gt; は空白を含むファイル名を扱うときに必要&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;dir&lt;/code&gt; コマンドのあとのオプションはそれぞれ
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;/b&lt;/code&gt; : ファイル名だけ表示&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;/s&lt;/code&gt; : サブツリーも検索&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;改行&#34;&gt;改行&lt;/h3&gt;
+
+&lt;p&gt;shellscriptではバックスラッシュ &lt;code&gt;\&lt;/code&gt; で改行するけど、batch scriptではハット &lt;code&gt;^&lt;/code&gt; でやる。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>MacBook ProのWifiが頻繁に切れるようになったので対応した</title>
+      <link>https://ymotongpoo.github.io/tech/2016/12/25/unstable-mbp-wifi/</link>
+      <pubDate>Sun, 25 Dec 2016 11:48:49 +0900</pubDate>
+      
+      <guid>https://ymotongpoo.github.io/tech/2016/12/25/unstable-mbp-wifi/</guid>
+      <description>
+
+&lt;h1 id=&#34;macbook-proのwifiが頻繁に切断されるようになった&#34;&gt;MacBook ProのWifiが頻繁に切断されるようになった&lt;/h1&gt;
+
+&lt;h2 id=&#34;macbook-pro側の対応&#34;&gt;MacBook Pro側の対応&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&#34;http://ottan.xyz/mac-wi-fi-1143/&#34;&gt;このへん&lt;/a&gt; を見つつ対応した。根本的な原因がわからないのが気持ち悪いけど、対処療法でとりあえず実施。実際に行ったのは次の作業。&lt;/p&gt;
+
+&lt;h3 id=&#34;library-preferences-systemconfiguraiton-以下のシステムファイルを削除&#34;&gt;&lt;code&gt;/Library/Preferences/SystemConfiguraiton&lt;/code&gt; 以下のシステムファイルを削除&lt;/h3&gt;
+
+&lt;p&gt;これらのファイルを削除。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;com.apple.airport.preferences.plist&lt;/li&gt;
+&lt;li&gt;com.apple.captive.probe.plist&lt;/li&gt;
+&lt;li&gt;com.apple.network.eapolclient.configuration.plist&lt;/li&gt;
+&lt;li&gt;com.apple.wifi.message-tracer.plist&lt;/li&gt;
+&lt;li&gt;NetworkInterfaces.plist&lt;/li&gt;
+&lt;li&gt;preferences.plist&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;mtuの確認&#34;&gt;MTUの確認&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;MTUの設定値 - 28&lt;/code&gt; でパケットサイズ作って送ってみたら安定してたのでデフォルトの1500から特に変更しない。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;% ping -D -s 1472 192.168.1.1
+PING 192.168.1.1 (192.168.1.1): 1472 data bytes
+1480 bytes from 192.168.1.1: icmp_seq=0 ttl=64 time=1.366 ms
+1480 bytes from 192.168.1.1: icmp_seq=1 ttl=64 time=1.060 ms
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;dns-ホスト名-ipv6の設定&#34;&gt;DNS、ホスト名、IPv6の設定&lt;/h3&gt;
+
+&lt;p&gt;ネットワーク設定を全部消したので再設定。以前の通り、DNSはGoogle Public DNSを参照するように設定。&lt;/p&gt;
+
+&lt;p&gt;IPv6はリンクローカルのみで使用するように設定。&lt;/p&gt;
+
+&lt;p&gt;またホスト名の設定が消えているので、 [システム環境設定] &amp;gt; [共有] から設定し直し。&lt;/p&gt;
+
+&lt;h2 id=&#34;ルータ側の設定&#34;&gt;ルータ側の設定&lt;/h2&gt;
+
+&lt;h3 id=&#34;チャンネルの変更&#34;&gt;チャンネルの変更&lt;/h3&gt;
+
+&lt;figure&gt;
+  &lt;amp-img src=&#34;https://ymotongpoo.github.io/img/2016-12-25-001.png&#34; alt=&#34;MacBook ProのWifiが頻繁に切れるようになったので対応した img/2016-12-25-001.png&#34; width=230px height=310px layout=&gt;&lt;/amp-img&gt;
+  
+&lt;/figure&gt;
+
+
+&lt;p&gt;「ワイヤレス診断」で最適なチャンネルが提案される（[ウィンドウ] &amp;gt; [スキャン]）ので、そのチャンネルを設定するように変更。ただ、まわりの家から飛んでるWifiが鑑賞しまくっててあまり影響はないかもしれないけど、それでも何度かスキャンを実行して、一番推奨チャンネルとして表示される回数が多かったものに変更。&lt;/p&gt;
+
+&lt;div class=&#34;clearfix&#34;&gt;&lt;/div&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>scikit-learnを使える環境を整える</title>
+      <link>https://ymotongpoo.github.io/tech/2016/12/21/setting-up-sklearn/</link>
+      <pubDate>Wed, 21 Dec 2016 23:35:31 +0900</pubDate>
+      
+      <guid>https://ymotongpoo.github.io/tech/2016/12/21/setting-up-sklearn/</guid>
+      <description>
+
+&lt;h2 id=&#34;scikit-learnとは&#34;&gt;scikit-learnとは&lt;/h2&gt;
+
+&lt;p&gt;機械学習をPythonで簡単に扱うためのライブラリ。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://scikit-learn.org/stable/&#34;&gt;scikit-learn&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;python-3-5環境のセットアップ&#34;&gt;Python 3.5環境のセットアップ&lt;/h2&gt;
+
+&lt;p&gt;現在時点での最新版をインストールする。MacPortsを利用しているので次の通り。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;% sudo port install python35
+% sudo port install py35-virtualenv py35-virtualenvwrapper
+% sudo port select --set virtualenv virtualenv35
+% mkvirtualenv sklearn
+(sklearn) %
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;scikit-learnのインストールと確認&#34;&gt;scikit-learnのインストールと確認&lt;/h2&gt;
+
+&lt;p&gt;依存関係があるものを先にインストールしてからインストール。　&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;% pip install numpy scipy
+% pip install sklearn
+% python
+Python 3.5.2 (default, Dec 17 2016, 06:22:44)
+[GCC 4.2.1 Compatible Apple LLVM 7.0.2 (clang-700.1.81)] on darwin
+Type &amp;quot;help&amp;quot;, &amp;quot;copyright&amp;quot;, &amp;quot;credits&amp;quot; or &amp;quot;license&amp;quot; for more information.
+&amp;gt;&amp;gt;&amp;gt; from sklearn import svm
+&amp;gt;&amp;gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;無事インストール出来ました。&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
