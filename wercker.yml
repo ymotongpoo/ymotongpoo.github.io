@@ -4,10 +4,6 @@ box:
 build:
   steps:
     - script:
-        name: start prompt
-        code: |
-          echo "start ymotongpoo.github.io hugo build"
-    - script:
         name: checkout source branch and build site with hugo.
         cwd: $WERCKER_SOURCE_DIR
         code: |
