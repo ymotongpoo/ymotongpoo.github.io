@@ -1,0 +1,35 @@
+box:
+  id: ymotongpoo/hugo
+
+build:
+  steps:
+    - script:
+        name: clone repo. 
+        cwd: $WERCKER_SOURCE_DIR
+        code: |
+          git clone git@github.com:ymotongpoo/ymotongpoo.github.io.git
+    - script:
+        name: checkout source branch and build site with hugo.
+        cwd: $WERCKER_SOURCE_DIR/ymotongpoo.github.io
+        code: |
+          git checkout source
+          git submodule init
+          git submodule update
+          hugo --theme=tropic
+    - script:
+        name: copy all content to output directory.
+        cwd: $WERCKER_SOURCE_DIR/ymotongpoo.github.io
+        code: |
+          cp -r public/. $WERCKER_OUTPUT_DIR
+
+deploy:
+  steps:
+    - script:
+        name: copy all content to master branch.
+        cwd: $WERCKER_SOURCE_DIR/ymotongpoo.github.io
+        code: |
+          git checkout master
+          cp -rf $WERCKER_OUTPUT_DIR/. . 
+          git add --all
+          git commmit -m '[wercker] `date +"%Y%m%d%H%M%S"`'
+          git push origin master
