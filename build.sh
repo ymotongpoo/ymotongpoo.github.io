@@ -50,7 +50,7 @@ function _new() {
 }
 
 function _usage() {
-  echo -e "./build.sh [deploy <commit message>] [serve]"
+  echo -e "./build.sh [deploy <commit message>] [serve] [diary <slugs>] [tech <slugs>]"
 
   return 0
 }

@@ -8,7 +8,7 @@ function Deploy($comments) {
     $comments | ForEach-Object { $commentStr += $_ }
 
     # build
-    Get-ChildItem -Recurse public | Remove-Item
+    Get-ChildItem -Recurse public | Remove-Item -Force -ErrorAction SilentlyContinue -Confirm:$false
     hugo --theme=${theme}
 
     # git add, commit and push to source
@@ -17,9 +17,9 @@ function Deploy($comments) {
     git push origin source:source
 
     # git add, commit and push to master
-    New-Item ${tmp}
+    New-Item -Path ${tmp} -ItemType Directory
     Copy-Item -Recurse public ${tmp}
-    Get-ChildItem -Recurse public | Remove-Item
+    Get-ChildItem -Recurse public | Remove-Item -Force -ErrorAction SilentlyContinue -Confirm:$false
     git checkout master
     Copy-Item -Recurse -Force ${tmp}/. .
     git add --all
