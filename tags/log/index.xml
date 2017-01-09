@@ -1,12 +1,40 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>depository</title>
+    <title>Log on depository</title>
     <link>https://ymotongpoo.github.io/tags/log/index.xml</link>
-    <description>Recent content on depository</description>
+    <description>Recent content in Log on depository</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
     <atom:link href="https://ymotongpoo.github.io/tags/log/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>仕事始めとWindows 10の開発環境の公開</title>
+      <link>https://ymotongpoo.github.io/diary/windows10/</link>
+      <pubDate>Thu, 05 Jan 2017 22:42:37 +0900</pubDate>
+      
+      <guid>https://ymotongpoo.github.io/diary/windows10/</guid>
+      <description>
+
+&lt;h1 id=&#34;仕事始めとwindow-10の開発環境の公開&#34;&gt;仕事始めとWindow 10の開発環境の公開&lt;/h1&gt;
+
+&lt;h2 id=&#34;仕事始め&#34;&gt;仕事始め&lt;/h2&gt;
+
+&lt;p&gt;今日は仕事始めだった。メールのスレッドが100以上未読だったうえに、ちょくちょく来てたメールにスターをつけて「後でやる」化してたので、合計で150以上のスレッドをさばいた計算になる。&lt;/p&gt;
+
+&lt;p&gt;今日は例外だったかもしれないけれど、年末年始にコードばかり書いてたときは集中できてたなあと思う。やっぱりこういう仕事の合間にどれだけコード書けるかが今年の課題になりそうだなあ。&lt;/p&gt;
+
+&lt;h2 id=&#34;windows-10の開発環境を公開した&#34;&gt;Windows 10の開発環境を公開した&lt;/h2&gt;
+
+&lt;p&gt;年末年始に実家に帰ったときにXPS 13の開発環境を整えた作業ログをブログで公開したら思った以上に反響がきてた。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://ymotongpoo.hatenablog.com/entry/2017/01/05/101233&#34;&gt;Windows 10の開発環境を整えた&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;はてブの数の割にコメントがみんなマイルドなものだったのが意外だった。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>クリスマスイブとか</title>

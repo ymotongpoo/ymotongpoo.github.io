@@ -13,14 +13,14 @@
 <link rel="apple-touch-icon" href="https://ymotongpoo.github.io/images/logo.png">
 
 
-<link rel="canonical" href="https://ymotongpoo.github.io/tech/2016/12/21/setting-up-sklearn/">
+<link rel="canonical" href="https://ymotongpoo.github.io/diary/2017-01-09-no-more-wercker/">
 
 
     
     <link href="https://fonts.googleapis.com/css?family=Cuprum:400,700" rel="stylesheet">
     
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet">
-    <title>scikit-learnを使える環境を整える - depository</title>
+    <title>wercker使うのをあきらめた - depository</title>
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
@@ -29,21 +29,21 @@
 <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
 
     
-<meta name="description" content="scikit-learnとは 機械学習をPythonで簡単に扱うためのライブラリ。 scikit-learn Python 3.5環境のセットアップ 現在時点での最新版をインストール">
+<meta name="description" content="wercker使うのをあきらめた CIでGitHub pagesの更新をしようと思った このサイトの更新をGitHubにsourceブランチからp">
 
-<meta property="og:title" content="scikit-learnを使える環境を整える - depository">
+<meta property="og:title" content="wercker使うのをあきらめた - depository">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://ymotongpoo.github.io/tech/2016/12/21/setting-up-sklearn/">
+<meta property="og:url" content="https://ymotongpoo.github.io/diary/2017-01-09-no-more-wercker/">
 <meta property="og:image" content="https://ymotongpoo.github.io/images/default.png">
 <meta property="og:site_name" content="depository">
-<meta property="og:description" content="scikit-learnとは 機械学習をPythonで簡単に扱うためのライブラリ。 scikit-learn Python 3.5環境のセットアップ 現在時点での最新版をインストール">
+<meta property="og:description" content="wercker使うのをあきらめた CIでGitHub pagesの更新をしようと思った このサイトの更新をGitHubにsourceブランチからp">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="depository">
-<meta name="twitter:url" content="https://ymotongpoo.github.io/tech/2016/12/21/setting-up-sklearn/">
-<meta name="twitter:title" content="scikit-learnを使える環境を整える - depository">
-<meta name="twitter:description" content="scikit-learnとは 機械学習をPythonで簡単に扱うためのライブラリ。 scikit-learn Python 3.5環境のセットアップ 現在時点での最新版をインストール">
+<meta name="twitter:url" content="https://ymotongpoo.github.io/diary/2017-01-09-no-more-wercker/">
+<meta name="twitter:title" content="wercker使うのをあきらめた - depository">
+<meta name="twitter:description" content="wercker使うのをあきらめた CIでGitHub pagesの更新をしようと思った このサイトの更新をGitHubにsourceブランチからp">
 <meta name="twitter:image" content="https://ymotongpoo.github.io/images/default.png">
 
 
@@ -55,15 +55,15 @@
       "@type": "WebPage",
       "@id":"https:\/\/ymotongpoo.github.io\/"
     },
-    "headline": "scikit-learnを使える環境を整える - depository",
+    "headline": "wercker使うのをあきらめた - depository",
     "image": {
       "@type": "ImageObject",
       "url": "https:\/\/ymotongpoo.github.io\/images\/default.png",
       "height": 800,
       "width": 800
     },
-    "datePublished": "2016-12-21T23:35:31JST",
-    "dateModified": "2016-12-21T23:35:31JST",
+    "datePublished": "2017-01-09T01:40:22JST",
+    "dateModified": "2017-01-09T01:40:22JST",
     "author": {
       "@type": "Person",
       "name": "depository"
@@ -78,7 +78,7 @@
         "height": 60
       }
     },
-    "description": "scikit-learnとは 機械学習をPythonで簡単に扱うためのライブラリ。 scikit-learn Python 3.5環境のセットアップ 現在時点での最新版をインストール"
+    "description": "wercker使うのをあきらめた CIでGitHub pagesの更新をしようと思った このサイトの更新をGitHubにsourceブランチからp"
   }
 </script>
 
@@ -136,26 +136,26 @@
   <ol>
     <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://ymotongpoo.github.io/" itemprop="url"><span itemprop="title"><i class="fa fa-home" aria-hidden="true"></i></span></a></li>
     
-    <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://ymotongpoo.github.io/tech/" itemprop="url"><span itemprop="title">tech</span></a></li>
+    <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://ymotongpoo.github.io/diary/" itemprop="url"><span itemprop="title">diary</span></a></li>
     
-    <li><span>scikit-learnを使える環境を整える</span></li>
+    <li><span>wercker使うのをあきらめた</span></li>
   </ol>
 </nav>
 
 <article class="single">
 
   <header>
-    <h1 class="title">scikit-learnを使える環境を整える</h1>
+    <h1 class="title">wercker使うのをあきらめた</h1>
     <ul class="p-facts">
-      <li><time datetime="2016-12-21T23:35:31JST">Dec 21, 2016</time></li>
-      <li><a href="https://ymotongpoo.github.io/tech/">tech</a></li>
+      <li><time datetime="2017-01-09T01:40:22JST">Jan 9, 2017</time></li>
+      <li><a href="https://ymotongpoo.github.io/diary/">diary</a></li>
       
     </ul>
     <aside class="p-share">
-  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fymotongpoo.github.io%2ftech%2f2016%2f12%2f21%2fsetting-up-sklearn%2f&t=scikit-learn%e3%82%92%e4%bd%bf%e3%81%88%e3%82%8b%e7%92%b0%e5%a2%83%e3%82%92%e6%95%b4%e3%81%88%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fymotongpoo.github.io%2ftech%2f2016%2f12%2f21%2fsetting-up-sklearn%2f&text=scikit-learn%e3%82%92%e4%bd%bf%e3%81%88%e3%82%8b%e7%92%b0%e5%a2%83%e3%82%92%e6%95%b4%e3%81%88%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="https://plus.google.com/share?url=https%3a%2f%2fymotongpoo.github.io%2ftech%2f2016%2f12%2f21%2fsetting-up-sklearn%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-  <a href="http://getpocket.com/edit?url=https%3a%2f%2fymotongpoo.github.io%2ftech%2f2016%2f12%2f21%2fsetting-up-sklearn%2f&title=scikit-learn%e3%82%92%e4%bd%bf%e3%81%88%e3%82%8b%e7%92%b0%e5%a2%83%e3%82%92%e6%95%b4%e3%81%88%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fymotongpoo.github.io%2fdiary%2f2017-01-09-no-more-wercker%2f&t=wercker%e4%bd%bf%e3%81%86%e3%81%ae%e3%82%92%e3%81%82%e3%81%8d%e3%82%89%e3%82%81%e3%81%9f" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fymotongpoo.github.io%2fdiary%2f2017-01-09-no-more-wercker%2f&text=wercker%e4%bd%bf%e3%81%86%e3%81%ae%e3%82%92%e3%81%82%e3%81%8d%e3%82%89%e3%82%81%e3%81%9f&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=https%3a%2f%2fymotongpoo.github.io%2fdiary%2f2017-01-09-no-more-wercker%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fymotongpoo.github.io%2fdiary%2f2017-01-09-no-more-wercker%2f&title=wercker%e4%bd%bf%e3%81%86%e3%81%ae%e3%82%92%e3%81%82%e3%81%8d%e3%82%89%e3%82%81%e3%81%9f" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
 </aside>
 
     <amp-ad type="adsense" data-ad-client="ca-pub-7999197875905972" data-ad-slot="8125118534" width="300" height="250"></amp-ad>
@@ -163,47 +163,68 @@
 
   <div class="article-body">
 
-<h2 id="scikit-learnとは">scikit-learnとは</h2>
+<h1 id="wercker使うのをあきらめた">wercker使うのをあきらめた</h1>
 
-<p>機械学習をPythonで簡単に扱うためのライブラリ。</p>
+<h2 id="ciでgithub-pagesの更新をしようと思った">CIでGitHub pagesの更新をしようと思った</h2>
+
+<p>このサイトの更新をGitHubに<code>source</code>ブランチからpushしただけでできるようにしようと思って、werckerでやろうと画策したんだけどどうやっても動かない。試したのは次のような感じ。</p>
+
+<h2 id="personal-access-tokenを使っての方法">Personal access tokenを使っての方法</h2>
+
+<p>Personal access tokenを使えばGitHubへのアクセスがかなり制限できるし、いざとなったらトークンを消せばいいだけなので、まずはそれでやろうと思い立った。</p>
+
+<p>Personal access tokenをwerckerみたいに毎回初期化される環境でやるには、<code>.netrc</code>に次のように書いておけばいいと思ってやってみた。</p>
+
+<pre><code>machine github.com
+login ymotongpoo
+password xxxxx
+</code></pre>
+
+<p>しかしどうもwerckerはpushの際にはSSHプロトコルを使っているようで次のようなエラーではじかれた。</p>
+
+<pre><code>Host key verification failed.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+</code></pre>
+
+<h2 id="ssh認証を使う方法">SSH認証を使う方法</h2>
+
+<h3 id="自分でssh鍵を生成する場合">自分でSSH鍵を生成する場合</h3>
+
+<p>自分のLinuxマシンで <code>ssh-keygen</code> で生成した公開鍵をGitHubのSSH鍵設定のところに登録し、秘密鍵をwerckerのpipelineの環境変数部分に登録。（名前は <code>MYPACKAGE_KEY_PRIVATE</code>）とした。</p>
+
+<p><code>wercker.yml</code> で <code>steps</code> に <code>add-ssh-key</code> を登録してみたもののやっぱり先と同様に失敗。</p>
 
 <ul>
-<li><a href="http://scikit-learn.org/stable/">scikit-learn</a></li>
+<li><a href="http://devcenter.wercker.com/docs/ssh-keys/using-ssh-keys">Using SSH Keys</a></li>
 </ul>
 
-<h2 id="python-3-5環境のセットアップ">Python 3.5環境のセットアップ</h2>
+<h3 id="werckerでssh鍵を生成する場合">werckerでSSH鍵を生成する場合</h3>
 
-<p>現在時点での最新版をインストールする。MacPortsを利用しているので次の通り。</p>
+<p>先のリンクに並んでSSH鍵をwercker側で設定する方法があったので、それも設定してみた。</p>
 
-<pre><code class="language-bash">% sudo port install python35
-% sudo port install py35-virtualenv py35-virtualenvwrapper
-% sudo port select --set virtualenv virtualenv35
-% mkvirtualenv sklearn
-(sklearn) %
-</code></pre>
+<ul>
+<li><a href="http://devcenter.wercker.com/docs/ssh-keys/generating-ssh-keys">Generating SSH Keys</a></li>
+</ul>
 
-<h2 id="scikit-learnのインストールと確認">scikit-learnのインストールと確認</h2>
+<p>これで生成しても同様のエラーではじかれる。</p>
 
-<p>依存関係があるものを先にインストールしてからインストール。　</p>
+<h3 id="上記の方法をdeploy-keyで試す場合">上記の方法をdeploy keyで試す場合</h3>
 
-<pre><code class="language-bash">% pip install numpy scipy
-% pip install sklearn
-% python
-Python 3.5.2 (default, Dec 17 2016, 06:22:44)
-[GCC 4.2.1 Compatible Apple LLVM 7.0.2 (clang-700.1.81)] on darwin
-Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
-&gt;&gt;&gt; from sklearn import svm
-&gt;&gt;&gt;
-</code></pre>
+<p>公開鍵をGitHubのdeploy keyとして登録し、write accessを与えてみたもののやはり失敗した。</p>
 
-<p>無事インストール出来ました。</p>
+<h2 id="結論">結論</h2>
+
+<p>別のCI使おう&hellip;</p>
 </div>
 
   <aside class="p-share">
-  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fymotongpoo.github.io%2ftech%2f2016%2f12%2f21%2fsetting-up-sklearn%2f&t=scikit-learn%e3%82%92%e4%bd%bf%e3%81%88%e3%82%8b%e7%92%b0%e5%a2%83%e3%82%92%e6%95%b4%e3%81%88%e3%82%8b" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fymotongpoo.github.io%2ftech%2f2016%2f12%2f21%2fsetting-up-sklearn%2f&text=scikit-learn%e3%82%92%e4%bd%bf%e3%81%88%e3%82%8b%e7%92%b0%e5%a2%83%e3%82%92%e6%95%b4%e3%81%88%e3%82%8b&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-  <a href="https://plus.google.com/share?url=https%3a%2f%2fymotongpoo.github.io%2ftech%2f2016%2f12%2f21%2fsetting-up-sklearn%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-  <a href="http://getpocket.com/edit?url=https%3a%2f%2fymotongpoo.github.io%2ftech%2f2016%2f12%2f21%2fsetting-up-sklearn%2f&title=scikit-learn%e3%82%92%e4%bd%bf%e3%81%88%e3%82%8b%e7%92%b0%e5%a2%83%e3%82%92%e6%95%b4%e3%81%88%e3%82%8b" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fymotongpoo.github.io%2fdiary%2f2017-01-09-no-more-wercker%2f&t=wercker%e4%bd%bf%e3%81%86%e3%81%ae%e3%82%92%e3%81%82%e3%81%8d%e3%82%89%e3%82%81%e3%81%9f" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fymotongpoo.github.io%2fdiary%2f2017-01-09-no-more-wercker%2f&text=wercker%e4%bd%bf%e3%81%86%e3%81%ae%e3%82%92%e3%81%82%e3%81%8d%e3%82%89%e3%82%81%e3%81%9f&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=https%3a%2f%2fymotongpoo.github.io%2fdiary%2f2017-01-09-no-more-wercker%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fymotongpoo.github.io%2fdiary%2f2017-01-09-no-more-wercker%2f&title=wercker%e4%bd%bf%e3%81%86%e3%81%ae%e3%82%92%e3%81%82%e3%81%8d%e3%82%89%e3%82%81%e3%81%9f" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
 </aside>
 
 
@@ -215,9 +236,7 @@ Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;licen
       <header><i class="inline clip"></i><a href="https://ymotongpoo.github.io/tags/">tags</a></header>
       <ul>
         
-        <li><a href="https://ymotongpoo.github.io/tags/sklearn/">sklearn</a></li>
-        
-        <li><a href="https://ymotongpoo.github.io/tags/python3/">python3</a></li>
+        <li><a href="https://ymotongpoo.github.io/tags/logs/">logs</a></li>
         
       </ul>
     </li>
