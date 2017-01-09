@@ -2,7 +2,7 @@
 date = "2017-01-09T01:40:22+09:00"
 title = "wercker使うのをあきらめた"
 draft = false
-slut = "no-more-wercker"
+slug = "no-more-wercker"
 tags = ["logs"]
 +++
 
