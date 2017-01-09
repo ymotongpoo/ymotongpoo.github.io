@@ -216,6 +216,46 @@ and the repository exists.
 <h2 id="結論">結論</h2>
 
 <p>別のCI使おう&hellip;</p>
+
+<h2 id="つづき">つづき</h2>
+
+<p>癪なのでもう一度よく設定を調べてみたら次のページを見つけた。</p>
+
+<ul>
+<li><a href="http://devcenter.wercker.com/docs/git/submodules">Using Git Submodules</a></li>
+</ul>
+
+<p>pushをする方法じゃないけれど、ここにSSH鍵の登録にホストを設定する方法とfingerprintの登録をする手順が書いてあった。</p>
+
+<pre><code>    - add-ssh-key:
+        keyname: KEY_NAME
+        host: github.com
+    - add-to-known_hosts:
+        hostname: github.com
+        fingerprint: 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48
+</code></pre>
+
+<p>これに則って、fingerprintを登録した。ただこれをコピペしただけではだめで、自分のdocker imageのOpenSSHが新しいのでSHA256のfingerprintが必要だった。</p>
+
+<p>調べてみたら、GitHubのほうにSHA256のfingerprintも書いてあった。</p>
+
+<ul>
+<li><a href="https://help.github.com/articles/what-are-github-s-ssh-key-fingerprints/">What are GitHub&rsquo;s SSH key fingerprints?</a></li>
+</ul>
+
+<p>というわけで次のように変更してみたら無事にpushできた。</p>
+
+<pre><code>    - add-ssh-key:
+        keyname: MYPACKAGE_KEY
+        host: github.com
+    - add-to-known_hosts:
+        hostname: github.com
+        fingerprint: SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8
+</code></pre>
+
+<h2 id="おまけ">おまけ</h2>
+
+<p>werckerのbuildのpipelineで全部書いていたので、<code>source</code>ブランチのビルドが終わって<code>master</code>にpushすると、今度はそれをトリガーにしてまたpipelineが始まってしまう。以前はあったように思うのだけど、最初のpipelineを起動するブランチは指定できないみたいなので、ワークアラウンドとして<code>master</code>ブランチに<code>wercker.yml</code>を置いて、ただ<code>echo</code>させるだけにして、pipeline自体が異常終了しないようにした。</p>
 </div>
 
   <aside class="p-share">
