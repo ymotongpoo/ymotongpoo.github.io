@@ -6,8 +6,112 @@
     <description>Recent content in Teches on depository</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Sat, 31 Dec 2016 12:41:35 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 09 Jan 2017 01:40:22 +0900</lastBuildDate>
     <atom:link href="https://ymotongpoo.github.io/tech/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>wercker使うのをあきらめた（けど、頑張ったらできた）</title>
+      <link>https://ymotongpoo.github.io/tech/2017/01/09/no-more-wercker/</link>
+      <pubDate>Mon, 09 Jan 2017 01:40:22 +0900</pubDate>
+      
+      <guid>https://ymotongpoo.github.io/tech/2017/01/09/no-more-wercker/</guid>
+      <description>
+
+&lt;h2 id=&#34;ciでgithub-pagesの更新をしようと思った&#34;&gt;CIでGitHub pagesの更新をしようと思った&lt;/h2&gt;
+
+&lt;p&gt;このサイトの更新をGitHubに&lt;code&gt;source&lt;/code&gt;ブランチからpushしただけでできるようにしようと思って、werckerでやろうと画策したんだけどどうやっても動かない。試したのは次のような感じ。&lt;/p&gt;
+
+&lt;h2 id=&#34;personal-access-tokenを使っての方法&#34;&gt;Personal access tokenを使っての方法&lt;/h2&gt;
+
+&lt;p&gt;Personal access tokenを使えばGitHubへのアクセスがかなり制限できるし、いざとなったらトークンを消せばいいだけなので、まずはそれでやろうと思い立った。&lt;/p&gt;
+
+&lt;p&gt;Personal access tokenをwerckerみたいに毎回初期化される環境でやるには、&lt;code&gt;.netrc&lt;/code&gt;に次のように書いておけばいいと思ってやってみた。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;machine github.com
+login ymotongpoo
+password xxxxx
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;しかしどうもwerckerはpushの際にはSSHプロトコルを使っているようで次のようなエラーではじかれた。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Host key verification failed.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;ssh認証を使う方法&#34;&gt;SSH認証を使う方法&lt;/h2&gt;
+
+&lt;h3 id=&#34;自分でssh鍵を生成する場合&#34;&gt;自分でSSH鍵を生成する場合&lt;/h3&gt;
+
+&lt;p&gt;自分のLinuxマシンで &lt;code&gt;ssh-keygen&lt;/code&gt; で生成した公開鍵をGitHubのSSH鍵設定のところに登録し、秘密鍵をwerckerのpipelineの環境変数部分に登録。（名前は &lt;code&gt;MYPACKAGE_KEY_PRIVATE&lt;/code&gt;）とした。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;wercker.yml&lt;/code&gt; で &lt;code&gt;steps&lt;/code&gt; に &lt;code&gt;add-ssh-key&lt;/code&gt; を登録してみたもののやっぱり先と同様に失敗。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://devcenter.wercker.com/docs/ssh-keys/using-ssh-keys&#34;&gt;Using SSH Keys&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;werckerでssh鍵を生成する場合&#34;&gt;werckerでSSH鍵を生成する場合&lt;/h3&gt;
+
+&lt;p&gt;先のリンクに並んでSSH鍵をwercker側で設定する方法があったので、それも設定してみた。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://devcenter.wercker.com/docs/ssh-keys/generating-ssh-keys&#34;&gt;Generating SSH Keys&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;これで生成しても同様のエラーではじかれる。&lt;/p&gt;
+
+&lt;h3 id=&#34;上記の方法をdeploy-keyで試す場合&#34;&gt;上記の方法をdeploy keyで試す場合&lt;/h3&gt;
+
+&lt;p&gt;公開鍵をGitHubのdeploy keyとして登録し、write accessを与えてみたもののやはり失敗した。&lt;/p&gt;
+
+&lt;h2 id=&#34;結論&#34;&gt;結論&lt;/h2&gt;
+
+&lt;p&gt;別のCI使おう&amp;hellip;&lt;/p&gt;
+
+&lt;h2 id=&#34;つづき&#34;&gt;つづき&lt;/h2&gt;
+
+&lt;p&gt;癪なのでもう一度よく設定を調べてみたら次のページを見つけた。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://devcenter.wercker.com/docs/git/submodules&#34;&gt;Using Git Submodules&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;pushをする方法じゃないけれど、ここにSSH鍵の登録にホストを設定する方法とfingerprintの登録をする手順が書いてあった。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    - add-ssh-key:
+        keyname: KEY_NAME
+        host: github.com
+    - add-to-known_hosts:
+        hostname: github.com
+        fingerprint: 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これに則って、fingerprintを登録した。ただこれをコピペしただけではだめで、自分のdocker imageのOpenSSHが新しいのでSHA256のfingerprintが必要だった。&lt;/p&gt;
+
+&lt;p&gt;調べてみたら、GitHubのほうにSHA256のfingerprintも書いてあった。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://help.github.com/articles/what-are-github-s-ssh-key-fingerprints/&#34;&gt;What are GitHub&amp;rsquo;s SSH key fingerprints?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;というわけで次のように変更してみたら無事にpushできた。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    - add-ssh-key:
+        keyname: MYPACKAGE_KEY
+        host: github.com
+    - add-to-known_hosts:
+        hostname: github.com
+        fingerprint: SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;おまけ&#34;&gt;おまけ&lt;/h2&gt;
+
+&lt;p&gt;werckerのbuildのpipelineで全部書いていたので、&lt;code&gt;source&lt;/code&gt;ブランチのビルドが終わって&lt;code&gt;master&lt;/code&gt;にpushすると、今度はそれをトリガーにしてまたpipelineが始まってしまう。以前はあったように思うのだけど、最初のpipelineを起動するブランチは指定できないみたいなので、ワークアラウンドとして&lt;code&gt;master&lt;/code&gt;ブランチに&lt;code&gt;wercker.yml&lt;/code&gt;を置いて、ただ&lt;code&gt;echo&lt;/code&gt;させるだけにして、pipeline自体が異常終了しないようにした。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Git Credential Manger for WinをMSYS2のgitで使う</title>

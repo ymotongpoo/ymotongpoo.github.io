@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://ymotongpoo.github.io/diary/2017/01/09/no-more-wercker/</loc>
+    <loc>https://ymotongpoo.github.io/tech/2017/01/09/no-more-wercker/</loc>
     <lastmod>2017-01-09T01:40:22+09:00</lastmod>
   </url>
   
@@ -89,7 +89,7 @@
   
   <url>
     <loc>https://ymotongpoo.github.io/diary/</loc>
-    <lastmod>2017-01-09T01:40:22+09:00</lastmod>
+    <lastmod>2017-01-05T22:42:37+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -107,7 +107,7 @@
   
   <url>
     <loc>https://ymotongpoo.github.io/tags/log/</loc>
-    <lastmod>2017-01-09T01:40:22+09:00</lastmod>
+    <lastmod>2017-01-05T22:42:37+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -142,13 +142,19 @@
   
   <url>
     <loc>https://ymotongpoo.github.io/tech/</loc>
-    <lastmod>2016-12-31T12:41:35+09:00</lastmod>
+    <lastmod>2017-01-09T01:40:22+09:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://ymotongpoo.github.io/tags/web/</loc>
     <lastmod>2016-12-22T22:19:04+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ymotongpoo.github.io/tags/wercker/</loc>
+    <lastmod>2017-01-09T01:40:22+09:00</lastmod>
     <priority>0</priority>
   </url>
   
