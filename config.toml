@@ -24,4 +24,4 @@ hasCJKLanguage = true
 
 [permalinks]
   tech = "/tech/:year/:month/:day/:slug/"
-  blog = "/blog/:year/:month/:day/:slug/"
+  diary = "/blog/:year/:month/:day/:slug/"
