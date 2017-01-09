@@ -50,3 +50,39 @@ and the repository exists.
 
 ## 結論
 別のCI使おう...
+
+## つづき
+癪なのでもう一度よく設定を調べてみたら次のページを見つけた。
+
+* [Using Git Submodules](http://devcenter.wercker.com/docs/git/submodules)
+
+pushをする方法じゃないけれど、ここにSSH鍵の登録にホストを設定する方法とfingerprintの登録をする手順が書いてあった。
+
+```
+    - add-ssh-key:
+        keyname: KEY_NAME
+        host: github.com
+    - add-to-known_hosts:
+        hostname: github.com
+        fingerprint: 16:27:ac:a5:76:28:2d:36:63:1b:56:4d:eb:df:a6:48
+```
+
+これに則って、fingerprintを登録した。ただこれをコピペしただけではだめで、自分のdocker imageのOpenSSHが新しいのでSHA256のfingerprintが必要だった。
+
+調べてみたら、GitHubのほうにSHA256のfingerprintも書いてあった。
+
+* [What are GitHub's SSH key fingerprints?](https://help.github.com/articles/what-are-github-s-ssh-key-fingerprints/)
+
+というわけで次のように変更してみたら無事にpushできた。
+
+```
+    - add-ssh-key:
+        keyname: MYPACKAGE_KEY
+        host: github.com
+    - add-to-known_hosts:
+        hostname: github.com
+        fingerprint: SHA256:nThbg6kXUpJWGl7E1IGOCspRomTxdCARLviKw6E5SY8
+```
+
+## おまけ
+werckerのbuildのpipelineで全部書いていたので、`source`ブランチのビルドが終わって`master`にpushすると、今度はそれをトリガーにしてまたpipelineが始まってしまう。以前はあったように思うのだけど、最初のpipelineを起動するブランチは指定できないみたいなので、ワークアラウンドとして`master`ブランチに`wercker.yml`を置いて、ただ`echo`させるだけにして、pipeline自体が異常終了しないようにした。
