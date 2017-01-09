@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Logs on depository</title>
+    <link>https://ymotongpoo.github.io/tags/logs/index.xml</link>
+    <description>Recent content in Logs on depository</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <atom:link href="https://ymotongpoo.github.io/tags/logs/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>wercker使うのをあきらめた</title>
+      <link>https://ymotongpoo.github.io/diary/no-more-wercker/</link>
+      <pubDate>Mon, 09 Jan 2017 01:40:22 +0900</pubDate>
+      
+      <guid>https://ymotongpoo.github.io/diary/no-more-wercker/</guid>
+      <description>
+
+&lt;h1 id=&#34;wercker使うのをあきらめた&#34;&gt;wercker使うのをあきらめた&lt;/h1&gt;
+
+&lt;h2 id=&#34;ciでgithub-pagesの更新をしようと思った&#34;&gt;CIでGitHub pagesの更新をしようと思った&lt;/h2&gt;
+
+&lt;p&gt;このサイトの更新をGitHubに&lt;code&gt;source&lt;/code&gt;ブランチからpushしただけでできるようにしようと思って、werckerでやろうと画策したんだけどどうやっても動かない。試したのは次のような感じ。&lt;/p&gt;
+
+&lt;h2 id=&#34;personal-access-tokenを使っての方法&#34;&gt;Personal access tokenを使っての方法&lt;/h2&gt;
+
+&lt;p&gt;Personal access tokenを使えばGitHubへのアクセスがかなり制限できるし、いざとなったらトークンを消せばいいだけなので、まずはそれでやろうと思い立った。&lt;/p&gt;
+
+&lt;p&gt;Personal access tokenをwerckerみたいに毎回初期化される環境でやるには、&lt;code&gt;.netrc&lt;/code&gt;に次のように書いておけばいいと思ってやってみた。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;machine github.com
+login ymotongpoo
+password xxxxx
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;しかしどうもwerckerはpushの際にはSSHプロトコルを使っているようで次のようなエラーではじかれた。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Host key verification failed.
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;ssh認証を使う方法&#34;&gt;SSH認証を使う方法&lt;/h2&gt;
+
+&lt;h3 id=&#34;自分でssh鍵を生成する場合&#34;&gt;自分でSSH鍵を生成する場合&lt;/h3&gt;
+
+&lt;p&gt;自分のLinuxマシンで &lt;code&gt;ssh-keygen&lt;/code&gt; で生成した公開鍵をGitHubのSSH鍵設定のところに登録し、秘密鍵をwerckerのpipelineの環境変数部分に登録。（名前は &lt;code&gt;MYPACKAGE_KEY_PRIVATE&lt;/code&gt;）とした。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;wercker.yml&lt;/code&gt; で &lt;code&gt;steps&lt;/code&gt; に &lt;code&gt;add-ssh-key&lt;/code&gt; を登録してみたもののやっぱり先と同様に失敗。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://devcenter.wercker.com/docs/ssh-keys/using-ssh-keys&#34;&gt;Using SSH Keys&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;werckerでssh鍵を生成する場合&#34;&gt;werckerでSSH鍵を生成する場合&lt;/h3&gt;
+
+&lt;p&gt;先のリンクに並んでSSH鍵をwercker側で設定する方法があったので、それも設定してみた。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://devcenter.wercker.com/docs/ssh-keys/generating-ssh-keys&#34;&gt;Generating SSH Keys&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;これで生成しても同様のエラーではじかれる。&lt;/p&gt;
+
+&lt;h3 id=&#34;上記の方法をdeploy-keyで試す場合&#34;&gt;上記の方法をdeploy keyで試す場合&lt;/h3&gt;
+
+&lt;p&gt;公開鍵をGitHubのdeploy keyとして登録し、write accessを与えてみたもののやはり失敗した。&lt;/p&gt;
+
+&lt;h2 id=&#34;結論&#34;&gt;結論&lt;/h2&gt;
+
+&lt;p&gt;別のCI使おう&amp;hellip;&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>
