@@ -3,7 +3,7 @@ date = "2017-01-09T01:40:22+09:00"
 title = "wercker使うのをあきらめた（けど、頑張ったらできた）"
 draft = false
 slug = "no-more-wercker"
-tags = ["log"]
+tags = ["wercker"]
 +++
 
 ## CIでGitHub pagesの更新をしようと思った
