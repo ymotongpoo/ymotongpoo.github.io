@@ -1,4 +1,4 @@
-box: alpine:latest
+box: ymotongpoo/hugo
 build:
   steps:
     - script:
