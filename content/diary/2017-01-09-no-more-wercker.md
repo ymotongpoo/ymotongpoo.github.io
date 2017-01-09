@@ -3,10 +3,9 @@ date = "2017-01-09T01:40:22+09:00"
 title = "wercker使うのをあきらめた"
 draft = false
 slug = "no-more-wercker"
-tags = ["logs"]
+tags = ["log"]
 +++
 
-# wercker使うのをあきらめた
 ## CIでGitHub pagesの更新をしようと思った
 このサイトの更新をGitHubに`source`ブランチからpushしただけでできるようにしようと思って、werckerでやろうと画策したんだけどどうやっても動かない。試したのは次のような感じ。
 
