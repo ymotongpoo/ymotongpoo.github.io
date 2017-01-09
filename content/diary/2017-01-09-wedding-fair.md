@@ -1,6 +1,6 @@
 +++
 date = "2017-01-09T23:25:34+09:00"
-title = "2017 01 09 wedding fair"
+title = "My Wedding Fair"
 draft = false
 slug = "wedding-fair"
 tags = ["life"]
