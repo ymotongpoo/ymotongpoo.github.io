@@ -6,8 +6,26 @@
     <description>Recent content on depository</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Mon, 09 Jan 2017 01:40:22 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 09 Jan 2017 23:25:34 +0900</lastBuildDate>
     <atom:link href="https://ymotongpoo.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>2017 01 09 wedding fair</title>
+      <link>https://ymotongpoo.github.io/diary/2017/01/09/wedding-fair/</link>
+      <pubDate>Mon, 09 Jan 2017 23:25:34 +0900</pubDate>
+      
+      <guid>https://ymotongpoo.github.io/diary/2017/01/09/wedding-fair/</guid>
+      <description>
+
+&lt;h2 id=&#34;werckerのバグを直した&#34;&gt;werckerのバグを直した&lt;/h2&gt;
+
+&lt;p&gt;結局うまくいかなかった原因はSSHのfingerprintを登録してなかったことが原因だった。これはブログのほうにもまとめておこう。&lt;/p&gt;
+
+&lt;h2 id=&#34;my-wedding-fairに参加した&#34;&gt;My Wedding Fairに参加した&lt;/h2&gt;
+
+&lt;p&gt;結婚式場が開催する説明会に参加してきた。大量の書類をもらって帰ってきた。1回目の打ち合わせまでにやることが大量にあるので、それまでに早めに準備をしておこうと思う。まずはスプレッドシートに必要な項目を全部書き写すところからかな。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>wercker使うのをあきらめた（けど、頑張ったらできた）</title>
@@ -579,77 +597,6 @@ PING 192.168.1.1 (192.168.1.1): 1472 data bytes
 &lt;p&gt;まずはバージョン0.3.0として、これまでマップで対応していたコメント記法の情報を専用クラスを作って1行コメントと複数行コメントの両方を保持できるようにしたので、今後設定で好みのスタイルで出来るようになっている。&lt;/p&gt;
 
 &lt;p&gt;そのついでで、対応言語の数を増やしたので、次は対応ライセンスの数を増やしたい。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>トレーニングの科学的根拠とか</title>
-      <link>https://ymotongpoo.github.io/diary/2016/12/22/scientific-basis-of-physical-training/</link>
-      <pubDate>Thu, 22 Dec 2016 22:19:04 +0900</pubDate>
-      
-      <guid>https://ymotongpoo.github.io/diary/2016/12/22/scientific-basis-of-physical-training/</guid>
-      <description>
-
-&lt;h2 id=&#34;トレーニングの話を書いた&#34;&gt;トレーニングの話を書いた&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href=&#34;http://www.adventar.org/calendars/1435&#34;&gt;pyspa Advent Calendar 2016&lt;/a&gt; で「ここ半年筋トレをしてるよ」という話を&lt;a href=&#34;http://www.adventar.org/calendars/1435&#34;&gt;雑に書いた&lt;/a&gt; ら、なんかよくわからない絡まれ方をして、その時はほっといたんだけど、さらによくわからないエントリを書かれた。&lt;/p&gt;
-
-&lt;p&gt;&lt;amp-twitter data-tweetid=&#34;808226321566343168&#34; width=&#34;800&#34; height=&#34;600&#34; layout=&#34;responsive&#34;&gt;&lt;/amp-twitter&gt;
-
-&lt;amp-twitter data-tweetid=&#34;811793453856083968&#34; width=&#34;800&#34; height=&#34;600&#34; layout=&#34;responsive&#34;&gt;&lt;/amp-twitter&gt;
-&lt;/p&gt;
-
-&lt;p&gt;「正しい運動の方法」というのが何を指してるのかはおいといて、いろんな意見がある界隈だからとりあえず覗いてみようと反論記事を読んでみたら、こんな感じだった。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://xevra.hatenablog.com/entry/2016/12/22/133755&#34;&gt;筋トレしても健康にならないし、ダイエットにもならない理由 &amp;ndash; xevra&amp;rsquo;s blog&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;冒頭で&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;多くの人が勘違いしているのだが健康のために筋トレやるのは間違っている。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;と書いておいて、後半では&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;さて、では筋トレは無駄という事でいいのだろうか？　実は私は筋トレをしている。なぜこんな事になるかと言うと、筋トレに求められているのは健康ではなく、モチベーションだからだ。&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;と書いている。間に有酸素運動の是非について書いてるけど、だった批判の主旨は「有酸素運動もすべき」で済む話じゃん。&lt;/p&gt;
-
-&lt;p&gt;あと科学的根拠を挙げるなら、引用をちゃんとしてほしい。文中で有酸素運動の根拠に挙げてる&lt;a href=&#34;http://www0.nih.go.jp/eiken/programs/kenzo20120306.pdf&#34;&gt;WHOのPDF&lt;/a&gt;の中でも次のようにある。&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;全身持久力、筋力、骨の健康の向上や、非伝染病の発症リスクや鬱症状の軽減のために、下記の項目が推奨される。&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;18-64 歳に分類される成人は、週あたり 150 分の中強度有酸素性身体活動、または、週あたり 75 分の高強度有酸素性身体活動、または、同等の中～高強度身体活動を組み合わせた身体活動を行うこと&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;有酸素性活動は 1 回につき、少なくとも 10 分間以上続けること&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;中強度有酸素性身体活動を週 300 分に増やすこと、または、週 150 分の身体活動を高強度の有酸素性活動にすること、または、同等の中～高強度身体活動を組み合わせて行うことで、さらなる健康効果が期待できる&lt;/p&gt;&lt;/li&gt;
-
-&lt;li&gt;&lt;p&gt;週 2 日またはそれ以上、大筋群を使う筋力トレーニングをすること&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;4番に「週２日またはそれ以上、大筋群を使う筋力トレーニングを」と明記してある。&lt;/p&gt;
-
-&lt;p&gt;まあこの辺の話はいまだに研究をされている内容だし、いろいろと意見があるのは分かるけど、批判するならもうちょっとまともな論旨で書けばいいのにな。&lt;/p&gt;
-
-&lt;p&gt;世の中にはいろいろな人がいますね。ちなみに自分は大学のときにスポーツ科学の研究をしていたし、石井直方先生の影響もある方の指導を受けていたので、件の人よりは人体には詳しいと思う。&lt;/p&gt;
-
-&lt;h2 id=&#34;cooking-for-geeks-第2版-を恵贈していただいた&#34;&gt;「Cooking for Geeks 第2版」を恵贈していただいた&lt;/h2&gt;
-
-&lt;p&gt;@turky より「Cooking for Geeks 第2版」を恵贈していただいた。最近 &lt;a href=&#34;http://amzn.to/2ij4E9R&#34;&gt;Anova Precision Cooker&lt;/a&gt; を買って、真空調理法とか肉の変質とかに関して科学的なアプローチが可能になったので、前からこの本が気になっていたのだけれども、ありがたいことに偶然寄贈いただけることになった。ありがたいかぎり。&lt;/p&gt;
-
-&lt;p&gt;まずはAnovaでの低温調理に関連しそうなところを読んで、早めにレビュー記事を書こうと思う。&lt;/p&gt;
-
-&lt;h2 id=&#34;このサイトとか&#34;&gt;このサイトとか&lt;/h2&gt;
-
-&lt;p&gt;なんか雑な文章を書く場所がほしいと思ったので、Hugoで書き始めた。相変わらずいつまで続くかわからないけど適当なことを書いておくのにはちょうどいいだろう。Gitで管理してるし、いざとなればレポジトリごと消しておしまい。&lt;/p&gt;
 </description>
     </item>
     

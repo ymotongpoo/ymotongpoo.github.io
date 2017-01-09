@@ -6,8 +6,26 @@
     <description>Recent content in Diaries on depository</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Thu, 05 Jan 2017 22:42:37 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 09 Jan 2017 23:25:34 +0900</lastBuildDate>
     <atom:link href="https://ymotongpoo.github.io/diary/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>2017 01 09 wedding fair</title>
+      <link>https://ymotongpoo.github.io/diary/2017/01/09/wedding-fair/</link>
+      <pubDate>Mon, 09 Jan 2017 23:25:34 +0900</pubDate>
+      
+      <guid>https://ymotongpoo.github.io/diary/2017/01/09/wedding-fair/</guid>
+      <description>
+
+&lt;h2 id=&#34;werckerのバグを直した&#34;&gt;werckerのバグを直した&lt;/h2&gt;
+
+&lt;p&gt;結局うまくいかなかった原因はSSHのfingerprintを登録してなかったことが原因だった。これはブログのほうにもまとめておこう。&lt;/p&gt;
+
+&lt;h2 id=&#34;my-wedding-fairに参加した&#34;&gt;My Wedding Fairに参加した&lt;/h2&gt;
+
+&lt;p&gt;結婚式場が開催する説明会に参加してきた。大量の書類をもらって帰ってきた。1回目の打ち合わせまでにやることが大量にあるので、それまでに早めに準備をしておこうと思う。まずはスプレッドシートに必要な項目を全部書き写すところからかな。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>仕事始めとWindows 10の開発環境の公開</title>
