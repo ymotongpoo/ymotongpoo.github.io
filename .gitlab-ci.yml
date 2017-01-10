@@ -16,28 +16,15 @@ build:hugo-site:
   artifacts:
     paths:
     - public/
-  dependencies:
-  - checkout:checkout-repo
-    
-copy:copy-content:
-  only:
-  - source
-  stage: copy
-  before_script:
-  - "mkdir -p /tmp/deploy"
-  script:
-  - "cp -r public/. /tmp/deploy"
-  after_script:
-  - "rm -rf public"
-  dependencies:
-  - build:hugo-site
 
 deploy:push-to-master:
   only:
   - source
   stage: deploy
+  before_script:
   script:
   - "git checkout master"
+  - "cp -rf public/. ."
   - "git config --global user.email ymotongpoo@gmail"
   - "git config --global user.name Yoshi Yamaguchi"
   - "cp -rf /tmp/deploy/. ."
@@ -45,4 +32,4 @@ deploy:push-to-master:
   - "git commit -m '[gitlab-ci]'"
   - "git push origin master"
   dependencies:
-  - copy:copy-content
+  - build:hugo-site
