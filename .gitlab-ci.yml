@@ -1,13 +1,15 @@
 image: ymotongpoo/hugo:latest
 
 stages:
+  - checkout
   - build
+  - copy
   - deploy
 
-build:checkout-repo:
+checkout:checkout-repo:
   only: 
   - source
-  stage: build
+  stage: checkout
   script:
   - "git checkout source"
   - "git submodule init"
@@ -22,11 +24,13 @@ build:hugo-site:
   artifacts:
     paths:
     - public/
+  dependencies:
+  - checkout:checkout-repo
     
-deploy:copy-content:
+copy:copy-content:
   only:
   - source
-  stage: deploy
+  stage: copy
   before_script:
   - "mkdir -p /tmp/deploy"
   script:
@@ -48,3 +52,5 @@ deploy:push-to-master:
   - "git add --all"
   - "git commit -m '[gitlab-ci]'"
   - "git push origin master"
+  dependencies:
+  - copy:copy-content
