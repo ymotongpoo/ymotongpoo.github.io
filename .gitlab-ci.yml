@@ -1,25 +1,17 @@
 image: ymotongpoo/hugo:latest
 
 stages:
-  - checkout
   - build
-  - copy
   - deploy
 
-checkout:checkout-repo:
+build:hugo-site:
   only: 
   - source
-  stage: checkout
+  stage: build
   script:
   - "git checkout source"
   - "git submodule init"
   - "git submodule update --recursive"
-
-build:hugo-site:
-  only:
-  - source
-  stage: build
-  script:
   - "/home/hugo/hugo --theme=tropic"
   artifacts:
     paths:
