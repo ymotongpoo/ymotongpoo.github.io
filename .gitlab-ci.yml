@@ -24,10 +24,9 @@ deploy:push-to-master:
   before_script:
   script:
   - "git checkout master"
-  - "cp -rf public/. ."
   - "git config --global user.email ymotongpoo@gmail"
   - "git config --global user.name Yoshi Yamaguchi"
-  - "cp -rf /tmp/deploy/. ."
+  - "cp -rf public/. ."
   - "git add --all"
   - "git commit -m '[gitlab-ci]'"
   - "git push origin master"
