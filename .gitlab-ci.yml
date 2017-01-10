@@ -4,34 +4,47 @@ stages:
   - build
   - deploy
 
-checkout and update repository:
+build:checkout-repo:
   only: 
-    - source
+  - source
   stage: build
   script:
-    - git checkout source
-    - git submodule init
-    - git submodule update --recursisve
+  - "git checkout source"
+  - "git submodule init"
+  - "git submodule update --recursisve"
 
-build hugo site:
+build:hugo-site:
   only:
-    - source
+  - source
   stage: build
   script:
-    - /home/hugo/hugo --theme=tropic
-
-copy content as artifact:
+  - "/home/hugo/hugo --theme=tropic"
+  artifacts:
+    paths:
+    - public/
+    
+deploy:copy-content:
   only:
-    - source
-  stage: build
+  - source
+  stage: deploy
+  before_script:
+  - "mkdir -p /tmp/deploy"
   script:
-    - cp -r public/. $dir
-    - rm -rf public
+  - "cp -r public/. /tmp/deploy"
+  after_script:
+  - "rm -rf public"
+  dependencies:
+  - build:hugo-site
 
-push content to master:
+deploy:push-to-master:
   only:
-    - master
-  stage:
-    - deploy
+  - source
+  stage: deploy
   script:
-    - git push origin HEAD:master
+  - "git checkout master"
+  - "git config --global user.email ymotongpoo@gmail"
+  - "git config --global user.name Yoshi Yamaguchi"
+  - "cp -rf /tmp/deploy/. ."
+  - "git add --all"
+  - "git commit -m '[gitlab-ci]'"
+  - "git push origin master"
