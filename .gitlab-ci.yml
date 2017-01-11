@@ -24,10 +24,10 @@ deploy:push-to-master:
   before_script:
   script:
   - "git checkout master"
-  - "ls -lh"
   - "git config --global user.email ymotongpoo@gmail"
   - "git config --global user.name Yoshi Yamaguchi"
-  - "cp -rf public/* ."
+  - "mv -rf public/* ."
+  - "rmdir public"
   - "git add --all"
   - "git commit -m '[gitlab-ci]'"
   - "git push origin master"
