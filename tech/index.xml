@@ -6,8 +6,90 @@
     <description>Recent content in Teches on depository</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Mon, 09 Jan 2017 01:40:22 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 11 Jan 2017 13:51:58 +0900</lastBuildDate>
     <atom:link href="https://ymotongpoo.github.io/tech/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Python3.6をLinuxにインストールした</title>
+      <link>https://ymotongpoo.github.io/tech/2017/01/11/installing-python3.6-on-linux/</link>
+      <pubDate>Wed, 11 Jan 2017 13:51:58 +0900</pubDate>
+      
+      <guid>https://ymotongpoo.github.io/tech/2017/01/11/installing-python3.6-on-linux/</guid>
+      <description>
+
+&lt;h2 id=&#34;python3-6のダウンロード&#34;&gt;Python3.6のダウンロード&lt;/h2&gt;
+
+&lt;p&gt;公式サイトからtar.gzをダウンロードして展開。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-zsh&#34;&gt;% sudo mkdir /opt/python
+% sudo chown ymotongpoo /opt/python
+% mv ~/Download/Python-3.6.0.tgz /opt/python
+% cd /opt/python/
+% tar xzf Python-3.6.0.tgz
+% cd Python-3.6.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;必要なパッケージをインストールしておく。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-zsh&#34;&gt;% sudo apt-get install zlib1g-dev bzip2 libbz2-dev libreadline6-dev libjpeg62 \
+libjpeg62-dev libsqlite3-0 libsqlite3-dev libgdbm3 libgdbm-dev libssl1.0.0 \
+libssl-dev tk8.6-dev 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Pythonのconfigureはこんな感じ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-zsh&#34;&gt;% ./configure --prefix=/opt/python/3.6.0 \
+              --with-threads \
+              --with-computed-gotos \
+              --enable-optimizations \
+              --enable-ipv6 \
+              --with-system-expat \
+              --with-dbmliborder=gdbm:ndbm \
+              --with-system-ffi \
+              --with-system-libmpdec \
+              --enable-loadable-sqlite-extensions
+% make &amp;amp;&amp;amp; make install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;インストールできたかのテスト&#34;&gt;インストールできたかのテスト&lt;/h2&gt;
+
+&lt;p&gt;実際にPython3のコマンドを叩いてみるだけの簡単なテスト。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-zsh&#34;&gt;% which python3
+/opt/python/3.6.0/bin/python3
+% python3
+Error in sitecustomize; set PYTHONVERBOSE for traceback:
+ModuleNotFoundError: No module named &#39;__builtin__&#39;
+Python 3.6.0 (default, Jan 11 2017, 17:46:21)
+[GCC 4.8.4] on linux
+Type &amp;quot;help&amp;quot;, &amp;quot;copyright&amp;quot;, &amp;quot;credits&amp;quot; or &amp;quot;license&amp;quot; for more information.
+&amp;gt;&amp;gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;あれ、なんかエラーでてる。よく見てみたら &lt;code&gt;PYTHONPATH&lt;/code&gt; に変な値が入ってる。
+しかしこれはインストール先の環境では勝手に変更したらいけないものなので困った。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-zsh&#34;&gt;% python3 -E
+Python 3.6.0 (default, Jan 11 2017, 17:46:21)
+[GCC 4.8.4] on linux
+Type &amp;quot;help&amp;quot;, &amp;quot;copyright&amp;quot;, &amp;quot;credits&amp;quot; or &amp;quot;license&amp;quot; for more information.
+&amp;gt;&amp;gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;確かに &lt;code&gt;PYTHONPATH&lt;/code&gt; なしで起動したら問題なくできた。&lt;/p&gt;
+
+&lt;h2 id=&#34;しかたなくworkaround&#34;&gt;しかたなくworkaround&lt;/h2&gt;
+
+&lt;p&gt;仕方ないので、 &lt;code&gt;venv&lt;/code&gt; で環境を作った後、 &lt;code&gt;activate&lt;/code&gt; スクリプトでいじることにした。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-zsh&#34;&gt;% python3 -E -m venv jupyter
+% cd jupyter
+% vim bin/activate  # この中でほかの環境変数と同様にPYTHONPATHをいじる設定を書いた
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これでうまくいった。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>wercker使うのをあきらめた（けど、頑張ったらできた）</title>

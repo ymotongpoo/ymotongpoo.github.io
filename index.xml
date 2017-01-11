@@ -6,8 +6,90 @@
     <description>Recent content on depository</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Mon, 09 Jan 2017 23:25:34 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 11 Jan 2017 13:51:58 +0900</lastBuildDate>
     <atom:link href="https://ymotongpoo.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Python3.6をLinuxにインストールした</title>
+      <link>https://ymotongpoo.github.io/tech/2017/01/11/installing-python3.6-on-linux/</link>
+      <pubDate>Wed, 11 Jan 2017 13:51:58 +0900</pubDate>
+      
+      <guid>https://ymotongpoo.github.io/tech/2017/01/11/installing-python3.6-on-linux/</guid>
+      <description>
+
+&lt;h2 id=&#34;python3-6のダウンロード&#34;&gt;Python3.6のダウンロード&lt;/h2&gt;
+
+&lt;p&gt;公式サイトからtar.gzをダウンロードして展開。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-zsh&#34;&gt;% sudo mkdir /opt/python
+% sudo chown ymotongpoo /opt/python
+% mv ~/Download/Python-3.6.0.tgz /opt/python
+% cd /opt/python/
+% tar xzf Python-3.6.0.tgz
+% cd Python-3.6.0
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;必要なパッケージをインストールしておく。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-zsh&#34;&gt;% sudo apt-get install zlib1g-dev bzip2 libbz2-dev libreadline6-dev libjpeg62 \
+libjpeg62-dev libsqlite3-0 libsqlite3-dev libgdbm3 libgdbm-dev libssl1.0.0 \
+libssl-dev tk8.6-dev 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Pythonのconfigureはこんな感じ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-zsh&#34;&gt;% ./configure --prefix=/opt/python/3.6.0 \
+              --with-threads \
+              --with-computed-gotos \
+              --enable-optimizations \
+              --enable-ipv6 \
+              --with-system-expat \
+              --with-dbmliborder=gdbm:ndbm \
+              --with-system-ffi \
+              --with-system-libmpdec \
+              --enable-loadable-sqlite-extensions
+% make &amp;amp;&amp;amp; make install
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;インストールできたかのテスト&#34;&gt;インストールできたかのテスト&lt;/h2&gt;
+
+&lt;p&gt;実際にPython3のコマンドを叩いてみるだけの簡単なテスト。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-zsh&#34;&gt;% which python3
+/opt/python/3.6.0/bin/python3
+% python3
+Error in sitecustomize; set PYTHONVERBOSE for traceback:
+ModuleNotFoundError: No module named &#39;__builtin__&#39;
+Python 3.6.0 (default, Jan 11 2017, 17:46:21)
+[GCC 4.8.4] on linux
+Type &amp;quot;help&amp;quot;, &amp;quot;copyright&amp;quot;, &amp;quot;credits&amp;quot; or &amp;quot;license&amp;quot; for more information.
+&amp;gt;&amp;gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;あれ、なんかエラーでてる。よく見てみたら &lt;code&gt;PYTHONPATH&lt;/code&gt; に変な値が入ってる。
+しかしこれはインストール先の環境では勝手に変更したらいけないものなので困った。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-zsh&#34;&gt;% python3 -E
+Python 3.6.0 (default, Jan 11 2017, 17:46:21)
+[GCC 4.8.4] on linux
+Type &amp;quot;help&amp;quot;, &amp;quot;copyright&amp;quot;, &amp;quot;credits&amp;quot; or &amp;quot;license&amp;quot; for more information.
+&amp;gt;&amp;gt;&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;確かに &lt;code&gt;PYTHONPATH&lt;/code&gt; なしで起動したら問題なくできた。&lt;/p&gt;
+
+&lt;h2 id=&#34;しかたなくworkaround&#34;&gt;しかたなくworkaround&lt;/h2&gt;
+
+&lt;p&gt;仕方ないので、 &lt;code&gt;venv&lt;/code&gt; で環境を作った後、 &lt;code&gt;activate&lt;/code&gt; スクリプトでいじることにした。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-zsh&#34;&gt;% python3 -E -m venv jupyter
+% cd jupyter
+% vim bin/activate  # この中でほかの環境変数と同様にPYTHONPATHをいじる設定を書いた
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これでうまくいった。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>My Wedding Fair</title>
@@ -575,28 +657,6 @@ PING 192.168.1.1 (192.168.1.1): 1472 data bytes
 &lt;p&gt;昨日は対応言語を増やしたので、今日は対応ライセンスを増やした。BSDの3条項ライセンスと2条項ライセンスの新旧の認識が間違ってたので、&lt;code&gt;BSD&lt;/code&gt;という設定はやめて、&lt;code&gt;BSD2&lt;/code&gt;と&lt;code&gt;BSD3&lt;/code&gt;にした。この対応で破壊的変更が入った。あとはCCの追加かなあ。&lt;/p&gt;
 
 &lt;p&gt;また1行コメントと複数行コメントのどちらを優先して使用するかのオプションも追加した。これでとりあえずの変更はおしまい。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>低温調理の会とか</title>
-      <link>https://ymotongpoo.github.io/diary/2016/12/23/anova-party/</link>
-      <pubDate>Fri, 23 Dec 2016 08:42:44 +0900</pubDate>
-      
-      <guid>https://ymotongpoo.github.io/diary/2016/12/23/anova-party/</guid>
-      <description>
-
-&lt;h2 id=&#34;低温調理の会&#34;&gt;低温調理の会&lt;/h2&gt;
-
-&lt;p&gt;@adamrocker と @atusi とAnovaを使って低温調理の会をした。大量の肉をAnovaでやっていくのはとても良い。自宅でもたまには塊肉を複数浮かべた絵を見たい。グラスフェッドの肉は50℃で長くやっていくと仕上げたときにふわふわの&lt;/p&gt;
-
-&lt;h2 id=&#34;vsc-licenserの更新&#34;&gt;vsc-licenserの更新&lt;/h2&gt;
-
-&lt;p&gt;Visual Studio Code Advent Calendar 2016に&lt;a href=&#34;http://ymotongpoo.hatenablog.com/entry/2016/12/21/164554&#34;&gt;投稿した&lt;/a&gt;ので、久々に &lt;a href=&#34;https://github.com/ymotongpoo/vsc-licenser&#34;&gt;vsc-licenser&lt;/a&gt;を更新しようかなと思い始めた。手始めに、コメントを1行コメントと複数行コメントの両方でできるようにしようと思う。&lt;/p&gt;
-
-&lt;p&gt;まずはバージョン0.3.0として、これまでマップで対応していたコメント記法の情報を専用クラスを作って1行コメントと複数行コメントの両方を保持できるようにしたので、今後設定で好みのスタイルで出来るようになっている。&lt;/p&gt;
-
-&lt;p&gt;そのついでで、対応言語の数を増やしたので、次は対応ライセンスの数を増やしたい。&lt;/p&gt;
 </description>
     </item>
     

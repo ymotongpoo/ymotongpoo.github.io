@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://ymotongpoo.github.io/tech/2017/01/11/installing-python3.6-on-linux/</loc>
+    <lastmod>2017-01-11T13:51:58+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ymotongpoo.github.io/diary/2017/01/09/wedding-fair/</loc>
     <lastmod>2017-01-09T23:25:34+09:00</lastmod>
   </url>
@@ -111,6 +116,12 @@
   </url>
   
   <url>
+    <loc>https://ymotongpoo.github.io/tags/linux/</loc>
+    <lastmod>2017-01-11T13:51:58+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ymotongpoo.github.io/tags/log/</loc>
     <lastmod>2017-01-05T22:42:37+09:00</lastmod>
     <priority>0</priority>
@@ -125,6 +136,12 @@
   <url>
     <loc>https://ymotongpoo.github.io/tags/network/</loc>
     <lastmod>2016-12-25T11:48:49+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ymotongpoo.github.io/tags/python/</loc>
+    <lastmod>2017-01-11T13:51:58+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -147,7 +164,7 @@
   
   <url>
     <loc>https://ymotongpoo.github.io/tech/</loc>
-    <lastmod>2017-01-09T01:40:22+09:00</lastmod>
+    <lastmod>2017-01-11T13:51:58+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -177,7 +194,7 @@
   
   <url>
     <loc>https://ymotongpoo.github.io/</loc>
-    <lastmod>2017-01-09T23:25:34+09:00</lastmod>
+    <lastmod>2017-01-11T13:51:58+09:00</lastmod>
     <priority>0</priority>
   </url>
   
