@@ -15,7 +15,7 @@ build:hugo-site:
   - "/home/hugo/hugo --theme=tropic"
   artifacts:
     paths:
-    - public/
+    - public/.
 
 deploy:push-to-master:
   only:
@@ -24,6 +24,7 @@ deploy:push-to-master:
   before_script:
   script:
   - "git checkout master"
+  - "ls -lh"
   - "git config --global user.email ymotongpoo@gmail"
   - "git config --global user.name Yoshi Yamaguchi"
   - "cp -rf public/* ."
