@@ -6,8 +6,49 @@
     <description>Recent content in Teches on depository</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Wed, 11 Jan 2017 13:51:58 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 12 Jan 2017 13:45:26 +0900</lastBuildDate>
     <atom:link href="https://ymotongpoo.github.io/tech/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Jupyter Notebookのインストール</title>
+      <link>https://ymotongpoo.github.io/tech/2017/01/12/installing-jupyter-notebook/</link>
+      <pubDate>Thu, 12 Jan 2017 13:45:26 +0900</pubDate>
+      
+      <guid>https://ymotongpoo.github.io/tech/2017/01/12/installing-jupyter-notebook/</guid>
+      <description>
+
+&lt;h2 id=&#34;jupyter-notebookのインストール&#34;&gt;Jupyter Notebookのインストール&lt;/h2&gt;
+
+&lt;p&gt;いい感じにipythonをブラウザ上で使ったりして、履歴も保存できたりする便利なやつ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-zsh&#34;&gt;% python3 -m venv jupyter
+% cd jupyter
+% pip3 install jupyter numpy scipy scikit-learn pandas
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これで問題なくインストールできた。楽。&lt;/p&gt;
+
+&lt;h2 id=&#34;jupyter-notebookの起動&#34;&gt;Jupyter Notebookの起動&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-zsh&#34;&gt;% jupyter notebook
+[I 11:29:00.155 NotebookApp] Serving notebooks from local directory:
+/usr/local/google/home/yoshifumi/src/projects/jupyter
+[I 11:29:00.155 NotebookApp] 0 active kernels
+[I 11:29:00.155 NotebookApp] The Jupyter Notebook is running at:
+http://localhost:8888/?token=3472f8ea9c4afb02dcba5d04bf417edc9f744448c847aece
+[I 11:29:00.155 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
+[W 11:29:00.156 NotebookApp] No web browser found: could not locate runnable browser.
+[C 11:29:00.156 NotebookApp]
+
+     Copy/paste this URL into your browser when you connect for the first time,
+     to login with a token:
+         http://localhost:8888/?token=3472f8ea9c4afb02dcba5d04bf417edc9f744448c847aece
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これで立ち上がってるのでログの下部に書いてあるURLにアクセスする。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Python3.6をLinuxにインストールした</title>
