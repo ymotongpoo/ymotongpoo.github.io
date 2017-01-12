@@ -6,8 +6,86 @@
     <description>Recent content in Diaries on depository</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Mon, 09 Jan 2017 23:25:34 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 12 Jan 2017 14:04:30 +0900</lastBuildDate>
     <atom:link href="https://ymotongpoo.github.io/diary/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Udemy Day1</title>
+      <link>https://ymotongpoo.github.io/diary/2017/01/12/udemy-day1/</link>
+      <pubDate>Thu, 12 Jan 2017 14:04:30 +0900</pubDate>
+      
+      <guid>https://ymotongpoo.github.io/diary/2017/01/12/udemy-day1/</guid>
+      <description>
+
+&lt;h2 id=&#34;section-3&#34;&gt;Section 3&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/playlist?list=PLDVKrmVEl_Wt0WoaQqDfRVt9EK1lQjZu5&#34;&gt;YouTubeのscikit-learnチュートリアル集（英語）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.youtube.com/playlist?list=PLQVvvaa0QuDfKTOs3Keq_kaG2P55YRn5v&#34;&gt;Machine Learning with Python&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.kamishima.net/mlmpyja/&#34;&gt;機械学習の Python との出会い Machine Learning Meets Python&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.slideshare.net/yasutomo57jp/pythondeep-learning-60544586&#34;&gt;Pythonによる機械学習入門〜基礎からDeep Learningまで〜（電子情報通信学会総合大会2016）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.slideshare.net/yasutomo57jp/python-svmdeep-learning&#34;&gt;Pythonによる機械学習入門 ～SVMからDeep Learningまで～（SSII2016）&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.amazon.co.jp/dp/4844380605/&#34;&gt;Python機械学習プログラミング 達人データサイエンティストによる理論と実践, インプレス, 2016&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://www.amazon.co.jp/dp/4873116988/&#34;&gt;実践 機械学習システム, オライリージャパン, 2014&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;lecture-29-33&#34;&gt;Lecture 29-33&lt;/h2&gt;
+
+&lt;h3 id=&#34;scikit-learnでの大まかな手順&#34;&gt;scikit-learnでの大まかな手順&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;データセットを用意する&lt;/li&gt;
+&lt;li&gt;学習用とテスト用にデータセットを分ける&lt;/li&gt;
+&lt;li&gt;識別器を用意する&lt;/li&gt;
+&lt;li&gt;学習させる&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;データセットを分ける場合はランダムに分けるように気をつけて。また分割を何度も行って、正解率の平均と標準偏差を出しておこう。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Cross Validation (交差確認)
+
+&lt;ul&gt;
+&lt;li&gt;K-fold CV (K=3, 5, 10)&lt;/li&gt;
+&lt;li&gt;Leave one out&lt;/li&gt;
+&lt;li&gt;Leave group out&lt;/li&gt;
+&lt;li&gt;Hold out&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;Stratified (層化)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;識別器はScikit Learnにいろいろプリセットで用意されていて楽ちん。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;from sklearn import linear_model
+cls = linear_model.LogisticRegression()
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;学習させるのは識別器の &lt;code&gt;fit()&lt;/code&gt; メソッドを使うだけ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;cls.fit(x_train, y_train)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;サンプル数によってやり方が変わってくる。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;N ~ 10 : 機械学習する意味ない&lt;/li&gt;
+&lt;li&gt;N ~ 100 : Leave one out CVで可能かも。でもデータは増やしたい。&lt;/li&gt;
+&lt;li&gt;N ~ 1000 : まともになってくる。10-fold CVで可能。&lt;/li&gt;
+&lt;li&gt;N ~ 10000 : 良い性能が期待できる。K-fold CV (K &amp;lt; 10)&lt;/li&gt;
+&lt;li&gt;N ~ 100000 : 実応用。Hold-out以外は無理。かなり工夫が必要。&lt;/li&gt;
+&lt;li&gt;N &amp;gt; 100000 : 最先端&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;キーワードを拾っていく&#34;&gt;キーワードを拾っていく&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;ロジスティクス回帰&lt;/li&gt;
+&lt;li&gt;Cross Validation&lt;/li&gt;
+&lt;li&gt;Hold out&lt;/li&gt;
+&lt;li&gt;Stratified&lt;/li&gt;
+&lt;/ul&gt;
+</description>
+    </item>
     
     <item>
       <title>My Wedding Fair</title>

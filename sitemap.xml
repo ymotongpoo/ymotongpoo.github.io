@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://ymotongpoo.github.io/diary/2017/01/12/udemy-day1/</loc>
+    <lastmod>2017-01-12T14:04:30+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ymotongpoo.github.io/tech/2017/01/12/installing-jupyter-notebook/</loc>
     <lastmod>2017-01-12T13:45:26+09:00</lastmod>
   </url>
@@ -104,7 +109,7 @@
   
   <url>
     <loc>https://ymotongpoo.github.io/diary/</loc>
-    <lastmod>2017-01-09T23:25:34+09:00</lastmod>
+    <lastmod>2017-01-12T14:04:30+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -134,7 +139,13 @@
   
   <url>
     <loc>https://ymotongpoo.github.io/tags/log/</loc>
-    <lastmod>2017-01-05T22:42:37+09:00</lastmod>
+    <lastmod>2017-01-12T14:04:30+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ymotongpoo.github.io/tags/ml/</loc>
+    <lastmod>2017-01-12T14:04:30+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -165,6 +176,12 @@
   <url>
     <loc>https://ymotongpoo.github.io/tags/sklearn/</loc>
     <lastmod>2016-12-21T23:35:31+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ymotongpoo.github.io/tags/study/</loc>
+    <lastmod>2017-01-12T14:04:30+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -205,7 +222,7 @@
   
   <url>
     <loc>https://ymotongpoo.github.io/</loc>
-    <lastmod>2017-01-12T13:45:26+09:00</lastmod>
+    <lastmod>2017-01-12T14:04:30+09:00</lastmod>
     <priority>0</priority>
   </url>
   
