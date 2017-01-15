@@ -15,7 +15,7 @@ build:hugo-site:
   - "/home/hugo/hugo --theme=tropic"
   artifacts:
     paths:
-    - public/
+    - public/.
 
 deploy:push-to-master:
   only:
@@ -26,7 +26,8 @@ deploy:push-to-master:
   - "git checkout master"
   - "git config --global user.email ymotongpoo@gmail"
   - "git config --global user.name Yoshi Yamaguchi"
-  - "cp -rf public/* ."
+  - "cp -a public/* ."
+  - "rm -rf public"
   - "git add --all"
   - "git commit -m '[gitlab-ci]'"
   - "git push origin master"
