@@ -9,6 +9,32 @@
     <atom:link href="https://ymotongpoo.github.io/tags/life/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>DockerでJupyter Notebookの環境を作り始めた</title>
+      <link>https://ymotongpoo.github.io/diary/2017/01/15/docker-jupyter/</link>
+      <pubDate>Sun, 15 Jan 2017 23:49:28 +0900</pubDate>
+      
+      <guid>https://ymotongpoo.github.io/diary/2017/01/15/docker-jupyter/</guid>
+      <description>
+
+&lt;h2 id=&#34;dockerでjupyter-notebookの環境を作り始めた&#34;&gt;DockerでJupyter Notebookの環境を作り始めた&lt;/h2&gt;
+
+&lt;p&gt;Scikit Learnを使って機械学習の勉強をし始めたんだけれども、どうせならDocker Imageを使おうかと思った。見てみたら、公式で配布しているものは&lt;a href=&#34;https://github.com/jupyter/docker-stacks/blob/master/base-notebook/Dockerfile#L59-L73&#34;&gt;Anacondaを使っている&lt;/a&gt;ので正直気に食わない。&lt;/p&gt;
+
+&lt;p&gt;ということでAlpine Linuxを使って最小構成のDocker Imageを自前で作り始めた。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/ymotongpoo/dockerfiles/blob/master/jupyter-notebook/Dockerfile.jupyter-alpine&#34;&gt;Dockerfile.jupyter-alpine&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;AlpineにはBLASとLAPACKのパッケージがないので自前ビルドする必要があり、そこでちょっとはまった。&lt;/p&gt;
+
+&lt;h2 id=&#34;婚約指輪を受け取りに行った&#34;&gt;婚約指輪を受け取りに行った&lt;/h2&gt;
+
+&lt;p&gt;昨年末に取り寄せ注文した婚約指輪を今日受け取りに行った。こんな機会でもなければ絶対に買わないようなものなので、なかなかの体験をした。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>My Wedding Fair</title>
       <link>https://ymotongpoo.github.io/diary/2017/01/09/wedding-fair/</link>
       <pubDate>Mon, 09 Jan 2017 23:25:34 +0900</pubDate>
