@@ -18,8 +18,8 @@
 
 &lt;h2 id=&#34;section-4-5&#34;&gt;Section 4-5&lt;/h2&gt;
 
-&lt;p&gt;$B%G!&amp;lt;%?$+$iFCD&amp;rsquo;NL$K$7$J$$$H5!3#3X=,$G$-$^$;$s$h$H$$$&amp;amp;OC!#(B
-$BJ8;zNs$d2hA|$r$I$N$h$&amp;amp;$KFCD&amp;rsquo;NL%Y%/%H%k$KJQ49$G$-$k$+!#(B&lt;/p&gt;
+&lt;p&gt;データから特徴量にしないと機械学習できませんよという話。
+文字列や画像をどのように特徴量ベクトルに変換できるか。&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;a href=&#34;http://www.gutenberg.org/&#34;&gt;Project Gutenberg&lt;/a&gt;&lt;/li&gt;
@@ -28,56 +28,56 @@
 &lt;h3 id=&#34;lecture-41-53&#34;&gt;Lecture 41-53&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;$B%G!&amp;lt;%?&amp;lt;hF@(B&lt;/li&gt;
-&lt;li&gt;$BFCD&amp;rsquo;NLCj=P(B&lt;/li&gt;
-&lt;li&gt;$BFCD&amp;rsquo;A*Br(B&lt;/li&gt;
-&lt;li&gt;$B@55,2=(B&lt;/li&gt;
-&lt;li&gt;$B&amp;lt;1JL(B&lt;/li&gt;
+&lt;li&gt;データ取得&lt;/li&gt;
+&lt;li&gt;特徴量抽出&lt;/li&gt;
+&lt;li&gt;特徴選択&lt;/li&gt;
+&lt;li&gt;正規化&lt;/li&gt;
+&lt;li&gt;識別&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;$B7gB;CM!&amp;ldquo;30$lCM$J$I$OA0=hM}$H$7$F&amp;lt;+J,$G4hD%$C$F&amp;lt;h$j=|$/$+2C9)$r$7$J$1$l$P$$$1$J$$!#(B&lt;/p&gt;
+&lt;p&gt;欠損値、外れ値などは前処理として自分で頑張って取り除くか加工をしなければいけない。&lt;/p&gt;
 
-&lt;p&gt;$B7gB;CM$N&amp;gt;l9g(B&lt;/p&gt;
+&lt;p&gt;欠損値の場合&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;$B&amp;lt;h$j=|$/(B&lt;/li&gt;
-&lt;li&gt;$BJ?6QCM$GKd$a$k(B(&lt;code&gt;Imputer&lt;/code&gt;)$B!#$3$N$H$-$NBP1~$H$7$F!&amp;ldquo;30$lCM$r@h$K30$7$F$*$/$+!&amp;ldquo;Cf1{CM$r;H$&amp;amp;!#(B&lt;/li&gt;
+&lt;li&gt;取り除く&lt;/li&gt;
+&lt;li&gt;平均値で埋める(&lt;code&gt;Imputer&lt;/code&gt;)。このときの対応として、外れ値を先に外しておくか、中央値を使う。&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;p&gt;$B$^$?&amp;lt;!85$N:o8:$K&lt;g@.J,J,@O$r;H$&amp;$3$H$,$G$-$k!#&lt;g@.J,$r4sM?N(=g$K$$$/$D$+A*Br$9$k$3$H$@$1$GM=B,N($r;D$7$?$^$^&lt;!85?t$r&gt;/$J$/$G$-$k!#(B&lt;/p&gt;
+&lt;p&gt;また次元の削減に主成分分析を使うことができる。主成分を寄与率順にいくつか選択することだけで予測率を残したまま次元数を少なくできる。&lt;/p&gt;
 
-&lt;p&gt;$B$H$j$&amp;ldquo;$($:2?$+$7$i$N&amp;lt;!85JQ49$r$9$kN.$l$O@~7A!&amp;amp;Hs@~7A$K$h$i$:(B&lt;/p&gt;
+&lt;p&gt;とりあえず何かしらの次元変換をする流れは線形・非線形によらず&lt;/p&gt;
 
 &lt;ol&gt;
-&lt;li&gt;$BJQ49%b%G%k$rMQ0U$9$k(B&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;fit()&lt;/code&gt; $B$9$k(B&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;transform()&lt;/code&gt; $B$9$k(B&lt;/li&gt;
+&lt;li&gt;変換モデルを用意する&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;fit()&lt;/code&gt; する&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;transform()&lt;/code&gt; する&lt;/li&gt;
 &lt;/ol&gt;
 
-&lt;p&gt;$B$H$$$&amp;amp;&amp;lt;j=g$K$J$k!#Hs@~7AJQ49$G&amp;lt;!?t$rA}$d$9$H$-$O:G8e$N&amp;lt;jCJ$K$7$h$&amp;amp;!#(B&lt;/p&gt;
+&lt;p&gt;という手順になる。非線形変換で次数を増やすときは最後の手段にしよう。&lt;/p&gt;
 
-&lt;p&gt;$BI8=`2=!&amp;ldquo;@55,2=$O&amp;lt;!85:o8:$h$j$b$J$K$h$j$bBg;v$J$N$G@dBP$K$d$m$&amp;amp;!#(B&lt;/p&gt;
+&lt;p&gt;標準化、正規化は次元削減よりもなによりも大事なので絶対にやろう。&lt;/p&gt;
 
-&lt;p&gt;ZCA$BGr?&amp;lsquo;2=$O(BDeep Learning$B$J$I$K$h$/;H$o$l$k!#(B&lt;/p&gt;
+&lt;p&gt;ZCA白色化はDeep Learningなどによく使われる。&lt;/p&gt;
 
 &lt;h2 id=&#34;secition-6&#34;&gt;Secition 6&lt;/h2&gt;
 
 &lt;h3 id=&#34;lecture-54-61&#34;&gt;Lecture 54-61&lt;/h3&gt;
 
-&lt;p&gt;2$B%/%i%9LdBj$G$&amp;ldquo;$l$P(Bconfusion matrix$B$r:n$C$F!&amp;ldquo;K\Ev$KM=B,$,4V0c$C$F$$$?$i$^$:$$$b$N$N8D?t$r8+6K$a$k!#(B
-$B$5$i$K(B SciKit Learn $B$K$O(B &lt;code&gt;classification_report&lt;/code&gt; $B$H$$$&amp;amp;JXMx$J$b$N$,$&amp;ldquo;$k!#(B&lt;/p&gt;
+&lt;p&gt;2クラス問題であればconfusion matrixを作って、本当に予測が間違っていたらまずいものの個数を見極める。
+さらに SciKit Learn には &lt;code&gt;classification_report&lt;/code&gt; という便利なものがある。&lt;/p&gt;
 
-&lt;p&gt;$B8!=P$7$?$$CM$N(Brecall$B$,Bg;v!#(B&lt;/p&gt;
+&lt;p&gt;検出したい値のrecallが大事。&lt;/p&gt;
 
-&lt;p&gt;&lt;code&gt;precision_recall_fscore_support&lt;/code&gt; $B$,$9$4$/JXMx$C$]$$!#(B&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;precision_recall_fscore_support&lt;/code&gt; がすごく便利っぽい。&lt;/p&gt;
 
-&lt;p&gt;$BB?%/%i%9LdBj$G$b(B &lt;code&gt;classification_report&lt;/code&gt; $B$NCM$r85$K$I$N%/%i%9$NG&amp;rsquo;&amp;lt;1N($,0-$$$+H=CG$G$-$k!#(B&lt;/p&gt;
+&lt;p&gt;多クラス問題でも &lt;code&gt;classification_report&lt;/code&gt; の値を元にどのクラスの認識率が悪いか判断できる。&lt;/p&gt;
 
-&lt;h3 id=&#34;b-o-i-b&#34;&gt;$B%-!&amp;lt;%o!&amp;lt;%I(B&lt;/h3&gt;
+&lt;h3 id=&#34;キーワード&#34;&gt;キーワード&lt;/h3&gt;
 
 &lt;ul&gt;
-&lt;li&gt;$B&amp;amp;VFs&amp;gt;h8!Dj(B&lt;/li&gt;
-&lt;li&gt;$B&amp;lt;g@.J,J,@O(B (PCA)&lt;/li&gt;
+&lt;li&gt;χ二乗検定&lt;/li&gt;
+&lt;li&gt;主成分分析 (PCA)&lt;/li&gt;
 &lt;/ul&gt;
 </description>
     </item>

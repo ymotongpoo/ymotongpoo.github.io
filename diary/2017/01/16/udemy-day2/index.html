@@ -29,21 +29,21 @@
 <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
 
     
-<meta name="description" content=" Section 4-5 $B%G!&amp;lt;%?$&#43;$iFCD&amp;rsquo;NL$K$7$J$$$H5!3#3X=,$G$-$^$;$s$h$H$$$&amp;amp;OC!#(B $BJ8;zNs$d2hA|$r$I$N$h$&amp;amp;$KFCD&amp;rsquo;NL%Y%/%H%k$KJQ49$G$-$k$&#43;!#(B Project Gutenberg  Lecture 41-53  $B%G!&amp;lt;%?&amp;lt;hF@(B $BFCD&amp;rsquo;NLCj=P(B $BFCD&amp;rsquo;A*Br(B $B@55,2=(B $B&amp;lt;1JL(B  $B7gB;CM!&amp;ldquo;30$lCM$J$I$OA0=hM}$H$7$F&amp;lt;&#43;J,$G4hD%$C$F&amp;lt;h$j=|$/$&#43;2C9)$r$7$J$1$l$P$$$1$J$$!#(B$B7gB;CM$N&amp;gt;l9g(B $B&amp;lt;h$j=|$/(B $BJ?6QCM$GKd$a$k(B(Imputer)$B!#$3$N$H$-$NBP1~$H$7$F!&amp;ldquo;30$lCM$r@h$K30$7$F$*$/$&#43;!&amp;ldquo;Cf1{CM$r;H$&amp;amp;!#(B  $B$^$?&amp;lt;!85$N:o8:$K/$J$/$G$-$k!#(B$B$H$j$&amp;ldquo;$($:2?$&#43;$7$i$N&amp;lt;!85JQ49$r$9$kN.$l$O@~7A!&amp;amp;Hs@~7A$K$h$i$:(B $BJQ49%b%G%k$rMQ0U$9$k(B fit() $B$9$k(B transform() $B$9$k(B  $B$H$$$&amp;amp;&amp;lt;j=g$K$J$k!#Hs@~7AJQ49$G&amp;lt;!?t$rA}$d$9$H$-$O:G8e$N&amp;lt;jCJ$K$7$h$&amp;amp;!#(B$BI8=`2=!&amp;ldquo;@55,2=$O&amp;lt;!85:o8:$h$j$b$J$K$h$j$bBg;v$J$N$G@dBP$K$d$m$&amp;amp;!#(BZCA$BGr?&amp;lsquo;2=$O(BDeep Learning$B$J$I$K$h$/;H$o$l$k!#(BSecition 6 Lecture 54-61 2$B%/%i%9LdBj$G$&amp;ldquo;$l$P(Bconfusion matrix$B$r:n$C$F!&amp;ldquo;K\Ev$KM=B,$,4V0c$C$F$$$?$i$^$:$$$b$N$N8D?t$r8&#43;6K$a$k!#(B $B$5$i$K(B SciKit Learn $B$K$O(B classification_report $B$H$$$&amp;amp;JXMx$J$b$N$,$&amp;ldquo;$k!#(B$B8!=P$7$?$$CM$N(Brecall$B$,Bg;v!#(Bprecision_recall_fscore_support $B$,$9$4$/JXMx$C$]$$!#(B$BB?%/%i%9LdBj$G$b(B classification_report $B$NCM$r85$K$I$N%/%i%9$NG&amp;rsquo;&amp;lt;1N($,0-$$$&#43;H=CG$G$-$k!#(B$B%-!&amp;lt;%o!&amp;lt;%I(B  $B&amp;amp;VFs&amp;gt;h8!Dj(B $B&amp;lt;g@.J,J,@O(B (PCA)  ">
+<meta name="description" content="Section 4-5 データから特徴量にしないと機械学習できませんよという話。 文字列や画像をどのように特徴量ベクトルに変換できるか。 Project Gutenberg Lecture 41-53 データ取得 特徴量抽">
 
 <meta property="og:title" content="Udemy Day2 - depository">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://ymotongpoo.github.io/diary/2017/01/16/udemy-day2/">
 <meta property="og:image" content="https://ymotongpoo.github.io/images/default.png">
 <meta property="og:site_name" content="depository">
-<meta property="og:description" content=" Section 4-5 $B%G!&amp;lt;%?$&#43;$iFCD&amp;rsquo;NL$K$7$J$$$H5!3#3X=,$G$-$^$;$s$h$H$$$&amp;amp;OC!#(B $BJ8;zNs$d2hA|$r$I$N$h$&amp;amp;$KFCD&amp;rsquo;NL%Y%/%H%k$KJQ49$G$-$k$&#43;!#(B Project Gutenberg  Lecture 41-53  $B%G!&amp;lt;%?&amp;lt;hF@(B $BFCD&amp;rsquo;NLCj=P(B $BFCD&amp;rsquo;A*Br(B $B@55,2=(B $B&amp;lt;1JL(B  $B7gB;CM!&amp;ldquo;30$lCM$J$I$OA0=hM}$H$7$F&amp;lt;&#43;J,$G4hD%$C$F&amp;lt;h$j=|$/$&#43;2C9)$r$7$J$1$l$P$$$1$J$$!#(B$B7gB;CM$N&amp;gt;l9g(B $B&amp;lt;h$j=|$/(B $BJ?6QCM$GKd$a$k(B(Imputer)$B!#$3$N$H$-$NBP1~$H$7$F!&amp;ldquo;30$lCM$r@h$K30$7$F$*$/$&#43;!&amp;ldquo;Cf1{CM$r;H$&amp;amp;!#(B  $B$^$?&amp;lt;!85$N:o8:$K/$J$/$G$-$k!#(B$B$H$j$&amp;ldquo;$($:2?$&#43;$7$i$N&amp;lt;!85JQ49$r$9$kN.$l$O@~7A!&amp;amp;Hs@~7A$K$h$i$:(B $BJQ49%b%G%k$rMQ0U$9$k(B fit() $B$9$k(B transform() $B$9$k(B  $B$H$$$&amp;amp;&amp;lt;j=g$K$J$k!#Hs@~7AJQ49$G&amp;lt;!?t$rA}$d$9$H$-$O:G8e$N&amp;lt;jCJ$K$7$h$&amp;amp;!#(B$BI8=`2=!&amp;ldquo;@55,2=$O&amp;lt;!85:o8:$h$j$b$J$K$h$j$bBg;v$J$N$G@dBP$K$d$m$&amp;amp;!#(BZCA$BGr?&amp;lsquo;2=$O(BDeep Learning$B$J$I$K$h$/;H$o$l$k!#(BSecition 6 Lecture 54-61 2$B%/%i%9LdBj$G$&amp;ldquo;$l$P(Bconfusion matrix$B$r:n$C$F!&amp;ldquo;K\Ev$KM=B,$,4V0c$C$F$$$?$i$^$:$$$b$N$N8D?t$r8&#43;6K$a$k!#(B $B$5$i$K(B SciKit Learn $B$K$O(B classification_report $B$H$$$&amp;amp;JXMx$J$b$N$,$&amp;ldquo;$k!#(B$B8!=P$7$?$$CM$N(Brecall$B$,Bg;v!#(Bprecision_recall_fscore_support $B$,$9$4$/JXMx$C$]$$!#(B$BB?%/%i%9LdBj$G$b(B classification_report $B$NCM$r85$K$I$N%/%i%9$NG&amp;rsquo;&amp;lt;1N($,0-$$$&#43;H=CG$G$-$k!#(B$B%-!&amp;lt;%o!&amp;lt;%I(B  $B&amp;amp;VFs&amp;gt;h8!Dj(B $B&amp;lt;g@.J,J,@O(B (PCA)  ">
+<meta property="og:description" content="Section 4-5 データから特徴量にしないと機械学習できませんよという話。 文字列や画像をどのように特徴量ベクトルに変換できるか。 Project Gutenberg Lecture 41-53 データ取得 特徴量抽">
 <meta property="og:locale" content="ja_JP">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="depository">
 <meta name="twitter:url" content="https://ymotongpoo.github.io/diary/2017/01/16/udemy-day2/">
 <meta name="twitter:title" content="Udemy Day2 - depository">
-<meta name="twitter:description" content=" Section 4-5 $B%G!&amp;lt;%?$&#43;$iFCD&amp;rsquo;NL$K$7$J$$$H5!3#3X=,$G$-$^$;$s$h$H$$$&amp;amp;OC!#(B $BJ8;zNs$d2hA|$r$I$N$h$&amp;amp;$KFCD&amp;rsquo;NL%Y%/%H%k$KJQ49$G$-$k$&#43;!#(B Project Gutenberg  Lecture 41-53  $B%G!&amp;lt;%?&amp;lt;hF@(B $BFCD&amp;rsquo;NLCj=P(B $BFCD&amp;rsquo;A*Br(B $B@55,2=(B $B&amp;lt;1JL(B  $B7gB;CM!&amp;ldquo;30$lCM$J$I$OA0=hM}$H$7$F&amp;lt;&#43;J,$G4hD%$C$F&amp;lt;h$j=|$/$&#43;2C9)$r$7$J$1$l$P$$$1$J$$!#(B$B7gB;CM$N&amp;gt;l9g(B $B&amp;lt;h$j=|$/(B $BJ?6QCM$GKd$a$k(B(Imputer)$B!#$3$N$H$-$NBP1~$H$7$F!&amp;ldquo;30$lCM$r@h$K30$7$F$*$/$&#43;!&amp;ldquo;Cf1{CM$r;H$&amp;amp;!#(B  $B$^$?&amp;lt;!85$N:o8:$K/$J$/$G$-$k!#(B$B$H$j$&amp;ldquo;$($:2?$&#43;$7$i$N&amp;lt;!85JQ49$r$9$kN.$l$O@~7A!&amp;amp;Hs@~7A$K$h$i$:(B $BJQ49%b%G%k$rMQ0U$9$k(B fit() $B$9$k(B transform() $B$9$k(B  $B$H$$$&amp;amp;&amp;lt;j=g$K$J$k!#Hs@~7AJQ49$G&amp;lt;!?t$rA}$d$9$H$-$O:G8e$N&amp;lt;jCJ$K$7$h$&amp;amp;!#(B$BI8=`2=!&amp;ldquo;@55,2=$O&amp;lt;!85:o8:$h$j$b$J$K$h$j$bBg;v$J$N$G@dBP$K$d$m$&amp;amp;!#(BZCA$BGr?&amp;lsquo;2=$O(BDeep Learning$B$J$I$K$h$/;H$o$l$k!#(BSecition 6 Lecture 54-61 2$B%/%i%9LdBj$G$&amp;ldquo;$l$P(Bconfusion matrix$B$r:n$C$F!&amp;ldquo;K\Ev$KM=B,$,4V0c$C$F$$$?$i$^$:$$$b$N$N8D?t$r8&#43;6K$a$k!#(B $B$5$i$K(B SciKit Learn $B$K$O(B classification_report $B$H$$$&amp;amp;JXMx$J$b$N$,$&amp;ldquo;$k!#(B$B8!=P$7$?$$CM$N(Brecall$B$,Bg;v!#(Bprecision_recall_fscore_support $B$,$9$4$/JXMx$C$]$$!#(B$BB?%/%i%9LdBj$G$b(B classification_report $B$NCM$r85$K$I$N%/%i%9$NG&amp;rsquo;&amp;lt;1N($,0-$$$&#43;H=CG$G$-$k!#(B$B%-!&amp;lt;%o!&amp;lt;%I(B  $B&amp;amp;VFs&amp;gt;h8!Dj(B $B&amp;lt;g@.J,J,@O(B (PCA)  ">
+<meta name="twitter:description" content="Section 4-5 データから特徴量にしないと機械学習できませんよという話。 文字列や画像をどのように特徴量ベクトルに変換できるか。 Project Gutenberg Lecture 41-53 データ取得 特徴量抽">
 <meta name="twitter:image" content="https://ymotongpoo.github.io/images/default.png">
 
 
@@ -78,7 +78,7 @@
         "height": 60
       }
     },
-    "description": " Section 4-5 $B%G!\x26lt;%?$\x2b$iFCD\x26rsquo;NL$K$7$J$$$H5!3#3X=,$G$-$^$;$s$h$H$$$\x26amp;OC!#(B $BJ8;zNs$d2hA|$r$I$N$h$\x26amp;$KFCD\x26rsquo;NL%Y%\/%H%k$KJQ49$G$-$k$\x2b!#(B\n Project Gutenberg  Lecture 41-53  $B%G!\x26lt;%?\x26lt;hF@(B $BFCD\x26rsquo;NLCj=P(B $BFCD\x26rsquo;A*Br(B $B@55,2=(B $B\x26lt;1JL(B  $B7gB;CM!\x26ldquo;30$lCM$J$I$OA0=hM}$H$7$F\x26lt;\x2bJ,$G4hD%$C$F\x26lt;h$j=|$\/$\x2b2C9)$r$7$J$1$l$P$$$1$J$$!#(B\n$B7gB;CM$N\x26gt;l9g(B\n $B\x26lt;h$j=|$\/(B $BJ?6QCM$GKd$a$k(B(Imputer)$B!#$3$N$H$-$NBP1~$H$7$F!\x26ldquo;30$lCM$r@h$K30$7$F$*$\/$\x2b!\x26ldquo;Cf1{CM$r;H$\x26amp;!#(B  $B$^$?\x26lt;!85$N:o8:$K\/$J$\/$G$-$k!#(B\n$B$H$j$\x26ldquo;$($:2?$\x2b$7$i$N\x26lt;!85JQ49$r$9$kN.$l$O@~7A!\x26amp;Hs@~7A$K$h$i$:(B\n $BJQ49%b%G%k$rMQ0U$9$k(B fit() $B$9$k(B transform() $B$9$k(B  $B$H$$$\x26amp;\x26lt;j=g$K$J$k!#Hs@~7AJQ49$G\x26lt;!?t$rA}$d$9$H$-$O:G8e$N\x26lt;jCJ$K$7$h$\x26amp;!#(B\n$BI8=`2=!\x26ldquo;@55,2=$O\x26lt;!85:o8:$h$j$b$J$K$h$j$bBg;v$J$N$G@dBP$K$d$m$\x26amp;!#(B\nZCA$BGr?\x26lsquo;2=$O(BDeep Learning$B$J$I$K$h$\/;H$o$l$k!#(B\nSecition 6 Lecture 54-61 2$B%\/%i%9LdBj$G$\x26ldquo;$l$P(Bconfusion matrix$B$r:n$C$F!\x26ldquo;K\\Ev$KM=B,$,4V0c$C$F$$$?$i$^$:$$$b$N$N8D?t$r8\x2b6K$a$k!#(B $B$5$i$K(B SciKit Learn $B$K$O(B classification_report $B$H$$$\x26amp;JXMx$J$b$N$,$\x26ldquo;$k!#(B\n$B8!=P$7$?$$CM$N(Brecall$B$,Bg;v!#(B\nprecision_recall_fscore_support $B$,$9$4$\/JXMx$C$]$$!#(B\n$BB?%\/%i%9LdBj$G$b(B classification_report $B$NCM$r85$K$I$N%\/%i%9$NG\x26rsquo;\x26lt;1N($,0-$$$\x2bH=CG$G$-$k!#(B\n$B%-!\x26lt;%o!\x26lt;%I(B  $B\x26amp;VFs\x26gt;h8!Dj(B $B\x26lt;g@.J,J,@O(B (PCA)  "
+    "description": "Section 4-5 データから特徴量にしないと機械学習できませんよという話。 文字列や画像をどのように特徴量ベクトルに変換できるか。 Project Gutenberg Lecture 41-53 データ取得 特徴量抽"
   }
 </script>
 
@@ -165,8 +165,8 @@
 
 <h2 id="section-4-5">Section 4-5</h2>
 
-<p>$B%G!&lt;%?$+$iFCD&rsquo;NL$K$7$J$$$H5!3#3X=,$G$-$^$;$s$h$H$$$&amp;OC!#(B
-$BJ8;zNs$d2hA|$r$I$N$h$&amp;$KFCD&rsquo;NL%Y%/%H%k$KJQ49$G$-$k$+!#(B</p>
+<p>データから特徴量にしないと機械学習できませんよという話。
+文字列や画像をどのように特徴量ベクトルに変換できるか。</p>
 
 <ul>
 <li><a href="http://www.gutenberg.org/">Project Gutenberg</a></li>
@@ -175,56 +175,56 @@
 <h3 id="lecture-41-53">Lecture 41-53</h3>
 
 <ul>
-<li>$B%G!&lt;%?&lt;hF@(B</li>
-<li>$BFCD&rsquo;NLCj=P(B</li>
-<li>$BFCD&rsquo;A*Br(B</li>
-<li>$B@55,2=(B</li>
-<li>$B&lt;1JL(B</li>
+<li>データ取得</li>
+<li>特徴量抽出</li>
+<li>特徴選択</li>
+<li>正規化</li>
+<li>識別</li>
 </ul>
 
-<p>$B7gB;CM!&ldquo;30$lCM$J$I$OA0=hM}$H$7$F&lt;+J,$G4hD%$C$F&lt;h$j=|$/$+2C9)$r$7$J$1$l$P$$$1$J$$!#(B</p>
+<p>欠損値、外れ値などは前処理として自分で頑張って取り除くか加工をしなければいけない。</p>
 
-<p>$B7gB;CM$N&gt;l9g(B</p>
+<p>欠損値の場合</p>
 
 <ul>
-<li>$B&lt;h$j=|$/(B</li>
-<li>$BJ?6QCM$GKd$a$k(B(<code>Imputer</code>)$B!#$3$N$H$-$NBP1~$H$7$F!&ldquo;30$lCM$r@h$K30$7$F$*$/$+!&ldquo;Cf1{CM$r;H$&amp;!#(B</li>
+<li>取り除く</li>
+<li>平均値で埋める(<code>Imputer</code>)。このときの対応として、外れ値を先に外しておくか、中央値を使う。</li>
 </ul>
 
-<p>$B$^$?&lt;!85$N:o8:$K<g@.J,J,@O$r;H$&$3$H$,$G$-$k!#<g@.J,$r4sM?N(=g$K$$$/$D$+A*Br$9$k$3$H$@$1$GM=B,N($r;D$7$?$^$^<!85?t$r>/$J$/$G$-$k!#(B</p>
+<p>また次元の削減に主成分分析を使うことができる。主成分を寄与率順にいくつか選択することだけで予測率を残したまま次元数を少なくできる。</p>
 
-<p>$B$H$j$&ldquo;$($:2?$+$7$i$N&lt;!85JQ49$r$9$kN.$l$O@~7A!&amp;Hs@~7A$K$h$i$:(B</p>
+<p>とりあえず何かしらの次元変換をする流れは線形・非線形によらず</p>
 
 <ol>
-<li>$BJQ49%b%G%k$rMQ0U$9$k(B</li>
-<li><code>fit()</code> $B$9$k(B</li>
-<li><code>transform()</code> $B$9$k(B</li>
+<li>変換モデルを用意する</li>
+<li><code>fit()</code> する</li>
+<li><code>transform()</code> する</li>
 </ol>
 
-<p>$B$H$$$&amp;&lt;j=g$K$J$k!#Hs@~7AJQ49$G&lt;!?t$rA}$d$9$H$-$O:G8e$N&lt;jCJ$K$7$h$&amp;!#(B</p>
+<p>という手順になる。非線形変換で次数を増やすときは最後の手段にしよう。</p>
 
-<p>$BI8=`2=!&ldquo;@55,2=$O&lt;!85:o8:$h$j$b$J$K$h$j$bBg;v$J$N$G@dBP$K$d$m$&amp;!#(B</p>
+<p>標準化、正規化は次元削減よりもなによりも大事なので絶対にやろう。</p>
 
-<p>ZCA$BGr?&lsquo;2=$O(BDeep Learning$B$J$I$K$h$/;H$o$l$k!#(B</p>
+<p>ZCA白色化はDeep Learningなどによく使われる。</p>
 
 <h2 id="secition-6">Secition 6</h2>
 
 <h3 id="lecture-54-61">Lecture 54-61</h3>
 
-<p>2$B%/%i%9LdBj$G$&ldquo;$l$P(Bconfusion matrix$B$r:n$C$F!&ldquo;K\Ev$KM=B,$,4V0c$C$F$$$?$i$^$:$$$b$N$N8D?t$r8+6K$a$k!#(B
-$B$5$i$K(B SciKit Learn $B$K$O(B <code>classification_report</code> $B$H$$$&amp;JXMx$J$b$N$,$&ldquo;$k!#(B</p>
+<p>2クラス問題であればconfusion matrixを作って、本当に予測が間違っていたらまずいものの個数を見極める。
+さらに SciKit Learn には <code>classification_report</code> という便利なものがある。</p>
 
-<p>$B8!=P$7$?$$CM$N(Brecall$B$,Bg;v!#(B</p>
+<p>検出したい値のrecallが大事。</p>
 
-<p><code>precision_recall_fscore_support</code> $B$,$9$4$/JXMx$C$]$$!#(B</p>
+<p><code>precision_recall_fscore_support</code> がすごく便利っぽい。</p>
 
-<p>$BB?%/%i%9LdBj$G$b(B <code>classification_report</code> $B$NCM$r85$K$I$N%/%i%9$NG&rsquo;&lt;1N($,0-$$$+H=CG$G$-$k!#(B</p>
+<p>多クラス問題でも <code>classification_report</code> の値を元にどのクラスの認識率が悪いか判断できる。</p>
 
-<h3 id="b-o-i-b">$B%-!&lt;%o!&lt;%I(B</h3>
+<h3 id="キーワード">キーワード</h3>
 
 <ul>
-<li>$B&amp;VFs&gt;h8!Dj(B</li>
-<li>$B&lt;g@.J,J,@O(B (PCA)</li>
+<li>χ二乗検定</li>
+<li>主成分分析 (PCA)</li>
 </ul>
 </div>
 
