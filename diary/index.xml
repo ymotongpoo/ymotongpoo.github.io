@@ -6,8 +6,37 @@
     <description>Recent content in Diaries on depository</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Mon, 16 Jan 2017 14:59:46 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 24 Jan 2017 23:40:00 +0900</lastBuildDate>
     <atom:link href="https://ymotongpoo.github.io/diary/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>bintrayが腐ってる</title>
+      <link>https://ymotongpoo.github.io/diary/2017/01/24/bintray-is-not-working-correctly/</link>
+      <pubDate>Tue, 24 Jan 2017 23:40:00 +0900</pubDate>
+      
+      <guid>https://ymotongpoo.github.io/diary/2017/01/24/bintray-is-not-working-correctly/</guid>
+      <description>
+
+&lt;h2 id=&#34;gitlab-ciでdebパッケージをbintrayに上げたいが&#34;&gt;GitLab CIでdebパッケージをbintrayに上げたいが&lt;/h2&gt;
+
+&lt;p&gt;ここしばらくdocker imageを作って遊んでるんだけど、GoのNightly Buildをして公開しようと思ってbintrayにアップロードしようとしている。
+しかしながら、どうもバイナリファイルだけアップロードできなくて、 @mopemope にも聞いてみたが同様のことが起きているようだ。&lt;/p&gt;
+
+&lt;p&gt;実際にやっていることは単純で &lt;code&gt;curl&lt;/code&gt; でこういうコマンドを叩いているだけ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ curl -T golang-nightly_${BUILD_VER}_amd64.deb -uymotongpoo:${BINTRAY_API_KEY} https://api.bintray.com/content/ymotongpoo/deb/golang/${BUILD_VER}/golang-nightly_${BUILD_VER}_amd64.deb;deb_distribution=jessie;deb_component=main;deb_architecture=amd64;publish=1;override=1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;しかし次のようなエラーが出ている。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{&amp;quot;message&amp;quot;:&amp;quot;Unable to upload files: Debian distribution, component and architecture were not found on repo and were not specified&amp;quot;}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;指定しているdistribution, component, architectureいずれも正しいんだけどなあ。bintrayに空のパスだけが作成されて終了してしまう。&lt;/p&gt;
+
+&lt;p&gt;とりあえず逃げ道として &lt;a href=&#34;https://packagecloud.io/&#34;&gt;packagecloud.io&lt;/a&gt; にレポジトリを作ってみた。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Udemy Day2</title>

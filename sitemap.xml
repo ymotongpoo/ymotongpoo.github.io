@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://ymotongpoo.github.io/diary/2017/01/24/bintray-is-not-working-correctly/</loc>
+    <lastmod>2017-01-24T23:40:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ymotongpoo.github.io/diary/2017/01/16/udemy-day2/</loc>
     <lastmod>2017-01-16T14:59:46+09:00</lastmod>
   </url>
@@ -119,7 +124,7 @@
   
   <url>
     <loc>https://ymotongpoo.github.io/diary/</loc>
-    <lastmod>2017-01-16T14:59:46+09:00</lastmod>
+    <lastmod>2017-01-24T23:40:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -149,7 +154,7 @@
   
   <url>
     <loc>https://ymotongpoo.github.io/tags/log/</loc>
-    <lastmod>2017-01-15T23:49:28+09:00</lastmod>
+    <lastmod>2017-01-24T23:40:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -232,7 +237,7 @@
   
   <url>
     <loc>https://ymotongpoo.github.io/</loc>
-    <lastmod>2017-01-16T14:59:46+09:00</lastmod>
+    <lastmod>2017-01-24T23:40:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   

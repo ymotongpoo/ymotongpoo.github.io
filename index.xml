@@ -6,8 +6,37 @@
     <description>Recent content on depository</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Mon, 16 Jan 2017 14:59:46 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 24 Jan 2017 23:40:00 +0900</lastBuildDate>
     <atom:link href="https://ymotongpoo.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>bintrayが腐ってる</title>
+      <link>https://ymotongpoo.github.io/diary/2017/01/24/bintray-is-not-working-correctly/</link>
+      <pubDate>Tue, 24 Jan 2017 23:40:00 +0900</pubDate>
+      
+      <guid>https://ymotongpoo.github.io/diary/2017/01/24/bintray-is-not-working-correctly/</guid>
+      <description>
+
+&lt;h2 id=&#34;gitlab-ciでdebパッケージをbintrayに上げたいが&#34;&gt;GitLab CIでdebパッケージをbintrayに上げたいが&lt;/h2&gt;
+
+&lt;p&gt;ここしばらくdocker imageを作って遊んでるんだけど、GoのNightly Buildをして公開しようと思ってbintrayにアップロードしようとしている。
+しかしながら、どうもバイナリファイルだけアップロードできなくて、 @mopemope にも聞いてみたが同様のことが起きているようだ。&lt;/p&gt;
+
+&lt;p&gt;実際にやっていることは単純で &lt;code&gt;curl&lt;/code&gt; でこういうコマンドを叩いているだけ。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ curl -T golang-nightly_${BUILD_VER}_amd64.deb -uymotongpoo:${BINTRAY_API_KEY} https://api.bintray.com/content/ymotongpoo/deb/golang/${BUILD_VER}/golang-nightly_${BUILD_VER}_amd64.deb;deb_distribution=jessie;deb_component=main;deb_architecture=amd64;publish=1;override=1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;しかし次のようなエラーが出ている。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;{&amp;quot;message&amp;quot;:&amp;quot;Unable to upload files: Debian distribution, component and architecture were not found on repo and were not specified&amp;quot;}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;指定しているdistribution, component, architectureいずれも正しいんだけどなあ。bintrayに空のパスだけが作成されて終了してしまう。&lt;/p&gt;
+
+&lt;p&gt;とりあえず逃げ道として &lt;a href=&#34;https://packagecloud.io/&#34;&gt;packagecloud.io&lt;/a&gt; にレポジトリを作ってみた。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Udemy Day2</title>
@@ -706,45 +735,6 @@ esac
 &lt;p&gt;実家に帰るのは春ぶりだが、相変わらず山梨は寒そうだ。一週間の天気予報をみたら、最高気温が10℃になっている日が一番気温が高く、それ以外の日はすべて1桁台。最低気温は氷点下だ。&lt;/p&gt;
 
 &lt;p&gt;そういえば帰省の途中でモンベルのジオラインを買い足す予定だったのに忘れていた。しまったなあ。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>バッチファイルではまった</title>
-      <link>https://ymotongpoo.github.io/tech/2016/12/27/batch-script/</link>
-      <pubDate>Tue, 27 Dec 2016 02:10:20 +0900</pubDate>
-      
-      <guid>https://ymotongpoo.github.io/tech/2016/12/27/batch-script/</guid>
-      <description>
-
-&lt;h1 id=&#34;バッチファイルではまった&#34;&gt;バッチファイルではまった&lt;/h1&gt;
-
-&lt;h2 id=&#34;shellscriptからbatch-scriptに移植していた&#34;&gt;shellscriptからbatch scriptに移植していた&lt;/h2&gt;
-
-&lt;p&gt;ffmpegでバッチ処理をするスクリプトをWindows用に移植するためにbatch scriptにしていたときにいくつかはまったのでメモしておく。&lt;/p&gt;
-
-&lt;h3 id=&#34;for文&#34;&gt;for文&lt;/h3&gt;
-
-&lt;p&gt;変数は &lt;code&gt;%%[アルファベット1文字]&lt;/code&gt; でないといけない。希望の動作を調べた結果次のようになった。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bat&#34;&gt;for /f &amp;quot;usebackq&amp;quot; %%f in (`dir /b /s *.ts`) do (
-    echo %%f
-)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;/f &amp;quot;usebackq&amp;quot;&lt;/code&gt; は空白を含むファイル名を扱うときに必要&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;dir&lt;/code&gt; コマンドのあとのオプションはそれぞれ
-
-&lt;ul&gt;
-&lt;li&gt;&lt;code&gt;/b&lt;/code&gt; : ファイル名だけ表示&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;/s&lt;/code&gt; : サブツリーも検索&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3 id=&#34;改行&#34;&gt;改行&lt;/h3&gt;
-
-&lt;p&gt;shellscriptではバックスラッシュ &lt;code&gt;\&lt;/code&gt; で改行するけど、batch scriptではハット &lt;code&gt;^&lt;/code&gt; でやる。&lt;/p&gt;
 </description>
     </item>
     
