@@ -6,8 +6,51 @@
     <description>Recent content in Teches on depository</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Thu, 12 Jan 2017 13:45:26 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 27 Jan 2017 15:34:45 +0900</lastBuildDate>
     <atom:link href="https://ymotongpoo.github.io/tech/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>AndroidのActivityを終了させる</title>
+      <link>https://ymotongpoo.github.io/tech/2017/01/27/finish-android-activity/</link>
+      <pubDate>Fri, 27 Jan 2017 15:34:45 +0900</pubDate>
+      
+      <guid>https://ymotongpoo.github.io/tech/2017/01/27/finish-android-activity/</guid>
+      <description>
+
+&lt;h2 id=&#34;activityを終了させる&#34;&gt;Activityを終了させる&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://developer.android.com/reference/android/support/v7/app/AppCompatActivity.html&#34;&gt;android.support.v7.app.AppCompatActivity &amp;ndash; DAC&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;http://qiita.com/okaxaki/items/f3a4a4ab0616ac2f68ed&#34;&gt;Activity#finish() でアプリが終了できないときは &amp;ndash; Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;最後のActivityで &lt;code&gt;Activity#finish()&lt;/code&gt; してもタスクが終わらないことがあるので、ちゃんと &lt;code&gt;Activity#finishAndRemoveTask()&lt;/code&gt; を呼ぶこと。&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;void finishAndRemoveTask()
+Call this when your activity is done and should be closed and the task should be completely removed as a part of finishing the root activity of the task.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2 id=&#34;loaderについて&#34;&gt;Loaderについて&lt;/h2&gt;
+
+&lt;p&gt;ActivityのライフサイクルとAsyncTaskとの分離がLoaderによって可能になった。（&lt;code&gt;AsyncTaskLoader&lt;/code&gt; とか &lt;code&gt;CursorLoader&lt;/code&gt;）&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;http://qiita.com/KeithYokoma/items/03420e791548153c0811&#34;&gt;Loaderについて知っておいたほうが良いこと３つ &amp;ndash; Qiita&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://developer.android.com/guide/components/loaders.html?hl=ja&#34;&gt;Loader &amp;ndash; DAC&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&#34;fragmentを作るとき&#34;&gt;Fragmentを作るとき&lt;/h2&gt;
+
+&lt;p&gt;いらんものをいっぱい作るのでチェックはぜんぶはずそう。（これではまった）&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;amp-img src=&#34;https://ymotongpoo.github.io/img/2017-01-27-001.png&#34; alt=&#34;AndroidのActivityを終了させる img/2017-01-27-001.png&#34; width=547px height=470px layout=&gt;&lt;/amp-img&gt;
+  
+&lt;/figure&gt;
+
+</description>
+    </item>
     
     <item>
       <title>Jupyter Notebookのインストール</title>
