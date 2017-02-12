@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://ymotongpoo.github.io/diary/2017/02/13/dd-wrt/</loc>
+    <lastmod>2017-02-13T01:25:00+09:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://ymotongpoo.github.io/tech/2017/01/27/finish-android-activity/</loc>
     <lastmod>2017-01-27T15:34:45+09:00</lastmod>
   </url>
@@ -141,7 +146,7 @@
   
   <url>
     <loc>https://ymotongpoo.github.io/diary/</loc>
-    <lastmod>2017-01-24T23:40:00+09:00</lastmod>
+    <lastmod>2017-02-13T01:25:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -172,6 +177,12 @@
   <url>
     <loc>https://ymotongpoo.github.io/tags/log/</loc>
     <lastmod>2017-01-24T23:40:00+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://ymotongpoo.github.io/tags/logs/</loc>
+    <lastmod>2017-02-13T01:25:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -254,7 +265,7 @@
   
   <url>
     <loc>https://ymotongpoo.github.io/</loc>
-    <lastmod>2017-01-27T15:34:45+09:00</lastmod>
+    <lastmod>2017-02-13T01:25:00+09:00</lastmod>
     <priority>0</priority>
   </url>
   
