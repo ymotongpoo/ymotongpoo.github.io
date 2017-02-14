@@ -6,8 +6,69 @@
     <description>Recent content on depository</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ja-jp</language>
-    <lastBuildDate>Mon, 13 Feb 2017 01:25:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 14 Feb 2017 12:50:46 +0900</lastBuildDate>
     <atom:link href="https://ymotongpoo.github.io/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>coursera note</title>
+      <link>https://ymotongpoo.github.io/tech/2017/02/14/coursera-note/</link>
+      <pubDate>Tue, 14 Feb 2017 12:50:46 +0900</pubDate>
+      
+      <guid>https://ymotongpoo.github.io/tech/2017/02/14/coursera-note/</guid>
+      <description>
+
+&lt;h2 id=&#34;week-1&#34;&gt;Week 1&lt;/h2&gt;
+
+&lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;
+
+&lt;p&gt;2つのタイプの機械学習がある。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;regression （回帰）: 連続値&lt;/li&gt;
+&lt;li&gt;classification （分類）: ラベリング&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ほかにもこういう分け方もある。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;supervised （教師あり）: サンプルに正解がすでに存在している&lt;/li&gt;
+&lt;li&gt;unsupervised （教師なし）: サンプルはただ存在している&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;model-and-cost-function&#34;&gt;Model and Cost Function&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;x: input (サンプル)&lt;/li&gt;
+&lt;li&gt;y: output (結果)&lt;/li&gt;
+&lt;li&gt;m: サンプル数&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;たとえば教師ありの回帰問題を考える。仮説関数 (hypothesis)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;h(x) = theta0 + theta1 x
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これは線形回帰かつ単回帰（線形に表現され、変数が1個）な場合の仮説関数。
+この関数をサンプルから求めるために目的関数（コスト関数）を用意する。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;J(theta0, theta1) = 1/2m sum(( h(x) - y )^2)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これを最小にする&lt;code&gt;theta0&lt;/code&gt;と&lt;code&gt;theta1&lt;/code&gt;を自動で求めていきたいということになる。&lt;/p&gt;
+
+&lt;h3 id=&#34;parameter-learning&#34;&gt;Parameter Learning&lt;/h3&gt;
+
+&lt;p&gt;いろいろな方法があるけれど、再急降下法でやっていくのが一般的。
+各パラメータで偏微分して、各パラメータを減らしていく。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;theta(j) := theta(j) - alpha * grad(J, theta(j))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;プログラムで書くときは値の更新が各変数で同時になるように注意。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;alpha&lt;/code&gt; は学習率と呼ばれる正の値。いい具合に決めてやらないと発散しちゃうので注意。&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>家のルータをDD-WRTに変更した</title>
@@ -24,6 +85,20 @@
 &lt;p&gt;設定を頻繁に変えていて、安定しない時間が少しあったが（例：設定したSSIDに接続できない）、しばらくして無事安定して接続できるようになったので、無線LAN経由で接続していた端末の設定をすべて変えた。Chromecastなども安定して接続できているし、PCもだいぶ快適に繋がっている。&lt;/p&gt;
 
 &lt;p&gt;まだ解決できていない点としては、上位のネットワークでavahi-daemonで吐いているホスト名を参照できていないので、その辺をどうにかしたい。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Identity関連とか</title>
+      <link>https://ymotongpoo.github.io/tech/2017/01/31/identity-related-specs/</link>
+      <pubDate>Tue, 31 Jan 2017 16:18:08 +0900</pubDate>
+      
+      <guid>https://ymotongpoo.github.io/tech/2017/01/31/identity-related-specs/</guid>
+      <description>
+
+&lt;h2 id=&#34;pkceについて&#34;&gt;PKCEについて&lt;/h2&gt;
+
+&lt;p&gt;*&lt;/p&gt;
 </description>
     </item>
     
@@ -610,76 +685,6 @@ and the repository exists.
 
 &lt;pre&gt;&lt;code class=&#34;language-powershell&#34;&gt;&amp;gt; choco install poshgit
 &lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>Git Credential Manger for WinをMSYS2のgitで使う</title>
-      <link>https://ymotongpoo.github.io/tech/2016/12/31/use-git-credential-manager-for-win-with-msys2/</link>
-      <pubDate>Sat, 31 Dec 2016 12:41:35 +0900</pubDate>
-      
-      <guid>https://ymotongpoo.github.io/tech/2016/12/31/use-git-credential-manager-for-win-with-msys2/</guid>
-      <description>
-
-&lt;h1 id=&#34;なぜgcm-for-winが必要か&#34;&gt;なぜGCM for Winが必要か&lt;/h1&gt;
-
-&lt;h2 id=&#34;githubで2要素認証をしている&#34;&gt;GitHubで2要素認証をしている&lt;/h2&gt;
-
-&lt;p&gt;2要素認証にすると、アクセストークンを発行しないと普通にHTTPSでpushができない。しかし、アクセストークンを発行しても、それを記憶していないといけない。そこでMacやLinuxのときと同様に、Git Credential Managerを利用しようと思った次第。&lt;/p&gt;
-
-&lt;h2 id=&#34;gitはmsys2で入れていた&#34;&gt;Gitはmsys2で入れていた&lt;/h2&gt;
-
-&lt;p&gt;いくつかの選択肢があるけれど、自分はすでにMSYS2でGitをインストールしてしまっていたので、Git Credential Managerのためだけに、再度Gitをインストーラーで入れるのは嫌だった。もしそれが問題ないなら、バイナリインストーラーを使うのが良い。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;https://github.com/Microsoft/Git-Credential-Manager-for-Windows/releases/latest&#34;&gt;Git Credential Manager for Windows latest build&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;そこで、上記のリンクにあったzipのものをダウンロードし、GCMだけを単体でインストールした。中に同梱されている &lt;code&gt;install.cmd&lt;/code&gt; を実行しておしまい。すると &lt;code&gt;git-credential-manager.exe&lt;/code&gt; 等々が &lt;code&gt;%USERPROFILE%\bin&lt;/code&gt; にインストールされる。これにPATHが通るようにMSYS2の &lt;code&gt;.zshenv&lt;/code&gt; に次のように追加しておいた。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-shellscript&#34;&gt;PATH=$PATH:/c/Users/&amp;lt;username&amp;gt;/bin
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;git-configで利用する旨を設定する&#34;&gt;git configで利用する旨を設定する&lt;/h2&gt;
-
-&lt;p&gt;MacやLinuxの場合と同様に &lt;code&gt;git config&lt;/code&gt; で設定しておく。&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-bash&#34;&gt;$ git config --global credential.helper manager
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;これで通常通り &lt;code&gt;git push&lt;/code&gt; などを行うとこういうポップアップが出るようになって2要素認証でログインできた。&lt;/p&gt;
-
-&lt;figure&gt;
-  &lt;amp-img src=&#34;https://ymotongpoo.github.io/img/2016-12-31-001.png&#34; alt=&#34;Git Credential Manger for WinをMSYS2のgitで使う img/2016-12-31-001.png&#34; width=409px height=338px layout=&gt;&lt;/amp-img&gt;
-  
-&lt;/figure&gt;
-
-
-&lt;p&gt;一度ログインしてしまえば2回目以降は自動で認証されるのでなにも入力しなくてよい。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title>誕生日</title>
-      <link>https://ymotongpoo.github.io/diary/2016/12/31/birthday/</link>
-      <pubDate>Sat, 31 Dec 2016 12:16:08 +0900</pubDate>
-      
-      <guid>https://ymotongpoo.github.io/diary/2016/12/31/birthday/</guid>
-      <description>
-
-&lt;h2 id=&#34;1年間の振り返りとか&#34;&gt;1年間の振り返りとか&lt;/h2&gt;
-
-&lt;p&gt;毎年恒例のエントリを書いた。内容が薄い。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://ymotongpoo.hatenablog.com/entry/2016/12/31/110228&#34;&gt;YAMAGUCHI::weblogの2016年を振り返る&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;また今年は前日に買ってよかったものを一覧にして書いた。&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href=&#34;http://ymotongpoo.hatenablog.com/entry/2016/12/29/232201&#34;&gt;2016年買ってよかったもの&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </description>
     </item>
     

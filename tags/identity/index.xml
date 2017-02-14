@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Identity on depository</title>
+    <link>https://ymotongpoo.github.io/tags/identity/index.xml</link>
+    <description>Recent content in Identity on depository</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja-jp</language>
+    <atom:link href="https://ymotongpoo.github.io/tags/identity/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Identity関連とか</title>
+      <link>https://ymotongpoo.github.io/tech/2017/01/31/identity-related-specs/</link>
+      <pubDate>Tue, 31 Jan 2017 16:18:08 +0900</pubDate>
+      
+      <guid>https://ymotongpoo.github.io/tech/2017/01/31/identity-related-specs/</guid>
+      <description>
+
+&lt;h2 id=&#34;pkceについて&#34;&gt;PKCEについて&lt;/h2&gt;
+
+&lt;p&gt;*&lt;/p&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

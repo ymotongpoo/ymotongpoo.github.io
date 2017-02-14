@@ -9,6 +9,67 @@
     <atom:link href="https://ymotongpoo.github.io/tags/ml/index.xml" rel="self" type="application/rss+xml" />
     
     <item>
+      <title>coursera note</title>
+      <link>https://ymotongpoo.github.io/tech/2017/02/14/coursera-note/</link>
+      <pubDate>Tue, 14 Feb 2017 12:50:46 +0900</pubDate>
+      
+      <guid>https://ymotongpoo.github.io/tech/2017/02/14/coursera-note/</guid>
+      <description>
+
+&lt;h2 id=&#34;week-1&#34;&gt;Week 1&lt;/h2&gt;
+
+&lt;h3 id=&#34;introduction&#34;&gt;Introduction&lt;/h3&gt;
+
+&lt;p&gt;2つのタイプの機械学習がある。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;regression （回帰）: 連続値&lt;/li&gt;
+&lt;li&gt;classification （分類）: ラベリング&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;ほかにもこういう分け方もある。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;supervised （教師あり）: サンプルに正解がすでに存在している&lt;/li&gt;
+&lt;li&gt;unsupervised （教師なし）: サンプルはただ存在している&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;model-and-cost-function&#34;&gt;Model and Cost Function&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;x: input (サンプル)&lt;/li&gt;
+&lt;li&gt;y: output (結果)&lt;/li&gt;
+&lt;li&gt;m: サンプル数&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;たとえば教師ありの回帰問題を考える。仮説関数 (hypothesis)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;h(x) = theta0 + theta1 x
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これは線形回帰かつ単回帰（線形に表現され、変数が1個）な場合の仮説関数。
+この関数をサンプルから求めるために目的関数（コスト関数）を用意する。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;J(theta0, theta1) = 1/2m sum(( h(x) - y )^2)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;これを最小にする&lt;code&gt;theta0&lt;/code&gt;と&lt;code&gt;theta1&lt;/code&gt;を自動で求めていきたいということになる。&lt;/p&gt;
+
+&lt;h3 id=&#34;parameter-learning&#34;&gt;Parameter Learning&lt;/h3&gt;
+
+&lt;p&gt;いろいろな方法があるけれど、再急降下法でやっていくのが一般的。
+各パラメータで偏微分して、各パラメータを減らしていく。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;theta(j) := theta(j) - alpha * grad(J, theta(j))
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;プログラムで書くときは値の更新が各変数で同時になるように注意。&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;alpha&lt;/code&gt; は学習率と呼ばれる正の値。いい具合に決めてやらないと発散しちゃうので注意。&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
       <title>Udemy Day1</title>
       <link>https://ymotongpoo.github.io/diary/2017/01/12/udemy-day1/</link>
       <pubDate>Thu, 12 Jan 2017 14:04:30 +0900</pubDate>
