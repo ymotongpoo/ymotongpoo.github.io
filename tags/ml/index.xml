@@ -10,6 +10,112 @@
     
     <item>
       <title>coursera note</title>
+      <link>https://ymotongpoo.github.io/tech/2017/02/15/coursera-note/</link>
+      <pubDate>Wed, 15 Feb 2017 13:31:22 +0900</pubDate>
+      
+      <guid>https://ymotongpoo.github.io/tech/2017/02/15/coursera-note/</guid>
+      <description>
+
+&lt;h2 id=&#34;week-2&#34;&gt;Week 2&lt;/h2&gt;
+
+&lt;h3 id=&#34;maultivarlate-linear-regression&#34;&gt;Maultivarlate Linear Regression&lt;/h3&gt;
+
+&lt;p&gt;多変量線形回帰問題を考える場合は、変数をベクトルで考えてあげると良い。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;h(x) = theta^T x
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;と書ける。このとき &lt;code&gt;x0=1&lt;/code&gt; とする。内積でかけて嬉しいね。
+また偏微分も基本的には全部相似形になるので簡単。&lt;/p&gt;
+
+&lt;p&gt;再急降下法を早く収束させるために、まずできることはサンプルを正規化すること。&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;feature scaling: とりあえず最大値で割って 0 =&amp;lt; x =&amp;lt; 1 にする&lt;/li&gt;
+&lt;li&gt;mean normalization: 平均で引いてから、最大値と最小値の幅で割って -0.5 =&amp;lt; x =&amp;lt; 0.5にする&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;あと再急降下法の収束を決める要素として、学習率αと離散値を扱うので収束と決める条件を設定しないといけない。
+それぞれ決めが難しいので、再急降下法の試行回数と &lt;code&gt;J(theta)&lt;/code&gt; の値のプロットを取って良さそうな値を決めるしかない。&lt;/p&gt;
+
+&lt;h3 id=&#34;octave&#34;&gt;Octave&lt;/h3&gt;
+
+&lt;p&gt;&lt;code&gt;a&lt;/code&gt; の少数第二位まで表示。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;disp(sprintf(&#39;%0.2f), a)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;3x2 の行列を宣言できる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;A = [1 2;
+     3 4;
+     5 6]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Aの2行目、2列目だけを抜き出す。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;A(2,:)
+A(:,2)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Aに行列を追加する。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;A = [A, [100; 101; 102]]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Aのすべての要素を1つのベクトルにまとめる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;A(:)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;2x3 のすべての要素が1と0の行列ができる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;ones(2, 3)
+zeros(2, 3)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;1x10000のランダムなベクトルを作って、ヒストグラムとして表示する。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;w = randn(1, 10000)
+hist(w, 50)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;4x4の単位行列を作る。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;eye(4)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;行列のサイズを調べる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;size(X)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ベクトルの長さを調べる。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;length(v)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;ファイルに入ったデータを読み込んで、データが格納されている変数を確認する。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;load(&#39;foo.dat&#39;)
+who
+whos
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;変数をクリアする。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;clear x
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;変数をファイルに保存する。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;save hello.mat v
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>coursera note</title>
       <link>https://ymotongpoo.github.io/tech/2017/02/14/coursera-note/</link>
       <pubDate>Tue, 14 Feb 2017 12:50:46 +0900</pubDate>
       
