@@ -11,16 +11,16 @@
 <meta name="generator" content="Hugo 0.18.1" />
 
 <link rel="apple-touch-icon" href="https://ymotongpoo.github.io/images/logo.png">
-<link rel="alternate" type="application/rss+xml" title="RSS" href="https://ymotongpoo.github.io/index.xml">
 
-<link rel="canonical" href="https://ymotongpoo.github.io/">
+
+<link rel="canonical" href="https://ymotongpoo.github.io/tech/2017/02/19/coursera-note/">
 
 
     
     <link href="https://fonts.googleapis.com/css?family=Cuprum:400,700" rel="stylesheet">
     
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css" rel="stylesheet">
-    <title>depository</title>
+    <title>coursera note - depository</title>
     <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
     <script async src="https://cdn.ampproject.org/v0.js"></script>
     <script async custom-element="amp-analytics" src="https://cdn.ampproject.org/v0/amp-analytics-0.1.js"></script>
@@ -29,6 +29,60 @@
 <script async custom-element="amp-ad" src="https://cdn.ampproject.org/v0/amp-ad-0.1.js"></script>
 
     
+<meta name="description" content="Week 3 Classification and Representation 分類問題には二種類ある。 バイナリ分類 マルチクラス分類 線形回帰を分類問題に適用させてしまうと、ラベルの値が決まっているにも関わらず関">
+
+<meta property="og:title" content="coursera note - depository">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ymotongpoo.github.io/tech/2017/02/19/coursera-note/">
+<meta property="og:image" content="https://ymotongpoo.github.io/images/default.png">
+<meta property="og:site_name" content="depository">
+<meta property="og:description" content="Week 3 Classification and Representation 分類問題には二種類ある。 バイナリ分類 マルチクラス分類 線形回帰を分類問題に適用させてしまうと、ラベルの値が決まっているにも関わらず関">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="depository">
+<meta name="twitter:url" content="https://ymotongpoo.github.io/tech/2017/02/19/coursera-note/">
+<meta name="twitter:title" content="coursera note - depository">
+<meta name="twitter:description" content="Week 3 Classification and Representation 分類問題には二種類ある。 バイナリ分類 マルチクラス分類 線形回帰を分類問題に適用させてしまうと、ラベルの値が決まっているにも関わらず関">
+<meta name="twitter:image" content="https://ymotongpoo.github.io/images/default.png">
+
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "NewsArticle",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id":"https:\/\/ymotongpoo.github.io\/"
+    },
+    "headline": "coursera note - depository",
+    "image": {
+      "@type": "ImageObject",
+      "url": "https:\/\/ymotongpoo.github.io\/images\/default.png",
+      "height": 800,
+      "width": 800
+    },
+    "datePublished": "2017-02-19T17:22:02JST",
+    "dateModified": "2017-02-19T17:22:02JST",
+    "author": {
+      "@type": "Person",
+      "name": "depository"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "depository",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https:\/\/ymotongpoo.github.io\/images/logo.png",
+        "width": 600,
+        "height": 60
+      }
+    },
+    "description": "Week 3 Classification and Representation 分類問題には二種類ある。 バイナリ分類 マルチクラス分類 線形回帰を分類問題に適用させてしまうと、ラベルの値が決まっているにも関わらず関"
+  }
+</script>
+
+
     <style amp-custom>
       /* Reset*/::-moz-selection { background-color: #00bcd4; color: #000; }::selection { background-color: #00bcd4; color: #000; }html { font-size: 18px;}@media (max-width: 768px) { html { font-size: 15px; }}body { font-family: "Rubik", "Hiragino Sans", "ヒラギノ角ゴシック Pro", "Hiragino Kaku Gothic Pro", メイリオ, Meiryo, sans-serif; font-size: inherit; line-height: 1rem;}a { color: #00bcd4; }a:hover, a:active, a:focus { color: #0097a7; }p { margin: 0; }img { max-width: 100%; }ul, ol { margin: 0; padding: 0; padding-left: 2.5rem;}hr { margin: .5rem 0; border: none; border-bottom: 1px solid #eceff1;}h1, h2, h3, h4, h5 ,h6 { margin: 0; font-weight: 700; }h1 { font-size: 1.4rem; line-height: 2rem; }h2 { font-size: 1.4rem; line-height: 2rem; }h3 { font-size: 1.1rem; line-height: 1.5rem; }h4 { font-size: 1rem; line-height: 1.5rem; }h5 { font-size: 1rem; line-height: 1rem; }h6 { font-size: 1rem; line-height: 1rem; }/* Layout */.container { max-width: 40rem; margin: 0 auto; padding: 0 1rem;}.l-header { padding: 1rem 0; margin-bottom: 2rem; position: relative;}main { display: block;}.l-footer { font-size: .8rem; padding: 1rem 0; color: #90a4ae;}/* Helpers */.h-logo { font-family: 'Quicksand', sans-serif;}/* Parts:logo */.p-logo { font-weight: 700;}@media (max-width: 768px) { .p-logo { text-align: center; margin-bottom: 1rem; }}.p-logo a { font-size: 1.5rem; line-height: 1.5rem; text-decoration: none; text-transform: uppercase; color: #000; text-shadow: 1px 1px 0 #eceff1;}/* Parts:nav */.p-nav { position: absolute; top: 1rem; right: 0;}@media (max-width: 768px) { .p-nav { position: static; text-align: center; }}.p-nav ul { padding-left: 0; list-style: none;}.p-nav li { display: inline-block; margin-left: .5rem;}@media (max-width: 768px) { .p-nav li { margin-left: 0; margin: 0 .5rem; }}.p-nav a { display: inline-block; text-decoration: none; font-weight: 700; line-height: 1.5rem; color: #000;}/* Parts:page-title */.p-page-title { margin-bottom: 2rem;}/* Parts:crumb */.p-crumb { margin-bottom: 1rem;}.p-crumb ol { padding-left: 0; list-style: none; white-space: nowrap; overflow: hidden;}.p-crumb li { display: inline-block; font-size: .8rem; color: #90a4ae;}.p-crumb li::after { content: ' ›'; margin: 0 .25rem; color: #cfd8dc;}.p-crumb li:last-child::after { content: '';}/* Parts:pagination */.p-pagination { font-size: .8rem; text-align: center;}.p-pagination a { display: inline-block; margin: 0 .5rem;}/* Parts:articles */.p-terms { padding-left: 0; list-style: none;}.p-terms li { display: inline-block; font-size: .8rem; margin: .25rem 1rem; margin-left: 0;}/* Parts:share */.p-share { display: table; table-layout: fixed; width: 100%; max-width: 16rem; margin-bottom: 1.5rem;}.p-share a { display: table-cell; text-align: center; background-color: #eceff1; padding: .5rem 0; font-size: .8rem; border: 1px solid #fff; transition-duration: .2s;}.p-share a.fb { box-shadow: 0 -3px 0 0 #3b5998 inset; color: #3b5998; }.p-share a.tw { box-shadow: 0 -3px 0 0 #00aced inset; color: #00aced; }.p-share a.gp { box-shadow: 0 -3px 0 0 #db4a39 inset; color: #db4a39; }.p-share a.pk { box-shadow: 0 -3px 0 0 #ee4256 inset; color: #ee4256; }.p-share a:hover { color: #fff; }.p-share a.fb:hover { box-shadow: 0 -2rem 0 0 #3b5998 inset; }.p-share a.tw:hover { box-shadow: 0 -2rem 0 0 #00aced inset; }.p-share a.gp:hover { box-shadow: 0 -2rem 0 0 #db4a39 inset; }.p-share a.pk:hover { box-shadow: 0 -2rem 0 0 #ee4256 inset; }/* Parts:facts */.p-facts { list-style: none; padding-left: 0;}.p-facts header { margin-bottom: .5rem;}.p-facts header a { text-transform: uppercase; color: #000; font-weight: 700;}.p-facts ul { padding-left: 0; list-style: none;}.p-facts li { display: inline;}.p-facts>li::after { content: '-'; margin: 0 .5rem;}.p-facts>li:last-child::after { content: '';}.p-facts>li li::after { content: ', ';}.p-facts>li li:last-child::after { content: '';}/* Parts:articles */.p-articles { padding-left: 0; list-style: none;}/* Parts:article */article { word-break: break-all;}article .p-facts { font-size: .8rem; color: #90a4ae; margin-bottom: 1rem;}article .title { margin-bottom: 1rem;}article.li .title a { color: #000; text-decoration: none;}article.single>header { margin-bottom: 3.5rem;}article.li { margin-bottom: 1rem; padding-bottom: 1rem; border-bottom: 1px solid #eceff1;}article.li .title { font-size: 1rem; line-height: 1.5rem;}article.li .summary { font-size: .8rem; color: #333;}/* Parts:article-body */.article-body { margin-bottom: 1.5rem; color: #333;}.article-body p { margin: 1.5rem 0; line-height: 1.5rem;}.article-body ul,.article-body ol { margin: 1.5rem 0;}.article-body li { line-height: 1.5rem;}.article-body h2,.article-body h3,.article-body h4,.article-body h5 { margin: 1.5rem 0;}.article-body h2 { padding: 1rem 0; border-bottom: 3px solid #333;}.article-body h3 { padding: .5rem 0; border-bottom: 2px solid #eceff1;}.article-body h2::before,.article-body h3::before,.article-body h4::before { margin-right: .5rem;}.article-body h2::before,.article-body h3::before { font-family: Fontawesome;}.article-body h2::before { content: '\f292'; color: #cddc39;}.article-body h3::before { content: '\f046'; color: #ffc107;}.article-body h4::before { content: '-'; }.article-body blockquote { margin: 1.5rem 0; padding: .5rem 1rem; border: none; border-radius: 5px; background-color: #eceff1;}.article-body blockquote p { margin: .5rem 0; font-size: .8rem; line-height: 1rem; color: #455a64;}.article-body figure { margin: 1.5rem 0; }.article-body figure.left,.article-body figure.right { width: 15rem; height: 12rem; margin-top: 0;}.article-body figure.left { float: left; margin-right: 1rem; }.article-body figure.right { float: right; margin-left: 1rem; }@media (max-width: 768px) { .article-body figure { margin: 0 -2rem; } .article-body figure.left, .article-body figure.right { float: none; margin: 1.5rem 0; width: auto; height: auto; }}.article-body figcaption { padding: .5rem 0; font-size: .8rem; text-align: center;}.article-body figcaption a { color: #263238;}.article-body pre { overflow: auto; background-color: #333; padding: .5rem; border: none;}.article-body code { display: inline-block; padding: 0 .5rem; line-height: 1.5rem; font-family: Menlo, monospace; border-radius: 5px; font-size: .7rem; background-color: #eceff1; color: #333;}.article-body pre code { background-color: transparent; color: #fff; text-shadow: 1px 1px 0 #000; line-height: 1rem;}
 
@@ -78,160 +132,144 @@
 
       <main>
         
+<nav class="p-crumb">
+  <ol>
+    <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://ymotongpoo.github.io/" itemprop="url"><span itemprop="title"><i class="fa fa-home" aria-hidden="true"></i></span></a></li>
+    
+    <li itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb"><a href="https://ymotongpoo.github.io/tech/" itemprop="url"><span itemprop="title">tech</span></a></li>
+    
+    <li><span>coursera note</span></li>
+  </ol>
+</nav>
 
+<article class="single">
 
-<ul class="p-articles">
-  
-  <li><article class="li">
   <header>
-    <h2 class="title"><a href="https://ymotongpoo.github.io/tech/2017/02/19/coursera-note/">coursera note</a></h2>
+    <h1 class="title">coursera note</h1>
     <ul class="p-facts">
       <li><time datetime="2017-02-19T17:22:02JST">Feb 19, 2017</time></li>
       <li><a href="https://ymotongpoo.github.io/tech/">tech</a></li>
       
     </ul>
+    <aside class="p-share">
+  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fymotongpoo.github.io%2ftech%2f2017%2f02%2f19%2fcoursera-note%2f&t=coursera%20note" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fymotongpoo.github.io%2ftech%2f2017%2f02%2f19%2fcoursera-note%2f&text=coursera%20note&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=https%3a%2f%2fymotongpoo.github.io%2ftech%2f2017%2f02%2f19%2fcoursera-note%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fymotongpoo.github.io%2ftech%2f2017%2f02%2f19%2fcoursera-note%2f&title=coursera%20note" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+</aside>
+
+    <amp-ad type="adsense" data-ad-client="ca-pub-7999197875905972" data-ad-slot="8125118534" width="300" height="250"></amp-ad>
   </header>
 
-  <div class="summary">Week 3 Classification and Representation 分類問題には二種類ある。 バイナリ分類 マルチクラス分類 線形回帰を分類問題に適用させてしまうと、ラベルの値が決まっているにも関わらず関...</div>
-</article>
-</li>
-  
-  <li><article class="li">
-  <header>
-    <h2 class="title"><a href="https://ymotongpoo.github.io/tech/2017/02/15/coursera-note/">coursera note</a></h2>
-    <ul class="p-facts">
-      <li><time datetime="2017-02-15T13:31:22JST">Feb 15, 2017</time></li>
-      <li><a href="https://ymotongpoo.github.io/tech/">tech</a></li>
-      
-    </ul>
-  </header>
+  <div class="article-body">
 
-  <div class="summary">Week 2 Maultivarlate Linear Regression 多変量線形回帰問題を考える場合は、変数をベクトルで考えてあげると良い。 h(x) = theta^T x と書ける。このとき x0=1 とする。内積でかけて嬉しいね。 ま...</div>
-</article>
-</li>
-  
-  <li><article class="li">
-  <header>
-    <h2 class="title"><a href="https://ymotongpoo.github.io/tech/2017/02/14/coursera-note/">coursera note</a></h2>
-    <ul class="p-facts">
-      <li><time datetime="2017-02-14T12:50:46JST">Feb 14, 2017</time></li>
-      <li><a href="https://ymotongpoo.github.io/tech/">tech</a></li>
-      
-    </ul>
-  </header>
+<h2 id="week-3">Week 3</h2>
 
-  <div class="summary">Week 1 Introduction 2つのタイプの機械学習がある。 regression （回帰）: 連続値 classification （分類）: ラベリング ほかにもこういう分け方もある。 supervised （教師あり）: サンプルに正解がす...</div>
-</article>
-</li>
-  
-  <li><article class="li">
-  <header>
-    <h2 class="title"><a href="https://ymotongpoo.github.io/diary/2017/02/13/dd-wrt/">家のルータをDD-WRTに変更した</a></h2>
-    <ul class="p-facts">
-      <li><time datetime="2017-02-13T01:25:00JST">Feb 13, 2017</time></li>
-      <li><a href="https://ymotongpoo.github.io/diary/">diary</a></li>
-      
-    </ul>
-  </header>
+<h3 id="classification-and-representation">Classification and Representation</h3>
 
-  <div class="summary">DD-WRTに変更した どうもOCNから提供されているルータ兼終端機器の調子が悪いので、終端機器側の無線LAN機能を使うのを止めて、だいぶ前に...</div>
-</article>
-</li>
-  
-  <li><article class="li">
-  <header>
-    <h2 class="title"><a href="https://ymotongpoo.github.io/tech/2017/01/31/identity-related-specs/">Identity関連とか</a></h2>
-    <ul class="p-facts">
-      <li><time datetime="2017-01-31T16:18:08JST">Jan 31, 2017</time></li>
-      <li><a href="https://ymotongpoo.github.io/tech/">tech</a></li>
-      
-    </ul>
-  </header>
+<p>分類問題には二種類ある。</p>
 
-  <div class="summary">PKCEについて *...</div>
-</article>
-</li>
-  
-  <li><article class="li">
-  <header>
-    <h2 class="title"><a href="https://ymotongpoo.github.io/tech/2017/01/27/finish-android-activity/">AndroidのActivityを終了させる</a></h2>
-    <ul class="p-facts">
-      <li><time datetime="2017-01-27T15:34:45JST">Jan 27, 2017</time></li>
-      <li><a href="https://ymotongpoo.github.io/tech/">tech</a></li>
-      
-    </ul>
-  </header>
-
-  <div class="summary">Activityを終了させる android.support.v7.app.AppCompatActivity &ndash; DAC Activity#finish() でアプリが終了できないときは &ndash; Qiita 最後のActivityで Activity#finish() してもタスクが終わらないことがあるので、ちゃん...</div>
-</article>
-</li>
-  
-  <li><article class="li">
-  <header>
-    <h2 class="title"><a href="https://ymotongpoo.github.io/diary/2017/01/24/bintray-is-not-working-correctly/">bintrayが腐ってる</a></h2>
-    <ul class="p-facts">
-      <li><time datetime="2017-01-24T23:40:00JST">Jan 24, 2017</time></li>
-      <li><a href="https://ymotongpoo.github.io/diary/">diary</a></li>
-      
-    </ul>
-  </header>
-
-  <div class="summary">GitLab CIでdebパッケージをbintrayに上げたいが ここしばらくdocker imageを作って遊んでるんだけど、GoのNightly Buil...</div>
-</article>
-</li>
-  
-  <li><article class="li">
-  <header>
-    <h2 class="title"><a href="https://ymotongpoo.github.io/diary/2017/01/16/udemy-day2/">Udemy Day2</a></h2>
-    <ul class="p-facts">
-      <li><time datetime="2017-01-16T14:59:46JST">Jan 16, 2017</time></li>
-      <li><a href="https://ymotongpoo.github.io/diary/">diary</a></li>
-      
-    </ul>
-  </header>
-
-  <div class="summary">Section 4-5 データから特徴量にしないと機械学習できませんよという話。 文字列や画像をどのように特徴量ベクトルに変換できるか。 Project Gutenberg Lecture 41-53 データ取得 特徴量抽...</div>
-</article>
-</li>
-  
-  <li><article class="li">
-  <header>
-    <h2 class="title"><a href="https://ymotongpoo.github.io/diary/2017/01/15/docker-jupyter/">DockerでJupyter Notebookの環境を作り始めた</a></h2>
-    <ul class="p-facts">
-      <li><time datetime="2017-01-15T23:49:28JST">Jan 15, 2017</time></li>
-      <li><a href="https://ymotongpoo.github.io/diary/">diary</a></li>
-      
-    </ul>
-  </header>
-
-  <div class="summary">DockerでJupyter Notebookの環境を作り始めた Scikit Learnを使って機械学習の勉強をし始めたんだけれども、どうせならDocke...</div>
-</article>
-</li>
-  
-  <li><article class="li">
-  <header>
-    <h2 class="title"><a href="https://ymotongpoo.github.io/diary/2017/01/12/udemy-day1/">Udemy Day1</a></h2>
-    <ul class="p-facts">
-      <li><time datetime="2017-01-12T14:04:30JST">Jan 12, 2017</time></li>
-      <li><a href="https://ymotongpoo.github.io/diary/">diary</a></li>
-      
-    </ul>
-  </header>
-
-  <div class="summary">Section 3 YouTubeのscikit-learnチュートリアル集（英語） Machine Learning with Python 機械学習の Python との出会い Machine Learning Meets Python Pythonによる機械学習入門〜基...</div>
-</article>
-</li>
-  
+<ul>
+<li>バイナリ分類</li>
+<li>マルチクラス分類</li>
 </ul>
 
-<nav class="p-pagination">
+<p>線形回帰を分類問題に適用させてしまうと、ラベルの値が決まっているにも関わらず関係ない値になってしまうので、これを解決するためにロジスティクス回帰を使う。（分類問題なのに「回帰」という単語を使っているのは歴史的経緯に寄るものなので気にしなくていい。）</p>
+
+<p>ロジスティクス回帰では仮説関数を次のように定義する。</p>
+
+<pre><code>h(x) = g(theta' * x)
+g(z) = 1 / (1 + e^(-z)) // sigmoid関数
+</code></pre>
+
+<p>sigmoid関数を使っているのは、なんか良い感じに <code>z=0</code> で <code>g(z)</code> がちょうど<code>g(z)=0.5</code>を境に良い感じに線対象になるからっぽい。（要確認）</p>
+
+<p>これをよくよく見てみると、仮に <code>g(z)=0.5</code> を判定基準として線を引いてみると、その実は中身の <code>h(x)=0</code> が判定基準となる。
+したがって、 <code>h(x)=0</code> の線がうまくサンプルを分類するように <code>theta</code> を調整してあげる必要がある。</p>
+
+<h3 id="logistic-regression-model">Logistic Regression Model</h3>
+
+<p><code>theta</code> をうまく調整するのには、線形回帰でやったように、コスト関数を用意して、何らかの最適化手法（たとえば最急降下法）を使ってあげればよい。</p>
+
+<p>まずコスト関数は次のように定義してあげると良い。</p>
+
+<pre><code>J(theta) = 1/m * sum(Cost(h(x), y)^2)
+</code></pre>
+
+<p>ここで <code>Cost(h(x), y)</code> は次のように定義する。（これは統計学の最尤法推定にもとづいているが、そういうものだと理解しておく）</p>
+
+<pre><code>Cost(h(x), y) = -log(h(x)) (y=1)
+Cost(h(x), y) = -log(1 - h(x)) (y=0)
+</code></pre>
+
+<p>yはバイナリ分類問題のとき必ず0か1なのでこれを1つの式で表すと次のようになる。</p>
+
+<pre><code>Cost(h(x), y) = -y * log(h(x)) - (1 - y)*log(1 - h(x))
+</code></pre>
+
+<p>これを最急降下法で解くためには各<code>θ</code>に対して偏微分をした関数を求めて、<code>J</code>の値が最小になるように繰り返し<code>θ</code>を更新していく。
+実はこの関数を使って<code>J</code>の偏微分を求めると、線形回帰のときと同じような形で書ける。すなわちベクトルで書くと</p>
+
+<pre><code>theta := theta - alpha/m * X' * (g(X*theta) - y)
+</code></pre>
+
+<p><code>θ</code> の最適化については最急降下法以外にも幾つかの手法がある。</p>
+
+<ul>
+<li>Conjugate Descent （共役勾配法）</li>
+<li>BFGS</li>
+<li>L-BFGS</li>
+</ul>
+
+<p>各々の実装は複雑なので、自前実装はせずに、すでに実装済みの効率の良いライブラリを使うべきである。（自前で <code>sqrt()</code> や <code>rand()</code> などを実装せずに既存の物を利用するのと同様）</p>
+
+<p>これらの最適化手法の利点としては、最急勾配法にあった学習率（<code>α</code>）の調整をしなくてよいというところにある。</p>
+
+<p>Octaveでこれらを利用するときは <code>fminunc</code> という関数を利用すると良い。</p>
+
+<pre><code>function [jVal, gradient] = costFunction(theta)
+  jVal = [...code to compute J(theta)...];
+  gradient = [...code to compute derivative of J(theta)...];
+endfunction
+</code></pre>
+
+<p>を用意してあげて、</p>
+
+<pre><code>options = optimset('GradObj', 'on', 'MaxIter', 100);
+initialTheta = zeros(2, 1);
+[optTheta, functionVal, exitFlag] = fminunc(@costFunction, initialTheta, options);
+</code></pre>
+
+<p>と呼んであげれば良い。</p>
+</div>
+
+  <aside class="p-share">
+  <a href="http://www.facebook.com/sharer.php?u=https%3a%2f%2fymotongpoo.github.io%2ftech%2f2017%2f02%2f19%2fcoursera-note%2f&t=coursera%20note" title="Facebookでシェア" class="fb" target="_blank" rel="nofollow"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+  <a href="http://twitter.com/intent/tweet?url=https%3a%2f%2fymotongpoo.github.io%2ftech%2f2017%2f02%2f19%2fcoursera-note%2f&text=coursera%20note&tw_p=tweetbutton" title="Twitterでシェア" class="tw" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+  <a href="https://plus.google.com/share?url=https%3a%2f%2fymotongpoo.github.io%2ftech%2f2017%2f02%2f19%2fcoursera-note%2f" title="Google Plusでシェア" class="gp" target="_blank" rel="nofollow"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+  <a href="http://getpocket.com/edit?url=https%3a%2f%2fymotongpoo.github.io%2ftech%2f2017%2f02%2f19%2fcoursera-note%2f&title=coursera%20note" title="Pocketに保存" class="pk" target="_blank" rel="nofollow"><i class="fa fa-get-pocket" aria-hidden="true"></i></a>
+</aside>
+
+
   
-  <a href="/page/2/" class="next" rel="next">NEXT</a>
-</nav>
+  
+  
+  <ul class="p-facts">
+    <li>
+      <header><i class="inline clip"></i><a href="https://ymotongpoo.github.io/tags/">tags</a></header>
+      <ul>
+        
+        <li><a href="https://ymotongpoo.github.io/tags/ml/">ml</a></li>
+        
+        <li><a href="https://ymotongpoo.github.io/tags/coursera/">coursera</a></li>
+        
+      </ul>
+    </li>
+  </ul>
+  
+  
 
-
-
-
+</article>
 
       </main>
 
