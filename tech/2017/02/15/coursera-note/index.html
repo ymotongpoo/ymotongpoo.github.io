@@ -187,6 +187,8 @@
 
 <h3 id="octave">Octave</h3>
 
+<h4 id="octave自体の操作">Octave自体の操作</h4>
+
 <p><code>a</code> の少数第二位まで表示。</p>
 
 <pre><code>disp(sprintf('%0.2f), a)
@@ -258,6 +260,64 @@ whos
 
 <pre><code>save hello.mat v
 </code></pre>
+
+<p>Aの各列での最大値を取る。</p>
+
+<pre><code>max(A, [], 1)
+</code></pre>
+
+<p>Aの各行での最大値を取る。</p>
+
+<pre><code>max(A, [], 2)
+</code></pre>
+
+<h4 id="plotting-data">Plotting Data</h4>
+
+<p><code>x</code>と<code>y</code>のベクトルを使ってプロット。x軸とy軸にラベルを付ける。凡例も書く。タイトルを「graph」とする。</p>
+
+<pre><code>plot(x, y)
+xlabel('time')
+ylabel('value')
+legend('second', 'value')
+title('graph')
+</code></pre>
+
+<p><code>imagesc</code> とかでヒートマップ作るのも面白い。</p>
+
+<h4 id="control-statements-for-while-if-statement">Control Statements; for, while, if statement</h4>
+
+<p>基本的に、制御文の後はカンマを付けて、最後は <code>end</code></p>
+
+<pre><code>for i=1:10,
+  if i / 2 == 0,
+    disp(i);
+  end;
+end;
+</code></pre>
+
+<pre><code>while 1,
+  disp('hello');
+end;
+</code></pre>
+
+<p>関数の定義は次の通り</p>
+
+<pre><code>function y = foo(x) % 関数の宣言
+
+y = x^2;            % 実装
+</code></pre>
+
+<p>複数の値を返すことも出来る。</p>
+
+<pre><code>function [y1, y2] = bar(x)
+
+y1 = x^2;
+y2 = x^3;
+</code></pre>
+
+<p><code>addpath</code>を使うと関数が定義されているファイルがあるディレクトリを追加できる。</p>
+
+<p>関数は</p>
 </div>
 
   <aside class="p-share">

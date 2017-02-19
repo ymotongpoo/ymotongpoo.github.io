@@ -40,6 +40,8 @@
 
 &lt;h3 id=&#34;octave&#34;&gt;Octave&lt;/h3&gt;
 
+&lt;h4 id=&#34;octave自体の操作&#34;&gt;Octave自体の操作&lt;/h4&gt;
+
 &lt;p&gt;&lt;code&gt;a&lt;/code&gt; の少数第二位まで表示。&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;disp(sprintf(&#39;%0.2f), a)
@@ -111,6 +113,64 @@ whos
 
 &lt;pre&gt;&lt;code&gt;save hello.mat v
 &lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Aの各列での最大値を取る。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;max(A, [], 1)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Aの各行での最大値を取る。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;max(A, [], 2)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h4 id=&#34;plotting-data&#34;&gt;Plotting Data&lt;/h4&gt;
+
+&lt;p&gt;&lt;code&gt;x&lt;/code&gt;と&lt;code&gt;y&lt;/code&gt;のベクトルを使ってプロット。x軸とy軸にラベルを付ける。凡例も書く。タイトルを「graph」とする。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;plot(x, y)
+xlabel(&#39;time&#39;)
+ylabel(&#39;value&#39;)
+legend(&#39;second&#39;, &#39;value&#39;)
+title(&#39;graph&#39;)
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;imagesc&lt;/code&gt; とかでヒートマップ作るのも面白い。&lt;/p&gt;
+
+&lt;h4 id=&#34;control-statements-for-while-if-statement&#34;&gt;Control Statements; for, while, if statement&lt;/h4&gt;
+
+&lt;p&gt;基本的に、制御文の後はカンマを付けて、最後は &lt;code&gt;end&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;for i=1:10,
+  if i / 2 == 0,
+    disp(i);
+  end;
+end;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;pre&gt;&lt;code&gt;while 1,
+  disp(&#39;hello&#39;);
+end;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;関数の定義は次の通り&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function y = foo(x) % 関数の宣言
+
+y = x^2;            % 実装
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;複数の値を返すことも出来る。&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;function [y1, y2] = bar(x)
+
+y1 = x^2;
+y2 = x^3;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;code&gt;addpath&lt;/code&gt;を使うと関数が定義されているファイルがあるディレクトリを追加できる。&lt;/p&gt;
+
+&lt;p&gt;関数は&lt;/p&gt;
 </description>
     </item>
     
